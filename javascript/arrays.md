@@ -26,8 +26,8 @@ Arrays are variables that store collections of data in an ordered list. Having a
 - destructuring
 
 #### Additional Resources
-- [ W3Schools JavaScript Arrays ](https://www.w3schools.com/js/js_arrays.asp)
-- [ W3Schools JavaScript Array Methods](https://www.w3schools.com/js/js_array_methods.asp)
+- [W3Schools JavaScript Arrays](https://www.w3schools.com/js/js_arrays.asp)
+- [W3Schools JavaScript Array Methods](https://www.w3schools.com/js/js_array_methods.asp)
 
 #### Process
 - `cd` into the `javascript-intro-challenges` repository
@@ -238,11 +238,10 @@ console.log(learnStudents.sort())
 console.log(learnStudents)
 // output --> ["Debra", "Joel", "Jonas"]
 
-let numbers = [4, 2, 5, 1, 3];
-numbers.sort((a, b) => a - b);
-console.log(numbers);
-
-// [1, 2, 3, 4, 5]
+let numbers = [4, 2, 5, 1, 3]
+numbers.sort((a, b) => a - b)
+console.log(numbers)
+// output --> [1, 2, 3, 4, 5]
 ```
 
 ### Accessors  
@@ -411,73 +410,131 @@ console.log(secondName)
 ---
 
 ### Challenges
-Copy the challenges into your JavaScript file. Comment out the instructions and code the solution to each problem beneath the prompt.
 
-Consider the variable:
 ```javascript
+// Copy the challenges into your JavaScript file. Comment out the instructions and code the solution to each problem beneath the prompt.
+
+// Consider the variable:
 var groceryList = ["chips", "dip", "cookies"]
-```
 
-1. Write the code that will add "soda" to the end of the original array.
+// 1. Write the code that will add "soda" to the end of the original array.
+groceryList.push("soda")
+console.log(groceryList)
+// Output: ["chips", "dip", "cookies", "soda"]
 
-2. Write the code that will add "granola" to the end of array without altering the original array.
+// 2. Write the code that will add "granola" to the end of array without altering the original array.
+console.log(groceryList.concat("granola"))
+// Output: ["chips", "dip", "cookies", "soda", "granola"]
 
-3. Write the code that will return a subset of the array containing only "chips" and "dip".
+// 3. Write the code that will return a subset of the array containing only "chips" and "dip".
+console.log(groceryList.slice(0, 2))
+// Output: ["chips", "dip"]
 
-4. Write the code that will add "beans" to the "chips" and "dip" array.
+// 4. Write the code that will add "beans" to the "chips" and "dip" array.
+var nachos = groceryList.slice(0, 2)
+nachos.push("beans")
+console.log(nachos)
+// Output: ["chips", "dip", "beans"]
 
-Consider the variable:
-```javascript
+// Consider the variable:
 var numbers = [2, 4, 6, 8, 10]
-```
-5. Write the code that will add the number 0 to the beginning of the array.
 
-6. Write the code that will add the number 12 to the end of the array.
+// 5. Write the code that will add the number 0 to the beginning of the array.
+numbers.unshift(0)
+console.log(numbers)
+// Output: [0, 2, 4, 6, 8, 10]
 
-7. Write the code that will remove the first number from the array.
+// 6. Write the code that will add the number 12 to the end of the array.
+numbers.push(12)
+console.log(numbers)
+// Output: [0, 2, 4, 6, 8, 10, 12]
 
-8. Write the code that will add the number 0 to the beginning of the array without altering the original array. **HINT**: it's not `.unshift` You'll have to get creative! ;)
+// 7. Write the code that will remove the first number from the array.
+numbers.shift()
+console.log(numbers)
+// Output: [2, 4, 6, 8, 10, 12]
 
-Consider the variable:
-```javascript
+// 8. Write the code that will add the number 0 to the beginning of the array without altering the original array. **HINT**: it's not `.unshift` You'll have to get creative! ;)
+console.log([0].concat(numbers))
+// Output: [0, 2, 4, 6, 8, 10, 12]
+
+// Consider the variable:
 var numSet = [2, 13, 6, 8, 4, 2]
-```
-9. Write the code that finds the index of the first appearance of the number 2.
 
-10. Write the code that finds the index of the last appearance of the number 2.
+// 9. Write the code that finds the index of the first appearance of the number 2.
+console.log(numSet.indexOf(2))
+// Output: 0
 
-11. Write the code that returns the number at the third index.
+// 10. Write the code that finds the index of the last appearance of the number 2.
+console.log(numSet.lastIndexOf(2))
+// Output: 5
 
-Consider the variable:
+// 11. Write the code that returns the number at the third index.
+console.log(numSet[3])
+// Output: 8
 
-```javascript
+// Consider the variable:
 var characters = ["y", "a", "r", "r", "a"]
-```
-12. Write the code that brings all the letters in the characters array together into a string.
 
-13. Write the code that reverses the order of the letters in the characters array and saves it into a variable called charsReversed.
+// 12. Write the code that brings all the letters in the characters array together into a string.
+console.log(characters.join(""))
+// Output: "yarra"
 
-14. Write the code that brings all the letters in the charsReversed array together into a string with an asterisk between each letter.
+// 13. Write the code that reverses the order of the letters in the characters array and saves it into a variable called charsReversed.
+var charsReversed = characters.reverse()
+console.log(charsReversed)
+// Output: ['a', 'r', 'r', 'a', 'y']
 
-15. Write the code that brings all the letters in the charsReversed array together into a string without separators.
+// 14. Write the code that brings all the letters in the charsReversed array together into a string with an asterisk between each letter.
+console.log(charsReversed.join("*"))
+// Output: "a*r*r*a*y"
 
-Create two arrays consisting of three first names of your cohort members in each.
+// 15. Write the code that brings all the letters in the charsReversed array together into a string without separators.
+console.log(charsReversed.join(""))
+// Output: "array"
 
-16. Write the code that sorts the names in alphabetical order.
+// Create two arrays consisting of three first names of your cohort members in each.
+var cohort1 = ["Austin", "TJ", "Chelsea"]
+var cohort2 = ["Sarah", "Rob", "Kumba"]
+console.log(cohort1)
+// Output: ["Austin", "TJ", "Chelsea"]
+console.log(cohort2)
+// Output: ["Sarah", "Rob", "Kumba"]
 
-17. Write the code that sorts the names in reverse alphabetical order.
+// 16. Write the code that sorts the names in alphabetical order.
+console.log(cohort1.sort())
+// Output: ["Austin", "Chelsea", "TJ"]
+console.log(cohort2.sort())
+// Output: ["Kumba", "Rob", "Sarah"]
 
-18. Write the code that sorts all the names in alphabetical order in a single array.
+// 17. Write the code that sorts the names in reverse alphabetical order.
+console.log(cohort1.sort().reverse())
+// Output: ["TJ", "Chelsea", "Austin"]
+console.log(cohort2.sort().reverse())
+// Output: ["Sarah", "Rob", "Kumba"]
 
-Consider the variables:
+// 18. Write the code that sorts all the names in alphabetical order in a single array.
+console.log(cohort1.concat(cohort2).sort())
+// Output: ["Austin", "Chelsea", "Kumba", "Rob", "Sarah", "TJ"]
 
-```javascript
+// Consider the variables:
 var numbers = [42, 221, 71, 7, 18, 87]
 var oddIndexes = []
+
+// 19. Write the code that logs the values from the numbers array that are at odd indexes.
+console.log(numbers[1])
+// Output: 221
+console.log(numbers[3])
+// Output: 7
+console.log(numbers[5])
+// Output: 87
+
+// 20. Write the code that adds the values from odd indexes into the oddIndexes array.
+oddIndexes.push(numbers[1])
+oddIndexes.push(numbers[3])
+oddIndexes.push(numbers[5])
+console.log(oddIndexes)
+// Output: [221, 7, 87]
 ```
-19. Write the code that logs the values from the numbers array that are at odd indexes.
-
-20. Write the code that adds the values from odd indexes into the oddIndexes array.
-
 ---
 [Back to Syllabus](../README.md#unit-one-javascript-foundations)
