@@ -395,10 +395,10 @@ console.log(theQuestion.length)  // => 34
 console.log(theQuestion.indexOf("f"))  // => 2
 
 // Write the code that will log the concatenation of the two variables.
-console.log("The answer to " + theQuestion + " is " + theAnswer)  // => The answer to life, the universe, and everything is 42
+console.log("The answer to " + theQuestion + " is " + theAnswer)  // => "The answer to life, the universe, and everything is 42"
 
 // Write the code that will log "the universe".
-console.log(theQuestion.slice(6, 18))  // => the universe
+console.log(theQuestion.slice(6, 18))  // => "the universe"
 
 // Write the code that will log the character "l" from theQuestion.
 console.log(theQuestion.charAt(0))  // => "l"
