@@ -255,47 +255,319 @@ console.log(tallEnough("yolo"))
 ---
 
 ### Challenges
-Copy the challenges into your JavaScript file. Comment out the instructions and code the solution to each problem beneath the prompt. Each solution requires pseudocode. Test your functions with multiple function calls.
 
-1. Write a function named `marco` that returns "polo".
+```javascript
+// Copy the challenges into your JavaScript file. Comment out the instructions and code the solution to each problem beneath the prompt. Each solution requires pseudocode. Test your functions with multiple function calls.
 
-2. Write a function named `greeting` that takes a name as an argument and returns "Welcome, <person's name here>!"
+// 1. Write a function named `marco` that returns "polo".    
+    // create a function named marco
+    const marco = () => {
+      // calling the function will return polo
+      return "polo"
+    }
+    console.log(marco())
+    // Output: "polo"
 
-3. Write a function named `oddOrEven` that takes a number as an argument and returns whether the number is odd or even.
+// 2. Write a function named `greeting` that takes a name as an argument and returns "Welcome, <person's name here>!"
+    // create a function named greeting
+    const greeting = (name) => {
+      // calling the function will return a string interpolation with the given name
+      return `Welcome, ${name}!`
+    }
+    console.log(greeting("Juan"))
+    // Output: "Welcome, Juan!"
+    console.log(greeting("Janice"))
+    // Output: "Welcome, Janice!"
 
-4. Write a function named `triple` that takes a number as an argument and returns the result of that number multiplied by 3.
-
-5. Write a function named `multiply` that takes two numbers as arguments and returns the result of the numbers multiplied together.
-
-6. Write a function named `divisibleBy` that takes two numbers as arguments and returns whether the first number is evenly divisible by the second so that divisibleBy(10, 5) logs "10 is evenly divisible by 5".
-
-7. Write a function named `assignGrade` that takes a number score as an argument and returns the letter grade for the score.
-
-8. Write a function named `isLonger` that takes two strings as arguments and returns the string that contains the most characters.
-
-9. Write a function named `greaterNum` that takes two numbers as arguments and returns whichever number is the greater (higher) number.
-
-10. Write a function named `yelling` that takes a string as an argument and return the string in all uppercase case letters.
+// 3. Write a function named `oddOrEven` that takes a number as an argument and returns whether the number is odd or even.
+    // create a function named oddOrEven that takes a number as an argument
+    const oddOrEven = (number) => {
+    // if the whole number remainder is equal to 0 return even using conditional, modulo, and strict equality operators
+      if(number%2 === 0) {
+        return "even"
+      }
+    // if the whole number remainder is not equal to 0 return odd
+      else {
+        return "odd"
+      }
+    }
+    console.log(oddOrEven(2022))
+    // Output: "even"
+    console.log(oddOrEven(2021))
+    // Output: "odd"
+    
+// 4. Write a function named `triple` that takes a number as an argument and returns the result of that number multiplied by 3.
+    // create a function named triple that takes a number as an argument
+    const triple = (num) => {
+        // return the result of that number multiplied by 3
+        return num * 3
+    }  
+    console.log(triple(3))
+    // Output: 9
+    console.log(triple(4))
+    // Output: 12
+    
+// 5. Write a function named `multiply` that takes two numbers as arguments and returns the result of the numbers multiplied together.
+    // create a function named multiply that takes two numbers as arguments
+    const multiply = (num1, num2) => {
+      // returns the result of the numbers multiplied together
+      return num1 * num2
+    } 
+    console.log(multiply(3.5, 4))
+    // Output: 14.12
+    console.log(multiply(5, 60))
+    // Output: 300
+    
+// 6. Write a function named `divisibleBy` that takes two numbers as arguments and returns whether the first number is evenly divisible by the second so that divisibleBy(10, 5) logs "10 is evenly divisible by 5".
+    // create a function named divisibleBy that takes two numbers as arguments
+    const divisibleBy = (num3, num4) => {
+      // use operators (conditional, modulo, strict equality) to determine if the first number is evenly divisible by the second
+      //if the whole number remainder is equal to 0 return using string interpolation that first number is evenly divisible by second number
+      if(num3%num4 === 0) {
+        return `${num3} is evenly divisible by ${num4}`
+      }
+      // if the whole number remainder is not equal to 0 return that first number is not evenly divisible by second number
+      else if(num3%num4 !== 0) {
+        return `${num3} is not evenly divisible by ${num4}`
+      }
+    }
+    console.log(divisibleBy(16,4))
+    // Output: "16 is evenly divisible by 4"
+    console.log(divisibleBy(16,3))
+    // Output: "16 is not evenly divisible by 3"
+    
+// 7. Write a function named `assignGrade` that takes a number score as an argument and returns the letter grade for the score.
+    // create a function named assignGrade that takes a number score as an argument
+    const assignGrade = (score) => {
+      // use operators (conditional, modulo, relational) to determine the grade range for the given score
+      // if the score is greater than or equal to 90 return A
+      if(score >= 90) {
+        return "A"
+      }
+      // if the score is greater than or equal to 80 but less than 90 return B 
+      else if(score >= 80) {
+        return "B"
+      }
+      // if the score is greater than or equal to 70 but less than 80 return C
+      else if(score >= 70) {
+        return "C"
+      }
+      // if the score is greater than or equal to 60 but less than 70 return D
+      else if(score >= 60) {
+        return "D"
+      }
+      // if any other score return F
+      else {
+        return "F"
+      }
+    }
+    console.log(assignGrade(13))
+    // Output: "F"
+    console.log(assignGrade(93))
+    // Output: "A"
+    console.log(assignGrade(83))
+    // Output: "B"
+        
+// 8. Write a function named `isLonger` that takes two strings as arguments and returns the string that contains the most characters.
+    // create a function named `isLonger` that takes two strings as arguments
+    const isLonger = (string1, string2) =>{
+      // use operators (relational, conditional) and length property of each string to determine which string has the most characters
+      // if the length of the first string is greater than the length of the second string return the first string
+      if(string1.length > string2.length) {
+        return `${string1}`
+      }
+      // if not return the second string
+      else {
+        return `${string2}`
+      }
+    }
+    console.log(isLonger("coder", "full stack web developer"))
+    // Output: "full stack web developer"
+    console.log(isLonger("student", "intern"))
+    // Output: "student"
+    
+// 9. Write a function named `greaterNum` that takes two numbers as arguments and returns whichever number is the greater (higher) number.
+    // create a function named `greaterNum` that takes two numbers as arguments
+    const greaterNum = (num5, num6) => {
+      // use operators (relational, conditional) to determine which number is the higher number
+      // if the first number is greater than the second number return the first number
+      if(num5 > num6) {
+        return num5
+      }
+      // if the second number is greater than the first number return the second number
+      else if(num6 > num5) {
+        return num6
+      }
+    }
+    console.log(greaterNum(-44, 44))
+    // Output: 44
+    console.log(greaterNum(0, -23))
+    // Output: 0
+    
+// 10. Write a function named `yelling` that takes a string as an argument and return the string in all uppercase case letters.
+    // create a function named `yelling` that takes a string as an argument
+    const yelling = (string) => {
+      // use built-in uppercase method for strings to return string in all uppercase case letters
+      return string.toUpperCase()
+    }
+    console.log(yelling("celebrate"))
+    // Output: "CELEBRATE"
+    console.log(yelling("change"))
+    // Output: "CHANGE"
+```    
 
 
 ### STRETCH Challenges
 
-1. The World Translator   
-  (a) Write a function named `helloWorld` that takes a language code (e.g. "es", "de", "en") as an argument and returns "Hello World!" in the given language. Ensure you function works for at least 5 languages.  
-  (b) Have your function [default](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Default_parameters) to returning English.
+```javascript
+// 1. The World Translator   
+  // (a) Write a function named `helloWorld` that takes a language code (e.g. "es", "de", "en") as an argument and returns "Hello World!" in the given language. Ensure your function works for at least 5 languages.  
+      // create a function named `helloWorld` that takes a language code as an argument
+      const helloWorld = (lang) => {
+        // use conditional and loose equality operators to select a foreign language
+        // if language code is "fr" return Hello World! in French
+        if(lang == "fr") {
+          return "Bonjour le monde!"
+        } 
+        // if language code is "ro" return Hello World! in Romanian
+        else if(lang == "ro") {
+          return "Salut Lume!"
+        } 
+        // if language code is "uk" return Hello World! in Ukrainian
+        else if(lang == "uk") {
+          return "Привіт Світ!"
+        } 
+        // if language code is "it" return Hello World! in Italian
+        else if(lang == "it") {
+          return "Ciao mondo!"
+        } 
+        // if language code is "tr" return Hello World! in Turkish
+        else if(lang == "tr") {
+          return "Selam Dünya!"
+        }
+        // if language code is "en" return Hello World! in English
+        else if(lang == "en") {
+          return "Hello World!"
+        } 
+        // all other language codes will return error code
+        else {
+          return "Try a different language"
+        }
+      }
+      console.log(helloWorld("tr"))
+      // Output: "Selam Dünya!"
+      console.log(helloWorld("es"))
+      // Output: "Try a different language"
+      console.log(helloWorld("en"))
+      // Output: "Hello World!"
+    
+  // (b) Have your function [default](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Default_parameters) to returning English.
+      // create a function named helloWorld2 that takes a language code and defaults to English
+      const helloWorld2 = (lang = "en") => {
+        // use conditional and loose equality operators to select a foreign language
+        // if language code is "fr" return Hello World! in French
+        if(lang == "fr") {
+          return "Bonjour le monde!"
+        } 
+        // if language code is "ro" return Hello World! in Romanian
+        else if(lang == "ro") {
+          return "Salut Lume!"
+        } 
+        // if language code is "uk" return Hello World! in Ukrainian
+        else if(lang == "uk") {
+          return "Привіт Світ!"
+        } 
+        // if language code is "it" return Hello World! in Italian
+        else if(lang == "it") {
+          return "Ciao mondo!"
+        } 
+        // if language code is "tr" return Hello World! in Turkish
+        else if(lang == "tr") {
+          return "Selam Dünya!"
+        }
+        // if any other language codes are used or no input return the default "Hello World!" in English
+        // This return syntax can be used as default after all if/else if statements have been established. Do not use with an else statement.
+        return "Hello World!"
+      }
+      console.log(helloWorld2("fr"))
+      // Output: "Bonjour le monde!"
+      console.log(helloWorld2("ro"))
+      // Output: "Salut Lume!"
+      console.log(helloWorld2("yi"))
+      // Output: "Hello World!"
+      console.log(helloWorld2())
+      // Output: "Hello World!"
+      
+// 2. The Pluralizer  
+  // (a) Write a function named `pluralizer` that takes a number and a singular noun as arguments and returns the number and pluralized form of the noun, if necessary.
 
-2. The Pluralizer  
-  (a) Write a function named `pluralizer` that takes a number and a singular noun as arguments and returns the number and pluralized form of the noun, if necessary.
+  // ```javascript
+  // pluralizer(5, "cat")
+  // // expected output: "5 cats"
 
-  ```javascript
-  pluralizer(5, "cat")
-  // expected output: "5 cats"
+  // pluralizer(1, "dog")
+  // // expected output: "1 dog"
+  // ```
 
-  pluralizer(1, "dog")
-  // expected output: "1 dog"
-  ```
+    // create a function named `pluralizer` that takes a number and a singular noun as arguments
+    const pluralizer = (number, noun) => {
+      // use conditional and logical operators to evaluate a number
+      // if a number is not 1 return the number and the plural noun by attaching s
+      if(number != 1) {
+        return number + " " + noun + "s"
+      }
+      // else return number and singular noun 
+      else {
+        return number + " " + noun;
+      }
+    }
+    console.log(pluralizer(15, "rose"))
+    // Output: "15 roses"
+    console.log(pluralizer(1, "tulip"))
+    // Output: "1 tulip"
+    console.log(pluralizer(0, "dandelion"))
+    // Output: "0 dandelions"
 
-  (b) Enhance your function so it can handle a few collective nouns like "sheep", "goose", "child", "person" and "species".
+  // (b) Enhance your function so it can handle a few collective nouns like "sheep", "goose", "child", "person" and "species".
+    // create a function named `pluralizer2` that takes a number and a singular noun as arguments
+    const pluralizer2 = (number, noun) => {
+      // use conditional, loose equality, and logical operators to evaluate number and noun
+      // if the noun is sheep, deer, species, or moose return the number and the singular noun
+      if(noun == "sheep" || noun == "deer" || noun == "species" || noun == "moose") {
+        return number + " " + noun
+      }
+      // if a number is not 1 and the noun is child return the number and children
+      else if(number != 1 && noun == "child") {
+        return number + " children"
+      }
+      // if a number is not 1 and the noun is goose return the number and geese
+      else if(number != 1 && noun == "goose") {
+        return number + " geese"
+      }
+      // if a number is not 1 and the noun is person return the number and people
+      else if(number != 1 && noun == "person") {
+        return number + " people"
+      }
+      // if a number is not 1 return the number and the plural noun by attaching s
+      else if(number != 1) {
+        return number + " " + noun + "s"
+      }
+      // else return number and singular noun 
+      else {
+        return number + " " + noun
+      } 
+    }
+    console.log(pluralizer2(0, "child"))
+    // Output: "0 children"
+    console.log(pluralizer2(1, "child"))
+    // Output: "1 child"
+    console.log(pluralizer2(2, "deer"))
+    // Output: "2 deer"
+    console.log(pluralizer2(5, "goose"))
+    // Output: "5 geese"
+    console.log(pluralizer2(10, "play"))
+    // Output: "10 plays"
+```    
 
 ---
 [Back to Syllabus](../README.md#unit-one-javascript-foundations)
