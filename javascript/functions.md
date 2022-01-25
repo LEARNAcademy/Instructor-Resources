@@ -283,7 +283,7 @@ console.log(tallEnough("yolo"))
     // create a function named oddOrEven that takes a number as an argument
     const oddOrEven = (number) => {
     // if the whole number remainder is equal to 0 return even using conditional, modulo, and strict equality operators
-      if(number%2 === 0) {
+      if(number % 2 === 0) {
         return "even"
       }
     // if the whole number remainder is not equal to 0 return odd
@@ -314,26 +314,26 @@ console.log(tallEnough("yolo"))
       return num1 * num2
     } 
     console.log(multiply(3.5, 4))
-    // Output: 14.12
+    // Output: 14
     console.log(multiply(5, 60))
     // Output: 300
     
 // 6. Write a function named `divisibleBy` that takes two numbers as arguments and returns whether the first number is evenly divisible by the second so that divisibleBy(10, 5) logs "10 is evenly divisible by 5".
     // create a function named divisibleBy that takes two numbers as arguments
-    const divisibleBy = (num3, num4) => {
+    const divisibleBy = (num1, num2) => {
       // use operators (conditional, modulo, strict equality) to determine if the first number is evenly divisible by the second
       //if the whole number remainder is equal to 0 return using string interpolation that first number is evenly divisible by second number
-      if(num3%num4 === 0) {
-        return `${num3} is evenly divisible by ${num4}`
+      if(num1 % num2 === 0) {
+        return `${num1} is evenly divisible by ${num2}`
       }
-      // if the whole number remainder is not equal to 0 return that first number is not evenly divisible by second number
-      else if(num3%num4 !== 0) {
-        return `${num3} is not evenly divisible by ${num4}`
+      // if the whole number remainder is not equal to 0 (determined using a logical operator) return that first number is not evenly divisible by second number
+      else if(num1 % num2 != 0) {
+        return `${num1} is not evenly divisible by ${num2}`
       }
     }
-    console.log(divisibleBy(16,4))
+    console.log(divisibleBy(16, 4))
     // Output: "16 is evenly divisible by 4"
-    console.log(divisibleBy(16,3))
+    console.log(divisibleBy(16, 3))
     // Output: "16 is not evenly divisible by 3"
     
 // 7. Write a function named `assignGrade` that takes a number score as an argument and returns the letter grade for the score.
@@ -370,15 +370,15 @@ console.log(tallEnough("yolo"))
         
 // 8. Write a function named `isLonger` that takes two strings as arguments and returns the string that contains the most characters.
     // create a function named `isLonger` that takes two strings as arguments
-    const isLonger = (string1, string2) =>{
+    const isLonger = (string1, string2) => {
       // use operators (relational, conditional) and length property of each string to determine which string has the most characters
       // if the length of the first string is greater than the length of the second string return the first string
       if(string1.length > string2.length) {
-        return `${string1}`
+        return string1
       }
       // if not return the second string
       else {
-        return `${string2}`
+        return string2
       }
     }
     console.log(isLonger("coder", "full stack web developer"))
@@ -388,15 +388,15 @@ console.log(tallEnough("yolo"))
     
 // 9. Write a function named `greaterNum` that takes two numbers as arguments and returns whichever number is the greater (higher) number.
     // create a function named `greaterNum` that takes two numbers as arguments
-    const greaterNum = (num5, num6) => {
+    const greaterNum = (num1, num2) => {
       // use operators (relational, conditional) to determine which number is the higher number
       // if the first number is greater than the second number return the first number
-      if(num5 > num6) {
-        return num5
+      if(num1 > num2) {
+        return num1
       }
       // if the second number is greater than the first number return the second number
-      else if(num6 > num5) {
-        return num6
+      else if(num2 > num1) {
+        return num2
       }
     }
     console.log(greaterNum(-44, 44))
@@ -424,29 +424,29 @@ console.log(tallEnough("yolo"))
   // (a) Write a function named `helloWorld` that takes a language code (e.g. "es", "de", "en") as an argument and returns "Hello World!" in the given language. Ensure your function works for at least 5 languages.  
       // create a function named `helloWorld` that takes a language code as an argument
       const helloWorld = (lang) => {
-        // use conditional and loose equality operators to select a foreign language
+        // use conditional and strict equality operators to select a foreign language
         // if language code is "fr" return Hello World! in French
-        if(lang == "fr") {
+        if(lang === "fr") {
           return "Bonjour le monde!"
         } 
         // if language code is "ro" return Hello World! in Romanian
-        else if(lang == "ro") {
+        else if(lang === "ro") {
           return "Salut Lume!"
         } 
         // if language code is "uk" return Hello World! in Ukrainian
-        else if(lang == "uk") {
+        else if(lang === "uk") {
           return "Привіт Світ!"
         } 
         // if language code is "it" return Hello World! in Italian
-        else if(lang == "it") {
+        else if(lang === "it") {
           return "Ciao mondo!"
         } 
         // if language code is "tr" return Hello World! in Turkish
-        else if(lang == "tr") {
+        else if(lang === "tr") {
           return "Selam Dünya!"
         }
         // if language code is "en" return Hello World! in English
-        else if(lang == "en") {
+        else if(lang === "en") {
           return "Hello World!"
         } 
         // all other language codes will return error code
@@ -464,30 +464,35 @@ console.log(tallEnough("yolo"))
   // (b) Have your function [default](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Default_parameters) to returning English.
       // create a function named helloWorld2 that takes a language code and defaults to English
       const helloWorld2 = (lang = "en") => {
-        // use conditional and loose equality operators to select a foreign language
+        // use conditional and strict equality operators to select a foreign language
         // if language code is "fr" return Hello World! in French
-        if(lang == "fr") {
+        if(lang === "fr") {
           return "Bonjour le monde!"
         } 
         // if language code is "ro" return Hello World! in Romanian
-        else if(lang == "ro") {
+        else if(lang === "ro") {
           return "Salut Lume!"
         } 
         // if language code is "uk" return Hello World! in Ukrainian
-        else if(lang == "uk") {
+        else if(lang === "uk") {
           return "Привіт Світ!"
         } 
         // if language code is "it" return Hello World! in Italian
-        else if(lang == "it") {
+        else if(lang === "it") {
           return "Ciao mondo!"
         } 
         // if language code is "tr" return Hello World! in Turkish
-        else if(lang == "tr") {
+        else if(lang === "tr") {
           return "Selam Dünya!"
         }
+        // if language code is "en" return Hello World! in English
+        else if(lang === "en") {
+          return "Hello World!"
+        }
         // if any other language codes are used or no input return the default "Hello World!" in English
-        // This return syntax can be used as default after all if/else if statements have been established. Do not use with an else statement.
-        return "Hello World!"
+        else {
+          return "Hello World!"
+        }
       }
       console.log(helloWorld2("fr"))
       // Output: "Bonjour le monde!"
@@ -501,24 +506,22 @@ console.log(tallEnough("yolo"))
 // 2. The Pluralizer  
   // (a) Write a function named `pluralizer` that takes a number and a singular noun as arguments and returns the number and pluralized form of the noun, if necessary.
 
-  // ```javascript
   // pluralizer(5, "cat")
   // // expected output: "5 cats"
 
   // pluralizer(1, "dog")
   // // expected output: "1 dog"
-  // ```
 
     // create a function named `pluralizer` that takes a number and a singular noun as arguments
     const pluralizer = (number, noun) => {
       // use conditional and logical operators to evaluate a number
-      // if a number is not 1 return the number and the plural noun by attaching s
+      // if a number is not 1 return the number and the plural noun by attaching "s" using string interpolation
       if(number != 1) {
-        return number + " " + noun + "s"
+        return `${number} ${noun}s`
       }
       // else return number and singular noun 
       else {
-        return number + " " + noun;
+        return `${number} ${noun}`
       }
     }
     console.log(pluralizer(15, "rose"))
@@ -531,30 +534,30 @@ console.log(tallEnough("yolo"))
   // (b) Enhance your function so it can handle a few collective nouns like "sheep", "goose", "child", "person" and "species".
     // create a function named `pluralizer2` that takes a number and a singular noun as arguments
     const pluralizer2 = (number, noun) => {
-      // use conditional, loose equality, and logical operators to evaluate number and noun
+      // use conditional, strict equality, and logical operators to evaluate number and noun
       // if the noun is sheep, deer, species, or moose return the number and the singular noun
-      if(noun == "sheep" || noun == "deer" || noun == "species" || noun == "moose") {
-        return number + " " + noun
+      if(noun === "sheep" || noun === "deer" || noun === "species" || noun === "moose") {
+        return `${number} ${noun}`
       }
-      // if a number is not 1 and the noun is child return the number and children
-      else if(number != 1 && noun == "child") {
-        return number + " children"
+      // if a number is not 1 and the noun is child return the number and children using string interpolation
+      else if(number != 1 && noun === "child") {
+        return `${number} children`
       }
       // if a number is not 1 and the noun is goose return the number and geese
-      else if(number != 1 && noun == "goose") {
-        return number + " geese"
+      else if(number != 1 && noun === "goose") {
+        return `${number} geese`
       }
       // if a number is not 1 and the noun is person return the number and people
-      else if(number != 1 && noun == "person") {
-        return number + " people"
+      else if(number != 1 && noun === "person") {
+        return `${number} people`
       }
       // if a number is not 1 return the number and the plural noun by attaching s
       else if(number != 1) {
-        return number + " " + noun + "s"
+        return `${number} ${noun}s`
       }
       // else return number and singular noun 
       else {
-        return number + " " + noun
+        return `${number} ${noun}`
       } 
     }
     console.log(pluralizer2(0, "child"))
