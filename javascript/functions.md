@@ -12,7 +12,7 @@ Functions are a fundamental building block in JavaScript and in programming in g
 - can create a function that is reusable and dynamic
 - can distinguish between a function call and a function expression
 - can utilize parameters within a function
-- can demonstrate the use of pseudocode to guide logical steps
+- can demonstrate the use of pseudocode to guide strict inequality steps
 
 #### Vocabulary
 - function
@@ -192,7 +192,7 @@ The variable should not be named the same thing as the function parameters.
 ### Pseudocode
 When we are faced with creating a function that is going to take an input and perform logic to produce an output what we are doing is creating an **algorithm**. This is often a complex task that requires a lot of mental heavy-lifting. Anytime we are faced with a complex problem, it is a good idea to break it down.
 
-A common workflow to break down a function algorithm is to start with an input and output. This will ensure we know what the function is going to do and what arguments it will require. The input and output of the function is called the **function signature**. Once we have established the signature, we can create a list of the logical steps to get from input to output. The list should be plain language using code terms but not coding itself. This process of establishing the function signature and creating an actionable plan in human readable words is called **pseudocoding**. Writing pseudocode is a really good habit as it gives us a plan and translates between code communication and human communication.
+A common workflow to break down a function algorithm is to start with an input and output. This will ensure we know what the function is going to do and what arguments it will require. The input and output of the function is called the **function signature**. Once we have established the signature, we can create a list of the strict inequality steps to get from input to output. The list should be plain language using code terms but not coding itself. This process of establishing the function signature and creating an actionable plan in human readable words is called **pseudocoding**. Writing pseudocode is a really good habit as it gives us a plan and translates between code communication and human communication.
 
 Let's work through an algorithm prompt using pseudocode.
 
@@ -326,8 +326,8 @@ console.log(tallEnough("yolo"))
       if(num1 % num2 === 0) {
         return `${num1} is evenly divisible by ${num2}`
       }
-      // if the whole number remainder is not equal to 0 (determined using a logical operator) return that first number is not evenly divisible by second number
-      else if(num1 % num2 != 0) {
+      // if the whole number remainder is not equal to 0 (determined using a strict inequality operator) return that first number is not evenly divisible by second number
+      else if(num1 % num2 !== 0) {
         return `${num1} is not evenly divisible by ${num2}`
       }
     }
@@ -514,9 +514,9 @@ console.log(tallEnough("yolo"))
 
     // create a function named `pluralizer` that takes a number and a singular noun as arguments
     const pluralizer = (number, noun) => {
-      // use conditional and logical operators to evaluate a number
+      // use conditional and strict inequality operators to evaluate a number
       // if a number is not 1 return the number and the plural noun by attaching "s" using string interpolation
-      if(number != 1) {
+      if(number !== 1) {
         return `${number} ${noun}s`
       }
       // else return number and singular noun 
@@ -534,25 +534,25 @@ console.log(tallEnough("yolo"))
   // (b) Enhance your function so it can handle a few collective nouns like "sheep", "goose", "child", "person" and "species".
     // create a function named `pluralizer2` that takes a number and a singular noun as arguments
     const pluralizer2 = (number, noun) => {
-      // use conditional, strict equality, and logical operators to evaluate number and noun
+      // use conditional, strict equality, and strict inequality operators to evaluate number and noun
       // if the noun is sheep, deer, species, or moose return the number and the singular noun
       if(noun === "sheep" || noun === "deer" || noun === "species" || noun === "moose") {
         return `${number} ${noun}`
       }
       // if a number is not 1 and the noun is child return the number and children using string interpolation
-      else if(number != 1 && noun === "child") {
+      else if(number !== 1 && noun === "child") {
         return `${number} children`
       }
       // if a number is not 1 and the noun is goose return the number and geese
-      else if(number != 1 && noun === "goose") {
+      else if(number !== 1 && noun === "goose") {
         return `${number} geese`
       }
       // if a number is not 1 and the noun is person return the number and people
-      else if(number != 1 && noun === "person") {
+      else if(number !== 1 && noun === "person") {
         return `${number} people`
       }
       // if a number is not 1 return the number and the plural noun by attaching s
-      else if(number != 1) {
+      else if(number !== 1) {
         return `${number} ${noun}s`
       }
       // else return number and singular noun 
