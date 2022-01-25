@@ -36,6 +36,8 @@ This repository is a reflection of the current status of the curriculum at LEARN
 - [Intro to Atom](./tools-and-resources/atom.md)
 - [Wireframes](./tools-and-resources/wireframes.md)
 - [Pair Programming](./tools-and-resources/pair-programming.md)
+- [Zoom Rooms](./tools-and-resources/zoom-rooms.md)
+- [Instructor Style Guide](./tools-and-resources/style-guide.md)
 
 
 ## First Day: Presentations
