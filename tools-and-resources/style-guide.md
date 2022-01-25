@@ -9,6 +9,7 @@ NOTE: WIP
 - No spaces between the method/action and parentheses
 - Space between closing parentheses and opening curly brace
 - Indentations consist of two spaces
+- Semicolons are only used when necessary
 
 Conditional Statements
 ```javascript
