@@ -326,7 +326,7 @@ console.log(tallEnough("yolo"))
       if(num1 % num2 === 0) {
         return `${num1} is evenly divisible by ${num2}`
       }
-      // if the whole number remainder is not equal to 0 (determined using a logical operator) return that first number is not evenly divisible by second number
+      // if the whole number remainder is not equal to 0 (determined using a strict inequality operator) return that first number is not evenly divisible by second number
       else if(num1 % num2 !== 0) {
         return `${num1} is not evenly divisible by ${num2}`
       }
@@ -514,7 +514,7 @@ console.log(tallEnough("yolo"))
 
     // create a function named `pluralizer` that takes a number and a singular noun as arguments
     const pluralizer = (number, noun) => {
-      // use conditional and logical operators to evaluate a number
+      // use conditional and strict inequality operators to evaluate a number
       // if a number is not 1 return the number and the plural noun by attaching "s" using string interpolation
       if(number !== 1) {
         return `${number} ${noun}s`
@@ -534,7 +534,7 @@ console.log(tallEnough("yolo"))
   // (b) Enhance your function so it can handle a few collective nouns like "sheep", "goose", "child", "person" and "species".
     // create a function named `pluralizer2` that takes a number and a singular noun as arguments
     const pluralizer2 = (number, noun) => {
-      // use conditional, strict equality, and logical operators to evaluate number and noun
+      // use conditional, strict equality, and strict inequality operators to evaluate number and noun
       // if the noun is sheep, deer, species, or moose return the number and the singular noun
       if(noun === "sheep" || noun === "deer" || noun === "species" || noun === "moose") {
         return `${number} ${noun}`
