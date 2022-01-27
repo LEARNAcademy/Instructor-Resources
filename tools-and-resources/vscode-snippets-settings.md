@@ -8,14 +8,14 @@ Instructions
 2. “Preferences: Configure User Snippets”
 3. Select “javascript.json”
 4. Copy and paste code below
-5. save file
+5. Save file
 
 JavaScript:
 ```json
 {
 	"Console Log": {
 		"prefix":"cl",
-		"body": "conslone.log($1)",
+		"body": "console.log($1)",
 		"description": "Console Log"
 	},  
 	"For Loop": {
@@ -39,7 +39,7 @@ JavaScript:
   },
   "Basic If Statement": {
     "prefix": "if",
-    "body": ["if( ${1:condition} ) {", " $2 ", "}"],
+    "body": ["if(${1:condition}) {", " $2 ", "}"],
     "description": "If Statement"
   },
   "If Else Statement": {
@@ -84,7 +84,7 @@ Instructions
 2. “Preferences: Configure User Snippets”
 3. Select “ruby.json”
 4. Copy and paste code below
-5. save file
+5. Save file
 
 Ruby: 
 ```json
