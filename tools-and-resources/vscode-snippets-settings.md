@@ -22,7 +22,7 @@ JavaScript:
 	"For Loop": {
 		"prefix": "for", 
 		"body": [
-			"for( let i = 0; i < array.length; i++ ){",
+			"for(let i = 0; i < array.length; i++){",
 			"  const ${1:element} = array[i]",
 			"}"
 		],
