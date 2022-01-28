@@ -9,6 +9,7 @@ Instructions
 3. Select “javascript.json”
 4. Copy and paste code below
 5. Save file
+6. Rinse & Repeat for the file “javascriptreact.json”
 
 JavaScript:
 ```json
