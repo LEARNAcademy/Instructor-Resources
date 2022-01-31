@@ -357,46 +357,293 @@ Use `fit()` to focus on an it-block without having to comment all other it-block
 > **IMPORTANT**: Write the test FIRST, see it fail, then write the code to make it PASS.
 
 > **IMPORTANT**: You do not need to comment out the old tests or functions. The purpose of tests are to be AUTOMATED. Commenting them out defeats that purpose.
+```javascript
+// 1.  Write the test for a function that returns "drink coffee" if you are tired and "keep working" if you are not tired.
 
+  // a describe method that lists the name of the function
+  describe("areYouTired", () => {
+    // a test/it method that describes what the function does
+    it("returns 'drink coffee' if you are tired and 'keep working' if you are not tired", () => {
+      //an expect method calling on the function followed by the matcher that checks the expected output of the function return
+      expect(areYouTired("yes")).toEqual("drink coffee")
+      expect(areYouTired("no")).toEqual("keep working")
+    })
+  })
 
-1. Write the test for a function that returns "drink coffee" if you are tired and "keep working" if you are not tired.  
-  - Write the function that will make the test pass.
+//   Write the function that will make the test pass.
+  // declare function that takes in a string
+  const areYouTired = (string) => {
+    // conditional statement of yes to return drink coffee
+    if(string === "yes") {
+      return "drink coffee"
+    // conditional statement of no to return keep working
+    } else if(string === "no") {
+      return "keep working"
+    }
+  }
 
-2. Write the test for a function that returns "relax" if you are stressed and "keep going" if you are not stressed.
-  - Write the function that will make the test pass.
+// 2.  Write the test for a function that returns "relax" if you are stressed and "keep going" if you are not stressed.
+  // a describe method that lists the name of the function
+  describe("areYouStressed", () => {
+    // a test/it method that describes what the function does
+    it("returns 'relax' if you are stressed and 'keep going' if you are not stressed", () => {
+      //an expect method calling on the function followed by the matcher that checks the expected output of the function return
+      expect(areYouStressed("yes")).toEqual("relax")
+      expect(areYouStressed("no")).toEqual("keep going")
+    })
+  })
 
-3. Write the test for a function that returns "in budget" if a price is lower than $300.  
-  - Write the function that will make the test pass.
+//   Write the function that will make the test pass.
+  // declare function that takes in a string
+  const areYouStressed = (string) => {
+    // conditional statement of yes to return relax
+    if(string === "yes") {
+      return "relax"
+    // conditional statement of no to return keep going
+    } else if(string === "no") {
+      return "keep going"
+    }
+  }  
 
-4. Write the test for a function that takes in two arguments(numbers) and returns the smaller number.
-  - Write the function that will make the test pass.
+// 3.  Write the test for a function that returns "in budget" if a price is lower than $300.
+  // a describe method that lists the name of the function
+  describe("budget", () => {
+    // a test/it method that describes what the function does
+    it("returns 'in budget' if a price is lower than $300", () => {
+      //an expect method calling on the function followed by the matcher that checks the expected output of the function return
+      expect(budget(200)).toEqual("in budget")
+    })
+  })
 
-5. Write the test for a function that takes in one argument(number) and returns whether the number is odd.
-  - Write the function that will make the test pass.
+//   Write the function that will make the test pass.
+  // declare function that takes in a number
+  const budget = (number) => {
+    // conditional statement of price lower than $300
+    if(number < 300) {
+      return "in budget"
+    // any other price will be out of budget
+    } else {
+      return "out of budget"
+    }
+  }
 
-6. Write the test for a function that takes in a fruit and returns "yellow" if the argument is banana, "red" if apple and "purple" if grape.
-  - Write the function that will make the test pass.
+// 4.  Write the test for a function that takes in two arguments(numbers) and returns the smaller number.
+  // a describe method that lists the name of the function
+  describe("smaller", () => {
+    // a test/it method that describes what the function does
+    it("takes in two arguments(numbers) and returns the smaller number ", () => {
+      //an expect method calling on the function followed by the matcher that checks the expected output of the function return
+      expect(smaller(5, 3)).toEqual(3)
+    })
+  })
 
-7. Write the test for a function called `rick` that returns "Morty".
-  - Write the function that will make the test pass.
+//   Write the function that will make the test pass.
+  // declare function that takes two numbers
+  const smaller = (num1, num2) => {
+    // conditional statement num1 < num2 returns num1
+    if(num1 < num2) {
+      return num1
+    // if num1 > num2 returns num2
+    } else if(num1 > num2) {
+      return num2
+    }
+  }
 
-8. Write the test for a function called `greeter` that takes a name as an argument and returns a greeting with that name to the screen.
-  - Write the function that will make the test pass.
+// 5.  Write the test for a function that takes in one argument(number) and returns whether the number is odd.
+  // a describe method that lists the name of the function
+  describe("oddNumber", () => {
+    // a test/it method that describes what the function does
+    it("takes in one argument(number) and returns whether the number is odd", () => {
+      //an expect method calling on the function followed by the matcher that checks the expected output of the function return
+      expect(oddNumber(3)).toEqual("odd")
+      expect(oddNumber(2)).toEqual("not odd")
+    })
+  })
 
-9. Write the test for a function called `oddOrEven` that takes a number as an argument and logs whether the number is odd or even.
-  - Write the function that will make the test pass.
+//   Write the function that will make the test pass.
+  // declare function that takes in a number
+  const oddNumber = (number) => {
+    // conditional statement using modulo and strict equality operators to determine if odd return odd
+    if(number %2 !==0) { 
+      return "odd"
+    // if determine to be even return not odd
+    } else if(number %2 ===0) {
+      return "not odd"
+    }
+  }
 
-10. Write the test for a function called `doubler` that takes a number and returns the result of the number multiplied by 2.
-  - Write the function that will make the test pass.
+// 6.  Write the test for a function that takes in a fruit and returns "yellow" if the argument is banana, "red" if apple and "purple" if grape.
+  // a describe method that lists the name of the function
+  describe("fruitColor", () => {
+    // a test/it method that describes what the function does
+    it("takes in a fruit and returns 'yellow' if the argument is banana, 'red' if apple and 'purple' if grape ", () => {
+      //an expect method calling on the function followed by the matcher that checks the expected output of the function return
+      expect(fruitColor("banana")).toEqual("yellow")
+      expect(fruitColor("apple")).toEqual("red")
+      expect(fruitColor("grape")).toEqual("purple")
+    })
+  })
 
-11. Write the test for a function called `multiply` that takes two numbers as arguments and logs the result of one of the numbers multiplied by the other.
-  - Write the function that will make the test pass.
+//   Write the function that will make the test pass.
+  // declare function that takes in a string
+  const fruitColor = (string) => {
+    // conditional statement and return of banana using strict equality
+    if(string === "banana") {
+      return "yellow"
+    }     
+    // conditional statement and return of apple using strict equality
+    if(string === "apple") {
+      return "red"
+    }
+    // conditional statement and return of grape using strict equality
+    if(string === "grape") {
+      return "purple"
+    }
+  }
 
-12. Write the test for a function called `divisibleBy` that takes two numbers as arguments and returns whether the first number is evenly divisible by the second so that divisibleBy(10, 5) logs "10 is evenly divisible by 5".
-  - Write the function that will make the test pass.
+// 7.  Write the test for a function called rick that returns "Morty".
+  // a describe method that lists the name of the function
+  describe("rick", () => {
+    // a test/it method that describes what the function does
+    it("returns 'Morty'", () => {
+      // an expect method calling on the function followed by the matcher that checks the expected output of the function return
+      expect(rick()).toEqual("Morty")
+    })
+  })
 
-13. Write the test for a function called `fizzbuzz`. If a number is a multiple of 3, replace it with the word 'fizz'. If a number is a multiple of five, replace it with the word 'buzz'. If a number is a multiple of both 3 and 5, replace it with 'fizzbuzz'.
-  - Write the function that will make the test pass.
+//   Write the function that will make the test pass.
+  // declare function called rick 
+  const rick = () => {
+    // return Morty
+    return "Morty"
+  }     
+
+// 8.  Write the test for a function called greeter that takes a name as an argument and returns a greeting with that name to the screen.
+  // a describe method that lists the name of the function
+  describe("greeter", () => {
+    // a test/it method that describes what the function does
+    it("takes a name as an argument and returns a greeting with that name to the screen", () => {
+      // an expect method calling on the function followed by the matcher that checks the expected output of the function return
+      expect(greeter("Alpha Cohort")).toEqual("Good morning, Alpha Cohort!")
+    })
+  })
+
+//   Write the function that will make the test pass.
+  // declare function called greeter that takes in a string 
+  const greeter = (string) => {
+    // using string interpolation return a greeting with the string
+    return `Good morning, ${string}!`
+  } 
+
+// 9.  Write the test for a function called oddOrEven that takes a number as an argument and logs whether the number is odd or even.
+// a describe method that lists the name of the function
+  describe("oddOrEven", () => {
+    // a test/it method that describes what the function does
+    it("takes a number as an argument and logs whether the number is odd or even", () => {
+      // an expect method calling on the function followed by the matcher that checks the expected output of the function return
+      expect(oddOrEven(16)).toEqual("even")
+      expect(oddOrEven(15)).toEqual("odd")
+    })
+  })
+
+//   Write the function that will make the test pass.
+// declare function called oddOrEven that takes in a number
+const oddOrEven = (number) => {
+  // conditional statement using modulo and strict inequality operators to determine if odd return odd
+  if(number %2 !==0) { 
+    return "odd"
+  // if determine to be even return even
+  } else if(number %2 ===0) {
+    return "even"
+  }
+}
+
+// 10.  Write the test for a function called doubler that takes a number and returns the result of the number multiplied by 2.
+  // a describe method that lists the name of the function
+  describe("doubler", () => {
+    // a test/it method that describes what the function does
+    it("takes a number and returns the result of the number multiplied by 2", () => {
+      // an expect method calling on the function followed by the matcher that checks the expected output of the function return
+      expect(doubler(11)).toEqual(22)
+    })
+  })
+
+//   Write the function that will make the test pass.
+  // declare function call doubler that takes in a number
+  const doubler = (number) => {
+    // return number multiplied by 2
+    return number * 2
+  }
+
+// 11.  Write the test for a function called multiply that takes two numbers as arguments and logs the result of one of the numbers multiplied by the other.
+  // a describe method that lists the name of the function
+  describe("multiply", () => {
+    // a test/it method that describes what the function does
+    it("takes two numbers as arguments and logs the result of one of the numbers multiplied by the other", () => {
+      // an expect method calling on the function followed by the matcher that checks the expected output of the function return
+      expect(multiply(6, 7)).toEqual(42)
+    })
+  })
+
+//   Write the function that will make the test pass.
+  // declare function call multiply that takes in two numbers
+  const multiply = (num1, num2) => {
+    // return the product of multiplying the two numbers
+    return num1 * num2
+  }
+
+// 12.  Write the test for a function called divisibleBy that takes two numbers as arguments and returns whether the first number is evenly divisible by the second so that divisibleBy(10, 5) logs "10 is evenly divisible by 5".
+  // a describe method that lists the name of the function
+  describe("divisibleBy", () => {
+    // a test/it method that describes what the function does
+    it("akes two numbers as arguments and returns whether the first number is evenly divisible by the second", () => {
+      //an expect method calling on the function followed by the matcher that checks the expected output of the function return
+      expect(divisibleBy(10, 5)).toEqual("10 is evenly divisible by 5")
+      expect(divisibleBy(10, 3)).toEqual("10 is not evenly divisible by 3")
+    })
+  })
+
+//   Write the function that will make the test pass.
+  // declare function called divisibleBy that takes in a number
+  const divisibleBy = (num1, num2) => {
+    // conditional statement of evenly divisible using modulo and strict equality operators and string interpolation
+    if(num1 % num2 ===0) { 
+      return `${num1} is evenly divisible by ${num2}`
+    // conditional statement of not evenly divisible using modulo and strict inequality operators and string interpolation
+    } else if(num1 % num2 !==0) { 
+      return `${num1} is not evenly divisible by ${num2}`
+    }
+  }
+// 13.  Write the test for a function called fizzbuzz. If a number is a multiple of 3, replace it with the word 'fizz'. If a number is a multiple of five, replace it with the word 'buzz'. If a number is a multiple of both 3 and 5, replace it with 'fizzbuzz'.
+// a describe method that lists the name of the function
+  describe("fizzbuzz", () => {
+    // a test/it method that describes what the function does
+    it("If a number is a multiple of 3, replace it with the word 'fizz'. If a number is a multiple of five, replace it with the word 'buzz'. If a number is a multiple of both 3 and 5, replace it with 'fizzbuzz'.", () => {
+      //an expect method calling on the function followed by the matcher that checks the expected output of the function return
+      expect(fizzbuzz(6)).toEqual("fizz")
+      expect(fizzbuzz(25)).toEqual("buzz")
+      expect(fizzbuzz(15)).toEqual("fizzbuzz")
+    })
+  })
+
+//   Write the function that will make the test pass.
+  // declare function called fizzbuzz that takes in a number
+  const fizzbuzz = (number) => {
+    // conditional statement of 3 & 5 multiple using modulo, logical, and strict equality operators
+    if(number % 3 === 0 && number % 5 === 0) { 
+      return "fizzbuzz"    
+    // conditional statement of 3 using modulo and strict equality operators
+    } else if(number % 3 === 0) { 
+      return "fizz"
+    // conditional statement of 5 using modulo and strict inequality operators
+    } else if(number % 5 === 0) { 
+      return "buzz"
+    // if any other number return number
+    } else {
+      return number
+    }
+  }   
+```
 
 ---
 [Back to Syllabus](../README.md#unit-one-javascript-foundations)
