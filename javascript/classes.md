@@ -232,10 +232,8 @@ console.log(bella.description())
 ```
 
 ## Challenges
-
-1. Coffee Maker
-
-```javascript
+``` java
+// Coffee Maker
 class Coffee {
   constructor(type, cream, sugar){
     this.type = type.toLowerCase()
@@ -263,27 +261,66 @@ class Coffee {
     }
   }
 }
+
+// Write the code that makes a black coffee. Then write the code that outputs the coffee's profile.
+var blackCoffee = new Coffee("black", 0, 0)
+console.log(blackCoffee.coffeeProfile())
+// Output: "A black coffee with 0 cream, 0 sugar"
+
+// Write the code that makes a coffee with 1 cream and 2 sugars. Then write the code that outputs the coffee's profile.
+var blondeCoffee = new Coffee("blonde", 1, 2)
+console.log(blondeCoffee.coffeeProfile())
+// Output: A blonde coffee with 1 cream, 2 sugars
+
+// Latte Maker
+// Write a Latte class that takes a flavor, a milk type and a number of shots.
+// Write a method for your Latte class that outputs the latte's profile.
+class Latte {
+  constructor(flavor, milkType, shots) {
+    this.flavor = flavor
+    this.milkType = milkType
+    this.shots = shots
+  }
+
+  latteProfile() {
+    return `A ${this.flavor} latte with ${this.milkType} milk and ${this.shots} shot(s) of esspresso`
+  }
+}
+
+// Write the code that makes a regular, single shot latte. Then, log the latte's profile.
+var regularLatte = new Latte("regular", "regular", 1)
+console.log(regularLatte.latteProfile())
+// Output: "A regular latte with regular milk and 1 shot(s) of esspresso"
+
+// Write the code that makes a double shot hazelnut latte with almond milk. Then, log the latte's profile.
+var doubleHazelnut = new Latte("hazelnut", "almond", 2)
+console.log(doubleHazelnut.latteProfile())
+// Output: "A hazelnut latte with almond milk and 2 shot(s) of esspresso"
+
+// Volume of a Cylinder
+// Write a class that calculates the volume of a Cylinder to four decimal places. Volume of a cylinder : V = πr2h (r is the radius and h is the height of the cylinder)
+
+class Cylinder {
+  constructor(radius, height) {
+    this.radius = radius
+    this.height = height
+  }
+  findVolume() {
+    return  (this.radius * this.height * Math.PI).toFixed(4)
+  }
+}
+
+// Write the code that creates three unique cylinder objects
+var canCylinder = new Cylinder(1.5, 3.5)
+console.log(canCylinder.findVolume())
+// Output: 16.4934
+var bucketCylinder = new Cylinder(5, 10)
+console.log(bucketCylinder.findVolume())
+// Output: 157.0796
+var cupCylinder = new Cylinder(2, 6)
+console.log(cupCylinder.findVolume())
+// Output: 37.6991
 ```
-
-- Write the code that makes a black coffee. Then write the code that outputs the coffee's profile.
-
-- Write the code that makes a coffee with 1 cream and 2 sugars. Then write the code that outputs the coffee's profile.
-
-2. Latte Maker
-
-- Write a Latte class that takes a flavor, a milk type and a number of shots.
-
-- Write a method for your Latte class that outputs the latte's profile.
-
-- Write the code that makes a regular, single shot latte. Then, log the latte's profile.
-
-- Write the code that makes a double shot hazelnut latte with almond milk. Then, log the latte's profile.
-
-3. Volume of a Cylinder
-
-- Write a class that calculates the volume of a Cylinder to four decimal places. Volume of a cylinder : V = πr<sup>2</sup>h (r is the radius and h is the height of the cylinder)
-
-- Write the code that creates three unique cylinder objects
 
 ---
 [Back to Syllabus](../README.md#unit-one-javascript-foundations)
