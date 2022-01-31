@@ -189,11 +189,10 @@ When deciding which higher-order function to use, remember these two differences
 ---
 
 ### Challenges
-```javascript
-// ### Challenges
-// Copy the challenges into your JavaScript file. Comment out the instructions and code the solution to each problem beneath the prompt. Use `.map()` or `.filter()` to complete all of the following exercises.   
-// **Don't forget to pseudo code.**
+ Copy the challenges into your JavaScript file. Comment out the instructions and code the solution to each problem beneath the prompt. Use `.map()` or `.filter()` to complete all of the following exercises.   
+ **Don't forget to pseudo code.**
 
+```javascript
 // 1. Write a function that takes in an array of numbers and returns a new array with all numbers multiplied by 10.
 
   var arr1 = [3, 9, 15, 4, 10]
