@@ -58,7 +58,7 @@ Can you guess what this loop will do?
 
 ```javascript
 for(let i=0; i<5; i++){
-  console.log(i)
+    console.log(i)
 }
 ```
 
@@ -66,7 +66,7 @@ How about this loop?
 
 ```javascript
 for(let i=10; i>0; i--){
-  console.log(i)
+    console.log(i)
 }
 ```
 
@@ -78,7 +78,7 @@ For loops are especially helpful when we want to iterate through an array and **
 var arr = [5, 3, 2, 9, 8]
 
 for(let i=0; i<arr.length; i++){
-  console.log(arr[i] * 3)
+    console.log(arr[i] * 3)
 }
 ```
 
@@ -101,9 +101,9 @@ We can also 'filter' an array based on certain conditions (if / else statements)
 var arr = [5, 3, 5, 2, 5, 7]
 
 for(let i=0; i<arr.length; i++){
-  if(arr[i] !== 5){
-    console.log(arr[i])
-  }      
+    if(arr[i] !== 5){
+        console.log(arr[i])
+    }      
 }
 ```
 
@@ -142,7 +142,7 @@ for(let i = 1; i <= 20; i++) {
 
 // - Write a for loop that logs the result of each number from 1 - 20 tripled.
 for(let i = 0; i <= 20; i++) {
-  console.log(i * 3)   
+    console.log(i * 3)   
 }
 // Output: 3, 6, 9, 12, ...60
 
@@ -213,15 +213,15 @@ for(let i = 0; i <= 15; i++) {
 // 2. Fizz Buzz: Use a for loop to log all numbers from 1-100.  If a number is a multiple of 3, replace it with the word `fizz`. If a number is a multiple of five, replace it with the word `buzz`. If a number is a multiple of both 3 and 5, replace it with `fizzbuzz`. **Expected output** --> 1, 2, "fizz", 4, "buzz", "fizz", 7, 8, "fizz", "buzz", 11, "fizz", 13, 14, "fizzbuzz" ...etc
 
 for(let i = 1; i < 101; i++) {
-  if(i % 3 == 0 && i % 5 == 0) {
-    console.log("fizzbuzz")
-  } else if(i % 3 === 0) {
-    console.log("fizz")
-  } else if(i % 5 === 0) {
-    console.log("buzz")
-  } else {
-    console.log(i)
-  }
+    if(i % 3 == 0 && i % 5 == 0) {
+        console.log("fizzbuzz")
+    } else if(i % 3 === 0) {
+        console.log("fizz")
+    } else if(i % 5 === 0) {
+        console.log("buzz")
+    } else {
+        console.log(i)
+    }
 }
 // Output: 1, 2, "fizz", 4, "buzz", 6, 7, 8, "fizz", "buzz", 11, "fizz", 13, 14, "fizzbuzz", ...etc
 ```
