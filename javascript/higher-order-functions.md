@@ -205,7 +205,7 @@ When deciding which higher-order function to use, remember these two differences
   }
   // logging the function and pass in the array
   console.log(tenFold(arr1))
-  // Output: [ 30, 90, 150, 40, 100 ]
+  // Output: [30, 90, 150, 40, 100]
 
 // 2. Write a function that takes in an array of numbers and returns a new array with only odd numbers.
 
@@ -219,7 +219,7 @@ When deciding which higher-order function to use, remember these two differences
   }
   // logging the function and pass in the array
   console.log(onlyOdd(arr2))
-  // Output: [ 7, 3, 5, 13 ]
+  // Output: [7, 3, 5, 13]
 
 // 3. Write a function that takes in an array of numbers and letters and returns a string with only the letters. **HINT:** Use [typeof](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof) method
 
@@ -231,8 +231,8 @@ When deciding which higher-order function to use, remember these two differences
     // create a local variable that filters through the array assessing each value
     let dataType = array.filter(value => {
       // using typeof and strict equality operators return the values with a datatype of string
-      return typeof(value) === 'string'
-      })
+      return typeof(value) === "string"
+    })
     // return the local variable joined into a string with no spaces
     return dataType.join("")
   }
@@ -257,7 +257,8 @@ When deciding which higher-order function to use, remember these two differences
   }
   // logging the function and pass in the array
   console.log(truth(filterArrayValues))
-  // Output: [ 58, 'abcd', true ]
+  // Output: [58, "abcd", true]
+
 ```
 
 **STRETCH Challenges**
@@ -273,7 +274,7 @@ When deciding which higher-order function to use, remember these two differences
     let letterArray = string.split("")
     // use .filter() function to iterate through the array and return a new array without vowels by using strict inequality and logical operators 
     let noVowel = letterArray.filter(value => 
-      value !== "a" && 
+      value !== "a" &&
       value !== "e" && 
       value !== "i" && 
       value !== "o" && 
@@ -295,15 +296,13 @@ When deciding which higher-order function to use, remember these two differences
   const noDuplicates = (array1, array2) => {
     // use a local variable to concat two arrays
     let array3 = array1.concat(array2)
-    // use a local variable to filter through the newArray while testing to see if the index of the current value matches the index of the current iteration
-    let newArray = array3.filter((value, index) => 
-    array3.indexOf(value) === index)
-    // returns one array with no duplicate values
-    return newArray
+    // filter through the array3 to see if the index of the current value matches the index of the current iteration and return an array with no duplicate values
+    return array3.filter((value, index, array) => 
+      array.indexOf(value) === index)
   }
   // logging the function and pass in the arrays
   console.log(noDuplicates(arr1, arr2))
-  // Output: [ 3, 7, 10, 5, 4, 8, 2, 1 ]
+  // Output: [3, 7, 10, 5, 4, 8, 2, 1]
 ```
 
 ---
