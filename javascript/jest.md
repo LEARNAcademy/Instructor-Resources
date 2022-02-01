@@ -358,6 +358,7 @@ Use `fit()` to focus on an it-block without having to comment all other it-block
 
 > **IMPORTANT**: You do not need to comment out the old tests or functions. The purpose of tests are to be AUTOMATED. Commenting them out defeats that purpose.
 ```javascript
+
 // 1.  Write the test for a function that returns "drink coffee" if you are tired and "keep working" if you are not tired.
 
   // a describe method that lists the name of the function
@@ -464,10 +465,10 @@ Use `fit()` to focus on an it-block without having to comment all other it-block
   // declare function that takes in a number
   const oddNumber = (number) => {
     // conditional statement using modulo and strict equality operators to determine if odd return odd
-    if(number %2 !==0) { 
+    if(number % 2 !== 0) { 
       return "odd"
     // if determine to be even return not odd
-    } else if(number %2 ===0) {
+    } else if(number % 2 === 0) {
       return "not odd"
     }
   }
@@ -489,14 +490,12 @@ Use `fit()` to focus on an it-block without having to comment all other it-block
   const fruitColor = (string) => {
     // conditional statement and return of banana using strict equality
     if(string === "banana") {
-      return "yellow"
-    }     
+      return "yellow"     
     // conditional statement and return of apple using strict equality
-    if(string === "apple") {
+    } else if(string === "apple") {
       return "red"
-    }
     // conditional statement and return of grape using strict equality
-    if(string === "grape") {
+    } else if(string === "grape") {
       return "purple"
     }
   }
@@ -550,10 +549,10 @@ Use `fit()` to focus on an it-block without having to comment all other it-block
 // declare function called oddOrEven that takes in a number
 const oddOrEven = (number) => {
   // conditional statement using modulo and strict inequality operators to determine if odd return odd
-  if(number %2 !==0) { 
+  if(number % 2 !== 0) { 
     return "odd"
   // if determine to be even return even
-  } else if(number %2 ===0) {
+  } else if(number % 2 === 0) {
     return "even"
   }
 }
@@ -596,7 +595,7 @@ const oddOrEven = (number) => {
   // a describe method that lists the name of the function
   describe("divisibleBy", () => {
     // a test/it method that describes what the function does
-    it("akes two numbers as arguments and returns whether the first number is evenly divisible by the second", () => {
+    it("takes two numbers as arguments and returns whether the first number is evenly divisible by the second", () => {
       //an expect method calling on the function followed by the matcher that checks the expected output of the function return
       expect(divisibleBy(10, 5)).toEqual("10 is evenly divisible by 5")
       expect(divisibleBy(10, 3)).toEqual("10 is not evenly divisible by 3")
@@ -643,6 +642,8 @@ const oddOrEven = (number) => {
       return number
     }
   }   
+
+
 ```
 
 ---
