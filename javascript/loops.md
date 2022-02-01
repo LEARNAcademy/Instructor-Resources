@@ -142,7 +142,7 @@ for(let i = 1; i <= 20; i++) {
 
 // - Write a for loop that logs the result of each number from 1 - 20 tripled.
 for(let i = 0; i <= 20; i++) {
-   console.log(i * 3)   
+  console.log(i * 3)   
 }
 // Output: 3, 6, 9, 12, ...60
 
