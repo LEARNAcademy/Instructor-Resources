@@ -142,7 +142,7 @@ for(let i = 1; i <= 20; i++) {
 
 // - Write a for loop that logs the result of each number from 1 - 20 tripled.
 for(let i = 0; i <= 20; i++) {
-    console.log(i * 3)   
+  console.log(i * 3)   
 }
 // Output: 3, 6, 9, 12, ...60
 
@@ -172,7 +172,7 @@ console.log(highest)
 let lowest = nums[0]
 for(let i = 0; i < nums.length; i++) {
     if(nums[i] < lowest) {
-        lowest = nums[i]
+    lowest = nums[i]
     }
 }
 console.log(lowest)
@@ -180,7 +180,7 @@ console.log(lowest)
 
 // - Create a loop that will log the remainder of each number when divided by 2. **Expected output** --> 1, 1, -1, 0, 1
 for(let i = 0; i < nums.length; i++) {
-    console.log(nums[i] % 2)
+console.log(nums[i] % 2)
 }
 // Output: 1, 1, -1, 0, 1
 
@@ -191,8 +191,8 @@ var myString = "learn student"
 let letterECount = 0
 for(let i = 0; i < myString.length; i++) {
     if(myString[i] === 'e') {
-        letterECount += 1
-    }
+    letterECount += 1
+  }
 }
 console.log(letterECount)
 // Output: 2
@@ -203,9 +203,9 @@ console.log(letterECount)
 
 for(let i = 0; i <= 15; i++) {
     if(i % 2 === 0) {
-        console.log(`${i} is even`)
+    console.log(`${i} is even`)
     } else {
-        console.log(`${i} is odd`)
+    console.log(`${i} is odd`)
     }
 }
 // Output: "0 is even", "1 is odd", "2 is even", ...etc
@@ -214,13 +214,13 @@ for(let i = 0; i <= 15; i++) {
 
 for(let i = 1; i < 101; i++) {
     if(i % 3 == 0 && i % 5 == 0) {
-        console.log("fizzbuzz")
+    console.log("fizzbuzz")
     } else if(i % 3 === 0) {
-        console.log("fizz")
+    console.log("fizz")
     } else if(i % 5 === 0) {
-        console.log("buzz")
+    console.log("buzz")
     } else {
-        console.log(i)
+    console.log(i)
     }
 }
 // Output: 1, 2, "fizz", 4, "buzz", 6, 7, 8, "fizz", "buzz", 11, "fizz", 13, 14, "fizzbuzz", ...etc
