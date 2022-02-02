@@ -75,94 +75,94 @@ console.log(onlyEven(myArr2))
 // Write a function that takes in an array of numbers and returns an array with all numbers multiplied by 3.
 var testArr1 = [3, 9, 15, 4, 10]
 const multipliedByThree = (array) => {
-		// create an empty array to store multiplied numbers
-    let newArray = []
-		// iterate over array
-    for(let i = 0; i < array.length; i++) {
+	// create an empty array to store multiplied numbers
+  let newArray = []
+	// iterate over array
+  for(let i = 0; i < array.length; i++) {
 		// push current iteration multiplied by three to newArray 
-        newArray.push(array[i] * 3)
-    }
-    return newArray
+    newArray.push(array[i] * 3)
+  }
+  return newArray
 }
 console.log(multipliedByThree(testArr1))
-// // Output: [9, 27, 45, 12, 30]
+// Output: [9, 27, 45, 12, 30]
 
 // Write a function that takes in an array of numbers and returns a new array with only odd numbers.
 var testArr2 = [0, 2, -7, 3, 5, 8, 10, 13]
 const onlyOdd = (array) => {
-	 // create an empty array to store odd numbers
-   let oddArray = []
-	 // iterate over array
-   for(let i = 0; i < array.length; i++) {
-	 		// evaluate if current iteration is odd using modulo
-       if(array[i] % 2 !== 0) {
-	 			// push current iteration multiplied by three to newArray
-           oddArray.push(array[i])
-       }
-   } 
-   return oddArray
+	// create an empty array to store odd numbers
+	let oddArray = []
+	// iterate over array
+  for(let i = 0; i < array.length; i++) {
+		// evaluate if current iteration is odd using modulo
+  	if(array[i] % 2 !== 0) {
+	 		// push current iteration multiplied by three to newArray
+      oddArray.push(array[i])
+  	}
+	} 
+	return oddArray
 }
 console.log(onlyOdd(testArr2))
-// // Output: [-7, 3, 5, 13]
+// Output: [-7, 3, 5, 13]
 
 // Write a function that takes in an array of numbers and letters and returns a string with only the letters. HINT: use the typeof method.
 var comboArr = [7, "n", true, "i", "c", 10, "e", -388, "w", 3, "o", 0, "r", false, "k"]
 const onlyLetters = (array) => {
 	// create an empty array to store just letters
-    let stringArray = []
-		// iterate over array
-    for(let i = 0; i < array.length; i++) {
-			// check if current iteration is a string using typeof
-        if(typeof array[i] === "string") {
-					// push iteration that evaluates as a string to array
-            stringArray.push(array[i])
-        }
-    }
-    return stringArray.join("")
+  let stringArray = []
+	// iterate over array
+	for(let i = 0; i < array.length; i++) {
+		// check if current iteration is a string using typeof
+		if(typeof array[i] === "string") {
+			// push iteration that evaluates as a string to array
+			stringArray.push(array[i])
+		}
+  }
+	return stringArray.join("")
 }
 console.log(onlyLetters(comboArr))
-// // Output: "nicework"
+// Output: "nicework"
 
 // Create a function that takes in an array of numbers and returns the sum.
 var addThese1 = [1, 2, 3, 4]
 const sumOfArray = (array) => {
 	// declare variable that is set to start value of 0
-    let sum = 0
-		//iterate over array
-    for(let i = 0; i < array.length; i++) {
-			// add to sum the current iteration 
-        sum += array[i] 
-    }
-    return sum
+  let sum = 0
+	//iterate over array
+	for(let i = 0; i < array.length; i++) {
+	// add to sum the current iteration 
+		sum += array[i] 
+	}
+  return sum
 }
 console.log(sumOfArray(addThese1))
-// // Output: 10
+// Output: 10
 
 var addThese2 = []
 console.log(sumOfArray(addThese2))
-// // Output: 0
+// Output: 0
 
 // Create a function that takes in an array of numbers and returns the index of the largest number.
 var indexHighestNumber = [1, 4, 2, 3]
 const findHighestNumber = (array) => {
 	// declare variable that is set to start value of 0
-    var highestNumber = 0
-		// declare variable that stores the value of the last iteration
-		var lastNumber = array[0]
-		// iterate over array
-    for(let i = 0; i < array.length; i++) {
-			// check if the last number is equal to the current iteration
-        if(array[i] > lastNumber) {
-					// set last number to be current iteration if it is larger so future iterations are only compared to the highest number in array to that point
-					lastNumber = array[i]
-					// set highest number to current index if it is larger than last number
-					highestNumber = i
-        }
-    }
-    return highestNumber
+  let highestNumber = 0
+	// declare variable that stores the value of the last iteration
+	let lastNumber = array[0]
+	// iterate over array
+	for(let i = 0; i < array.length; i++) {
+		// check if the last number is equal to the current iteration
+		if(array[i] > lastNumber) {
+			// set last number to be current iteration if it is larger so future iterations are only compared to the highest number in array to that point
+			lastNumber = array[i]
+			// set highest number to current index if it is larger than last number
+			highestNumber = i
+		}
+	}
+  return highestNumber
 }
 console.log(findHighestNumber(indexHighestNumber))
-// // Output: 1
+// Output: 1
 
 // STRETCH Challenges
 
@@ -172,21 +172,18 @@ var arr2 = [7, 8, 2, 3, 1, 5, 4]
 const noDuplicates = (array1, array2) => {
 	// create variable that holds concated arrays together
 	let concatArray = array1.concat(array2)
-	// iterate over each index of the array 
-	for(let i = 0; i < concatArray.length; i++){
-		// iterate with nested for loop to compare the inner loop values j with outer loop values i. 
-		for(let j = i + 1; j < concatArray.length; j++) {
-			// check if the value of the outer loop value i is the same as any inner loop values j iterated on
-			if(concatArray[i] === concatArray[j]){
-				// remove only the last index j from the concated array that was equal to the outer loop value i 
-				concatArray.splice(j--, 1)
-			}
+	let noDuplicateArray = []
+	// iterate over each index of the array and compare current value in array to new array
+	for(let i = 0; i < concatArray.length; i++) {
+		if(noDuplicateArray.indexOf(concatArray[i]) === -1) {
+			// push value that is not a duplicate into empty array
+			noDuplicateArray.push(concatArray[i])
 		}
 	}
-	return concatArray
+	return noDuplicateArray
 }
 console.log(noDuplicates(arr1, arr2))
-// // Output: [3, 7, 10, 5, 4, 8, 2, 1]
+// Output: [3, 7, 10, 5, 4, 8, 2, 1]
 
 // Create a function that takes in two numbers as arguments and returns an array the length of the first number filled with the second number.
 var arrayLength = 6
@@ -202,15 +199,15 @@ const buildArray = (length, value) => {
 	return newArray
 }
 console.log(buildArray(arrayLength, arrayValue))
-// // Output: [0, 0, 0, 0, 0, 0]
+// Output: [0, 0, 0, 0, 0, 0]
 
 var arrayLength = 4
 var arrayValue = 11
 console.log(buildArray(arrayLength, arrayValue))
-// // Output: [11, 11, 11, 11]
+// Output: [11, 11, 11, 11]
 
 // Create a function that takes a number as an argument. Add up all the numbers from 1 to the number you passed to the function.
-// // 1 + 2 + 3 + 4 = 10
+// 1 + 2 + 3 + 4 = 10
 var addUp1 = 4
 const letsAdd = (number) => {
 	// create variable that starts at 0
@@ -223,16 +220,16 @@ const letsAdd = (number) => {
 	return mySum
 }
 console.log(letsAdd(addUp1))
-// // Output: 10
+// Output: 10
 
 var addUp2 = 10
-// // 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10 = 55
+// 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10 = 55
 console.log(letsAdd(addUp2))
-// // Output: 55
+// Output: 55
 
 var addUp3 = 600
 console.log(letsAdd(addUp3))
-// // Output: 180300
+// Output: 180300
 
 // EPIC Challenges
 // In this challenge, as a developer you will create a number guessing game.  Please read through all steps before starting.
