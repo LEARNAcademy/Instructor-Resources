@@ -58,7 +58,7 @@ Can you guess what this loop will do?
 
 ```javascript
 for(let i=0; i<5; i++){
-    console.log(i)
+  console.log(i)
 }
 ```
 
@@ -78,7 +78,7 @@ For loops are especially helpful when we want to iterate through an array and **
 var arr = [5, 3, 2, 9, 8]
 
 for(let i=0; i<arr.length; i++){
-    console.log(arr[i] * 3)
+  console.log(arr[i] * 3)
 }
 ```
 
@@ -101,9 +101,9 @@ We can also 'filter' an array based on certain conditions (if / else statements)
 var arr = [5, 3, 5, 2, 5, 7]
 
 for(let i=0; i<arr.length; i++){
-    if(arr[i] !== 5){
-        console.log(arr[i])
-    }      
+  if(arr[i] !== 5){
+    console.log(arr[i])
+  }      
 }
 ```
 
@@ -136,7 +136,7 @@ Notice that in our loops we use `let` to assign `i` or `index` to a starting val
 // 1. Logging values with for loops
 // - Write a for loop that logs each number from 1 - 20.
 for(let i = 1; i <= 20; i++) {
-    console.log(i)
+  console.log(i)
 // Output: 1, 2, 3, 4, ...20
 
 
@@ -148,12 +148,12 @@ for(let i = 0; i <= 20; i++) {
 
 // - Create a for loop that logs each even number from 1-20, and in the place of every odd number, returns the word "ODD" **Expected output** --> ODD, 2, ODD, 4, ODD, 6 ...etc
 for(let i = 1; i <= 20; i++) {
-    if(i % 2 !== 0) {
-        console.log("ODD")
-    } else {
-        console.log(i)
-    }
+  if(i % 2 !== 0) {
+    console.log("ODD")
+  } else {
+    console.log(i)
   }
+}
 // Output: ODD, 2, ODD, 4, ODD, 6, ...etc
 
 // 2. Looping over an array. Consider this variable:
@@ -161,9 +161,9 @@ let nums = [3, 57, -9, 20, 67]
 //- Create a loop that will log the highest number from the array. **Expected output** --> 67
 const highest = nums[0]
 for(let i = 0; i < nums.length; i++) {
-    if(nums[i] > highest) {
-        highest = nums[i]    
-    }
+  if(nums[i] > highest) {
+    highest = nums[i]    
+  }
 }
 console.log(highest)
 // Output: 67
@@ -171,16 +171,16 @@ console.log(highest)
 // - Create a loop that will log the lowest number from the array **Expected output** --> -9
 let lowest = nums[0]
 for(let i = 0; i < nums.length; i++) {
-    if(nums[i] < lowest) {
+  if(nums[i] < lowest) {
     lowest = nums[i]
-    }
+  }
 }
 console.log(lowest)
 // Output: -9
 
 // - Create a loop that will log the remainder of each number when divided by 2. **Expected output** --> 1, 1, -1, 0, 1
 for(let i = 0; i < nums.length; i++) {
-console.log(nums[i] % 2)
+  console.log(nums[i] % 2)
 }
 // Output: 1, 1, -1, 0, 1
 
@@ -190,7 +190,7 @@ var myString = "learn student"
 // - Write the code that will log the number of times the letter "e" occurs in the string. **Expected output** --> 2
 let letterECount = 0
 for(let i = 0; i < myString.length; i++) {
-    if(myString[i] === 'e') {
+  if(myString[i] === 'e') {
     letterECount += 1
   }
 }
@@ -202,26 +202,26 @@ console.log(letterECount)
 //1. Even or Odd: Write a for loop that iterates from 0 to 15. For each iteration, it will check if the current number is odd or even, and display the appropriate outcome. **Expected output** -> "0 is even" "1 is odd" "2 is even" ...etc
 
 for(let i = 0; i <= 15; i++) {
-    if(i % 2 === 0) {
+  if(i % 2 === 0) {
     console.log(`${i} is even`)
-    } else {
+  } else {
     console.log(`${i} is odd`)
-    }
+  }
 }
 // Output: "0 is even", "1 is odd", "2 is even", ...etc
 
 // 2. Fizz Buzz: Use a for loop to log all numbers from 1-100.  If a number is a multiple of 3, replace it with the word `fizz`. If a number is a multiple of five, replace it with the word `buzz`. If a number is a multiple of both 3 and 5, replace it with `fizzbuzz`. **Expected output** --> 1, 2, "fizz", 4, "buzz", "fizz", 7, 8, "fizz", "buzz", 11, "fizz", 13, 14, "fizzbuzz" ...etc
 
 for(let i = 1; i < 101; i++) {
-    if(i % 3 == 0 && i % 5 == 0) {
+  if(i % 3 == 0 && i % 5 == 0) {
     console.log("fizzbuzz")
-    } else if(i % 3 === 0) {
+  } else if(i % 3 === 0) {
     console.log("fizz")
-    } else if(i % 5 === 0) {
+  } else if(i % 5 === 0) {
     console.log("buzz")
-    } else {
+  } else {
     console.log(i)
-    }
+  }
 }
 // Output: 1, 2, "fizz", 4, "buzz", 6, 7, 8, "fizz", "buzz", 11, "fizz", 13, 14, "fizzbuzz", ...etc
 ```
