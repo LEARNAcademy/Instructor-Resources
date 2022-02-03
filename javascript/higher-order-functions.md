@@ -189,52 +189,120 @@ When deciding which higher-order function to use, remember these two differences
 ---
 
 ### Challenges
-Copy the challenges into your JavaScript file. Comment out the instructions and code the solution to each problem beneath the prompt. Use `.map()` or `.filter()` to complete all of the following exercises.   
-**Don't forget to pseudo code.**
-
-1. Write a function that takes in an array of numbers and returns a new array with all numbers multiplied by 10.
+ Copy the challenges into your JavaScript file. Comment out the instructions and code the solution to each problem beneath the prompt. Use `.map()` or `.filter()` to complete all of the following exercises.   
+ **Don't forget to pseudo code.**
 
 ```javascript
-var arr1 = [3, 9, 15, 4, 10]
-// --> [30, 90, 150, 40, 100]
-```
+// 1. Write a function that takes in an array of numbers and returns a new array with all numbers multiplied by 10.
 
-2. Write a function that takes in an array of numbers and returns a new array with only odd numbers.
+  var arr1 = [3, 9, 15, 4, 10]
+  // --> [30, 90, 150, 40, 100]
 
-```javascript
-var arr2 = [2, 7, 3, 5, 8, 10, 13]
-// --> [7, 3, 5, 13]
-```
+  // declare a function that takes in an array of numbers
+  const tenFold = (array) => {
+    // use .map() function to iterate through the array and return a new array with all the values multiplied by 10
+    return array.map(value => value * 10)
+  }
+  // logging the function and pass in the array
+  console.log(tenFold(arr1))
+  // Output: [30, 90, 150, 40, 100]
 
-3. Write a function that takes in an array of numbers and letters and returns a string with only the letters. **HINT:** Use [typeof](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof) method
+// 2. Write a function that takes in an array of numbers and returns a new array with only odd numbers.
 
-```javascript
-var comboArr = [7, "n", "i", "c", 10, "e", false, "w", 3, "o", "r", "k"]
-// --> "nicework"
-```
+  var arr2 = [2, 7, 3, 5, 8, 10, 13]
+  // --> [7, 3, 5, 13]
 
-4. Create a function that takes in an array and returns an array without any false, null, 0, or blank values.
+  // declare a function that takes in an array of numbers
+  const onlyOdd = (array) => {
+    // use .filter() function to iterate through the array and return a new array with only odd values determined by using modulo and strict inequality operators
+    return array.filter(value => value % 2 !== 0)
+  }
+  // logging the function and pass in the array
+  console.log(onlyOdd(arr2))
+  // Output: [7, 3, 5, 13]
 
-```javascript
-var filterArrayValues = [58, " ", "abcd", true, null, false, 0]
-// --> [58, "abcd", true]
+// 3. Write a function that takes in an array of numbers and letters and returns a string with only the letters. **HINT:** Use [typeof](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof) method
+
+  var comboArr = [7, "n", "i", "c", 10, "e", false, "w", 3, "o", "r", "k"]
+  // --> "nicework"
+
+  // declare a function that takes in an array of numbers and letters
+  const letters = (array) => {
+    // create a local variable that filters through the array assessing each value
+    let dataType = array.filter(value => {
+      // using typeof and strict equality operators return the values with a datatype of string
+      return typeof(value) === "string"
+    })
+    // return the local variable joined into a string with no spaces
+    return dataType.join("")
+  }
+  // logging the function and pass in the array
+  console.log(letters(comboArr))
+  // Output: "nicework"
+
+// 4. Create a function that takes in an array and returns an array without any false, null, 0, or blank values.
+
+  var filterArrayValues = [58, " ", "abcd", true, null, false, 0]
+  // --> [58, "abcd", true]
+
+  // declare a function that takes in an array 
+  const truth = (array) => {
+    // create a local variable that filters through the array assessing each value
+    let trueValue = array.filter(value => {
+      // using Boolean() function and strict equality operators return values that are true
+      return Boolean(value) === true
+    })
+    // return the local variable excluding blank strings using strict inequality operator
+    return trueValue.filter(value => value !== " ")
+  }
+  // logging the function and pass in the array
+  console.log(truth(filterArrayValues))
+  // Output: [58, "abcd", true]
+
 ```
 
 **STRETCH Challenges**
-
-1. Create a function that takes in a string and returns a new string with all the vowels removed.
-
 ```javascript
-var str = "javascript is awesome"
-// --> "jvscrpt s wsm"
-```
+// 1. Create a function that takes in a string and returns a new string with all the vowels removed.
 
-2. Create a function that takes in two arrays as arguments returns one array with no duplicate values.
+  var str = "javascript is awesome"
+  // --> "jvscrpt s wsm"
 
-```javascript
-var arr1 = [3, 7, 10, 5, 4, 3]
-var arr2 = [7, 8, 2, 1, 5, 4]
-// --> [3, 7, 10, 5, 4, 8, 2, 1]
+  // declare a function that takes in a string
+  const deleteVowels = (string) => {
+    // create a local variable to split the string into an array of letters 
+    let letterArray = string.split("")
+    // use .filter() function to iterate through the array and return a new array without vowels by using strict inequality and logical operators 
+    let noVowel = letterArray.filter(value => 
+      value !== "a" &&
+      value !== "e" && 
+      value !== "i" && 
+      value !== "o" && 
+      value !== "u")
+    // return the string without any vowels using the join() method  
+    return noVowel.join("")
+  }
+  // logging the function and pass in the string
+  console.log(deleteVowels(str))
+  // Output: "jvscrpt s wsm"
+
+// 2. Create a function that takes in two arrays as arguments returns one array with no duplicate values.
+
+  var arr1 = [3, 7, 10, 5, 4, 3]
+  var arr2 = [7, 8, 2, 1, 5, 4]
+  // --> [3, 7, 10, 5, 4, 8, 2, 1]
+  
+  // declare a function that takes in two arrays
+  const noDuplicates = (array1, array2) => {
+    // use a local variable to concat two arrays
+    let array3 = array1.concat(array2)
+    // filter through the array3 to see if the index of the current value matches the index of the current iteration and return an array with no duplicate values
+    return array3.filter((value, index, array) => 
+      array.indexOf(value) === index)
+  }
+  // logging the function and pass in the arrays
+  console.log(noDuplicates(arr1, arr2))
+  // Output: [3, 7, 10, 5, 4, 8, 2, 1]
 ```
 
 ---
