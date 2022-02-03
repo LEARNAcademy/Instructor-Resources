@@ -162,90 +162,136 @@ Being comfortable with object destructuring allows you to make quick work of ext
 
 ### Challenges
 
-1. **Consider this variable:**
-
 ```javascript
+// Consider this variable:
 var person = {
   firstName: "Arthur",
-  lastName: "Dent"
+  lastName: "Dent",
+  homePlanet: "Earth",
+  getData: function() {
+    return `${this.firstName} ${this.lastName} is from planet ${this.homePlanet}`
+  }
 }
-```
-- Write the code that accesses the first name of the person object.
-- Write the code that accesses the last name of the person object.
-- Write the code that gives the person object a property of homePlanet and set it to 'Earth'.
-- Update the person object with a method that logs "Arthur Dent is from planet Earth".
+// Write the code that accesses the first name of the person object.
+console.log(person.firstName)
+// Output: "Arthur"
 
-2. **Consider this variable:**
+// Write the code that accesses the last name of the person object.
+console.log(person.lastName)
+// Output: "Dent"
 
-```javascript
+// Write the code that gives the person object a property of homePlanet and set it to 'Earth'.
+console.log(person.homePlanet)
+// Output: "Earth"
+
+// Update the person object with a method that logs "Arthur Dent is from planet Earth".
+console.log(person.getData())
+// Output: "Arthur Dent is from planet Earth"
+
+// Consider this variable:
 var product = {
   name: "chair", price: 14.99
 }
-```
-- Write a function called describeProduct takes product as an argument and logs "The product is a chair. It costs $14.99".
+// Write a function called describeProduct takes product as an argument and logs "The product is a chair. It costs $14.99".
+const describeProduct = (product) => {
+  return `The product is a ${product.name}. It costs $${product.price}.`
+}
+console.log(describeProduct(product))
+// Output: "The product is a chair. It costs $14.99."
 
-3. **Consider this variable:**
-
-```javascript
+// Consider this variable:
 var lunch = {
   name: "PB and Banana",
   type: "sandwich",
   ingredients: ["bread", "peanut butter", "banana"]
 }
-```
-- Write the code that accesses the ingredients property.
-- Write the code that access the 3rd ingredient of the lunch object.
-- Write a function that takes the lunch object as an argument and returns "The ingredients for a PB and Banana sandwich are bread, peanut butter, and banana."
-- Update the lunch object with method that returns "The ingredients for a PB and Banana sandwich are bread, peanut butter, and banana."
+// Write the code that accesses the ingredients property.
+console.log(lunch.ingredients)
+// Output: ["bread, "peanut butter", "banana"]
 
-4. **Consider this variable:**
+// Write the code that access the 3rd ingredient of the lunch object.
+console.log(lunch.ingredients[2])
+// Output: "banana"
 
-```javascript
+// Write a function that takes the lunch object as an argument and returns "The ingredients for a PB and Banana sandwich are bread, peanut butter, and banana."
+const makeLunch = (lunch) => {
+  return `The ingredients for a ${lunch.name} ${lunch.type} are ${lunch.ingredients[0]}, ${lunch.ingredients[1]}, and ${lunch.ingredients[2]}.`
+}
+console.log(makeLunch(lunch))
+// Output: "The ingredients for a PB and Banana sandwich are bread,peanut butter,banana."
+
+// Update the lunch object with method that returns "The ingredients for a PB and Banana sandwich are bread, peanut butter, and banana."
+var lunch = {
+  name: "PB and Banana",
+  type: "sandwich",
+  ingredients: ["bread", "peanut butter", "banana"],
+  gotLunch: function() {
+    return `The ingredients for a ${lunch.name} ${lunch.type} are ${lunch.ingredients[0]}, ${lunch.ingredients[1]}, and ${lunch.ingredients[2]}.`
+  }
+}
+console.log(lunch.gotLunch())
+// Output: "The ingredients for a PB and Banana sandwich are bread,peanut butter,banana."
+
+// Consider this variable:
 var animals = [
   { name: "Waffles", type: "dog", age: 12 },
   { name: "Fluffy", type: "cat", age: 14 },
   { name: "Spelunky", type: "dog", age: 4 },
   { name: "Hank", type: "cat", age: 11 },
 ]
-```
-- Create a function that takes in any array of objects and returns a new array with only those of type cat.
-- Using the same array of objects above. Create a function that returns a new array with only the names of the animals.
-
-5. **Consider this variable:**
-
-```javascript
-let author = {
-    name: "H. G. Wells",
-    genre: "science fiction"
+// Create a function that takes in any array of objects and returns a new array with only those of type cat.
+const findCats = (animals) => {
+  return animals.filter(animal => animal.type === "cat")
 }
-```
-- Write the code that destructures the author object and makes the following work:
+console.log(findCats(animals))
+// Output: [
+//  { name: "Fluffy", type: "cat", age: 14 },
+//  { name: "Hank", type: "cat", age: 11 }
+// ]
 
-```javascript
+// Using the same array of objects above. Create a function that returns a new array with only the names of the animals.
+const findNames = (animals) => {
+  return animals.map(animal => animal.name)
+}
+console.log(findNames(animals))
+// Output: ["Waffles", "Fluffy", "Spelunky", "Hank"]
+
+// Consider this variable:
+let author = {
+  name: "H. G. Wells",
+  genre: "science fiction"
+}
+// Write the code that destructures the author object and makes the following work:
+// console.log(`${name} is a ${genre} author`)
+// --> "H. G. Wells is a science fiction author"
+var { name, genre } = author
 console.log(`${name} is a ${genre} author`)
---> "H. G. Wells is a science fiction author"
-```
-6. **Consider this variable:**
+// Output: "H. G. Wells is a science fiction author"
 
-```javascript
+// Consider this variable:
 let pokeOne = {
-    species: "Charmandar",
-    pokemon_type: "Fire"
+  species: "Charmandar",
+  pokemon_type: "Fire"
 }
 
 let pokeTwo = {
-    species: "Magikarp",
-    pokemon_type: "Water"
+  species: "Magikarp",
+  pokemon_type: "Water"
 }
-```
+// Write a function called describePokemon() that take an object like the ones above and uses destructuring to return a description of the Pokemon such that:
+// console.log(describePokemon(pokeOne))
+// --> "Charmandar is a Fire pokemon"
+// console.log(describePokemon(pokeTwo))
+// --> "Magikarp is a Water pokemon"
 
-- Write a function called `describePokemon()` that take an object like the ones above and uses destructuring to return a description of the Pokemon such that:
-
-```javascript
+const describePokemon = (poke) => {
+  let { species, pokemon_type } = poke
+  return `${species} is a ${pokemon_type} pokemon`
+}
 console.log(describePokemon(pokeOne))
---> "Charmandar is a Fire pokemon"
+// Output: "Charmandar is a Fire pokemon"
 console.log(describePokemon(pokeTwo))
---> "Magikarp is a Water pokemon"
+// Output: "Magikarp is a Water pokemon"
 ```
 
 ---
