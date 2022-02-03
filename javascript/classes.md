@@ -232,7 +232,7 @@ console.log(bella.description())
 ```
 
 ## Challenges
-``` java
+``` javascript
 // Coffee Maker
 class Coffee {
   constructor(type, cream, sugar){
@@ -283,19 +283,19 @@ class Latte {
   }
 
   latteProfile() {
-    return `A ${this.flavor} latte with ${this.milkType} milk and ${this.shots} shot(s) of esspresso`
+    return `A ${this.flavor} latte with ${this.milkType} milk and ${this.shots} shot(s) of espresso`
   }
 }
 
 // Write the code that makes a regular, single shot latte. Then, log the latte's profile.
 var regularLatte = new Latte("regular", "regular", 1)
 console.log(regularLatte.latteProfile())
-// Output: "A regular latte with regular milk and 1 shot(s) of esspresso"
+// Output: "A regular latte with regular milk and 1 shot(s) of espresso"
 
 // Write the code that makes a double shot hazelnut latte with almond milk. Then, log the latte's profile.
 var doubleHazelnut = new Latte("hazelnut", "almond", 2)
 console.log(doubleHazelnut.latteProfile())
-// Output: "A hazelnut latte with almond milk and 2 shot(s) of esspresso"
+// Output: "A hazelnut latte with almond milk and 2 shot(s) of espresso"
 
 // Volume of a Cylinder
 // Write a class that calculates the volume of a Cylinder to four decimal places. Volume of a cylinder : V = πr2h (r is the radius and h is the height of the cylinder)
