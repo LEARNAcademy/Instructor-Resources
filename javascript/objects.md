@@ -207,15 +207,15 @@ var lunch = {
 }
 // Write the code that accesses the ingredients property.
 console.log(lunch.ingredients)
-// Output: [ 'bread', 'peanut butter', 'banana' ]
+// Output: ["bread, "peanut butter", "banana"]
 
 // Write the code that access the 3rd ingredient of the lunch object.
 console.log(lunch.ingredients[2])
-// Output: 'banana'
+// Output: "banana"
 
 // Write a function that takes the lunch object as an argument and returns "The ingredients for a PB and Banana sandwich are bread, peanut butter, and banana."
 const makeLunch = (lunch) => {
-  return `The ingredients for a ${lunch.name} ${lunch.type} are ${lunch.ingredients}.`
+  return `The ingredients for a ${lunch.name} ${lunch.type} are ${lunch.ingredients[0]}, ${lunch.ingredients[1]}, and ${lunch.ingredients[2]}.`
 }
 console.log(makeLunch(lunch))
 // Output: "The ingredients for a PB and Banana sandwich are bread,peanut butter,banana."
@@ -226,7 +226,7 @@ var lunch = {
   type: "sandwich",
   ingredients: ["bread", "peanut butter", "banana"],
   gotLunch: function() {
-    return `The ingredients for a ${lunch.name} ${lunch.type} are ${lunch.ingredients}.`
+    return `The ingredients for a ${lunch.name} ${lunch.type} are ${lunch.ingredients[0]}, ${lunch.ingredients[1]}, and ${lunch.ingredients[2]}.`
   }
 }
 console.log(lunch.gotLunch())
@@ -241,35 +241,25 @@ var animals = [
 ]
 // Create a function that takes in any array of objects and returns a new array with only those of type cat.
 const findCats = (animals) => {
-  let cats = []
-  animals.filter(animal => {
-    if(animal.type === "cat") {
-      cats.push(animal)
-    }
-  })
-  return cats
+  return animals.filter(animal => animal.type === "cat")
 }
 console.log(findCats(animals))
 // Output: [
-//   { name: 'Fluffy', type: 'cat', age: 14 },
-//   { name: 'Hank', type: 'cat', age: 11 }
+//  { name: "Fluffy", type: "cat", age: 14 },
+//  { name: "Hank", type: "cat", age: 11 }
 // ]
 
 // Using the same array of objects above. Create a function that returns a new array with only the names of the animals.
 const findNames = (animals) => {
-  let animalNames = []
-  animals.map(animal => {
-    animalNames.push(animal.name)
-  })
-  return animalNames
+  return animals.map(animal => animal.name)
 }
 console.log(findNames(animals))
-// Output: [ 'Waffles', 'Fluffy', 'Spelunky', 'Hank' ]
+// Output: ["Waffles", "Fluffy", "Spelunky", "Hank"]
 
 // Consider this variable:
 let author = {
-    name: "H. G. Wells",
-    genre: "science fiction"
+  name: "H. G. Wells",
+  genre: "science fiction"
 }
 // Write the code that destructures the author object and makes the following work:
 // console.log(`${name} is a ${genre} author`)
@@ -280,13 +270,13 @@ console.log(`${name} is a ${genre} author`)
 
 // Consider this variable:
 let pokeOne = {
-    species: "Charmandar",
-    pokemon_type: "Fire"
+  species: "Charmandar",
+  pokemon_type: "Fire"
 }
 
 let pokeTwo = {
-    species: "Magikarp",
-    pokemon_type: "Water"
+  species: "Magikarp",
+  pokemon_type: "Water"
 }
 // Write a function called describePokemon() that take an object like the ones above and uses destructuring to return a description of the Pokemon such that:
 // console.log(describePokemon(pokeOne))
@@ -295,7 +285,7 @@ let pokeTwo = {
 // --> "Magikarp is a Water pokemon"
 
 const describePokemon = (poke) => {
-  var { species, pokemon_type } = poke
+  let { species, pokemon_type } = poke
   return `${species} is a ${pokemon_type} pokemon`
 }
 console.log(describePokemon(pokeOne))
