@@ -79,7 +79,7 @@ const multipliedByThree = (array) => {
   let newArray = []
 	// iterate over array
   for(let i = 0; i < array.length; i++) {
-		// push current iteration multiplied by three to newArray 
+		// push current iteration multiplied by three to newArray
     newArray.push(array[i] * 3)
   }
   return newArray
@@ -99,7 +99,7 @@ const onlyOdd = (array) => {
 	 		// push current iteration multiplied by three to newArray
       oddArray.push(array[i])
   	}
-	} 
+	}
 	return oddArray
 }
 console.log(onlyOdd(testArr2))
@@ -130,8 +130,8 @@ const sumOfArray = (array) => {
   let sum = 0
 	//iterate over array
 	for(let i = 0; i < array.length; i++) {
-	// add to sum the current iteration 
-		sum += array[i] 
+	// add to sum the current iteration
+		sum += array[i]
 	}
   return sum
 }
@@ -170,17 +170,17 @@ console.log(findHighestNumber(indexHighestNumber))
 var arr1 = [3, 7, 10, 5, 4, 3, 3]
 var arr2 = [7, 8, 2, 3, 1, 5, 4]
 const noDuplicates = (array1, array2) => {
-	// create variable that holds concated arrays together
-	let concatArray = array1.concat(array2)
-	let noDuplicateArray = []
-	// iterate over each index of the array and compare current value in array to new array
-	for(let i = 0; i < concatArray.length; i++) {
-		if(noDuplicateArray.indexOf(concatArray[i]) === -1) {
-			// push value that is not a duplicate into empty array
-			noDuplicateArray.push(concatArray[i])
-		}
-	}
-	return noDuplicateArray
+// create variable that holds concated arrays together
+let concatArray = array1.concat(array2)
+  let noDuplicateArray = []
+  // iterate over each index of the array and compare current value in array to new array
+  for(let i = 0; i < concatArray.length; i++) {
+    if(noDuplicateArray.indexOf(concatArray[i]) === -1) {
+      // push value that is not a duplicate into empty array
+      noDuplicateArray.push(concatArray[i])
+    }
+  }
+  return noDuplicateArray
 }
 console.log(noDuplicates(arr1, arr2))
 // Output: [3, 7, 10, 5, 4, 8, 2, 1]
@@ -189,14 +189,14 @@ console.log(noDuplicates(arr1, arr2))
 var arrayLength = 6
 var arrayValue = 0
 const buildArray = (length, value) => {
-	// create an empty array
-	let newArray = []
-	// iterate for the length provided
-	for(let i = 0; i < length; i++) {
-		// for each iteration, push the value given into empty array
-		newArray.push(value)
-	}
-	return newArray
+  // create an empty array
+  let newArray = []
+  // iterate for the length provided
+  for(let i = 0; i < length; i++) {
+    // for each iteration, push the value given into empty array
+    newArray.push(value)
+  }
+  return newArray
 }
 console.log(buildArray(arrayLength, arrayValue))
 // Output: [0, 0, 0, 0, 0, 0]
@@ -210,14 +210,14 @@ console.log(buildArray(arrayLength, arrayValue))
 // 1 + 2 + 3 + 4 = 10
 var addUp1 = 4
 const letsAdd = (number) => {
-	// create variable that starts at 0
-	let mySum = 0
-	// iterate to the number 4 starting at the number 1
-	for(let i = 1; i <= number; i++) {
-		// add the variable mySum the set index number which will increase by one each iteration.
-		mySum += i
-	}
-	return mySum
+  // create variable that starts at 0
+  let mySum = 0
+  // iterate to the number 4 starting at the number 1
+  for(let i = 1; i <= number; i++) {
+    // add the variable mySum the set index number which will increase by one each iteration.
+    mySum += i
+  }
+  return mySum
 }
 console.log(letsAdd(addUp1))
 // Output: 10
@@ -237,6 +237,7 @@ console.log(letsAdd(addUp3))
 // Create a function called highLow that takes in a number and returns whether the number is higher or lower than the "answer" which is a random number.
 // Create an HTML page and link your JavaScript file. More info here .
 
+```
 // <!DOCTYPE html>
 // <html lang="en">
 // <head>
@@ -254,7 +255,7 @@ console.log(letsAdd(addUp3))
 //   <h3 id="output"></h3>
 // </body>
 // </html>
-
+```
 // As a user, I see a prompt or input where I can guess a number between 1 and 100 (both inclusive).
 // As a user, I can see if my guess is too high or too low.
 // As a user, if I guess the "answer" correctly I am notified that I won.
