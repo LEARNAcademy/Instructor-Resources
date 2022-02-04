@@ -75,11 +75,11 @@ console.log(onlyEven(myArr2))
 // Write a function that takes in an array of numbers and returns an array with all numbers multiplied by 3.
 var testArr1 = [3, 9, 15, 4, 10]
 const multipliedByThree = (array) => {
-	// create an empty array to store multiplied numbers
+  // create an empty array to store multiplied numbers
   let newArray = []
-	// iterate over array
+  // iterate over array
   for(let i = 0; i < array.length; i++) {
-		// push current iteration multiplied by three to newArray 
+    // push current iteration multiplied by three to newArray
     newArray.push(array[i] * 3)
   }
   return newArray
@@ -90,17 +90,17 @@ console.log(multipliedByThree(testArr1))
 // Write a function that takes in an array of numbers and returns a new array with only odd numbers.
 var testArr2 = [0, 2, -7, 3, 5, 8, 10, 13]
 const onlyOdd = (array) => {
-	// create an empty array to store odd numbers
-	let oddArray = []
-	// iterate over array
+  // create an empty array to store odd numbers
+  let oddArray = []
+  // iterate over array
   for(let i = 0; i < array.length; i++) {
-		// evaluate if current iteration is odd using modulo
-  	if(array[i] % 2 !== 0) {
-	 		// push current iteration multiplied by three to newArray
+    // evaluate if current iteration is odd using modulo
+    if(array[i] % 2 !== 0) {
+      // push current iteration multiplied by three to newArray
       oddArray.push(array[i])
-  	}
-	} 
-	return oddArray
+    }
+  }
+  return oddArray
 }
 console.log(onlyOdd(testArr2))
 // Output: [-7, 3, 5, 13]
@@ -108,17 +108,17 @@ console.log(onlyOdd(testArr2))
 // Write a function that takes in an array of numbers and letters and returns a string with only the letters. HINT: use the typeof method.
 var comboArr = [7, "n", true, "i", "c", 10, "e", -388, "w", 3, "o", 0, "r", false, "k"]
 const onlyLetters = (array) => {
-	// create an empty array to store just letters
+  // create an empty array to store just letters
   let stringArray = []
-	// iterate over array
-	for(let i = 0; i < array.length; i++) {
-		// check if current iteration is a string using typeof
-		if(typeof array[i] === "string") {
-			// push iteration that evaluates as a string to array
-			stringArray.push(array[i])
-		}
+  // iterate over array
+  for(let i = 0; i < array.length; i++) {
+    // check if current iteration is a string using typeof
+    if(typeof array[i] === "string") {
+      // push iteration that evaluates as a string to array
+      stringArray.push(array[i])
+    }
   }
-	return stringArray.join("")
+  return stringArray.join("")
 }
 console.log(onlyLetters(comboArr))
 // Output: "nicework"
@@ -126,13 +126,13 @@ console.log(onlyLetters(comboArr))
 // Create a function that takes in an array of numbers and returns the sum.
 var addThese1 = [1, 2, 3, 4]
 const sumOfArray = (array) => {
-	// declare variable that is set to start value of 0
+  // declare variable that is set to start value of 0
   let sum = 0
-	//iterate over array
-	for(let i = 0; i < array.length; i++) {
-	// add to sum the current iteration 
-		sum += array[i] 
-	}
+  //iterate over array
+  for(let i = 0; i < array.length; i++) {
+  // add to sum the current iteration
+    sum += array[i]
+  }
   return sum
 }
 console.log(sumOfArray(addThese1))
@@ -145,20 +145,20 @@ console.log(sumOfArray(addThese2))
 // Create a function that takes in an array of numbers and returns the index of the largest number.
 var indexHighestNumber = [1, 4, 2, 3]
 const findHighestNumber = (array) => {
-	// declare variable that is set to start value of 0
+  // declare variable that is set to start value of 0
   let highestNumber = 0
-	// declare variable that stores the value of the last iteration
-	let lastNumber = array[0]
-	// iterate over array
-	for(let i = 0; i < array.length; i++) {
-		// check if the last number is equal to the current iteration
-		if(array[i] > lastNumber) {
-			// set last number to be current iteration if it is larger so future iterations are only compared to the highest number in array to that point
-			lastNumber = array[i]
-			// set highest number to current index if it is larger than last number
-			highestNumber = i
-		}
-	}
+  // declare variable that stores the value of the last iteration
+  let lastNumber = array[0]
+  // iterate over array
+  for(let i = 0; i < array.length; i++) {
+    // check if the last number is equal to the current iteration
+    if(array[i] > lastNumber) {
+      // set last number to be current iteration if it is larger so future iterations are only compared to the highest number in array to that point
+      lastNumber = array[i]
+      // set highest number to current index if it is larger than last number
+      highestNumber = i
+    }
+  }
   return highestNumber
 }
 console.log(findHighestNumber(indexHighestNumber))
@@ -170,17 +170,17 @@ console.log(findHighestNumber(indexHighestNumber))
 var arr1 = [3, 7, 10, 5, 4, 3, 3]
 var arr2 = [7, 8, 2, 3, 1, 5, 4]
 const noDuplicates = (array1, array2) => {
-	// create variable that holds concated arrays together
-	let concatArray = array1.concat(array2)
-	let noDuplicateArray = []
-	// iterate over each index of the array and compare current value in array to new array
-	for(let i = 0; i < concatArray.length; i++) {
-		if(noDuplicateArray.indexOf(concatArray[i]) === -1) {
-			// push value that is not a duplicate into empty array
-			noDuplicateArray.push(concatArray[i])
-		}
-	}
-	return noDuplicateArray
+// create variable that holds concated arrays together
+let concatArray = array1.concat(array2)
+  let noDuplicateArray = []
+  // iterate over each index of the array and compare current value in array to new array
+  for(let i = 0; i < concatArray.length; i++) {
+    if(noDuplicateArray.indexOf(concatArray[i]) === -1) {
+      // push value that is not a duplicate into empty array
+      noDuplicateArray.push(concatArray[i])
+    }
+  }
+  return noDuplicateArray
 }
 console.log(noDuplicates(arr1, arr2))
 // Output: [3, 7, 10, 5, 4, 8, 2, 1]
@@ -189,14 +189,14 @@ console.log(noDuplicates(arr1, arr2))
 var arrayLength = 6
 var arrayValue = 0
 const buildArray = (length, value) => {
-	// create an empty array
-	let newArray = []
-	// iterate for the length provided
-	for(let i = 0; i < length; i++) {
-		// for each iteration, push the value given into empty array
-		newArray.push(value)
-	}
-	return newArray
+  // create an empty array
+  let newArray = []
+  // iterate for the length provided
+  for(let i = 0; i < length; i++) {
+    // for each iteration, push the value given into empty array
+    newArray.push(value)
+  }
+  return newArray
 }
 console.log(buildArray(arrayLength, arrayValue))
 // Output: [0, 0, 0, 0, 0, 0]
@@ -210,14 +210,14 @@ console.log(buildArray(arrayLength, arrayValue))
 // 1 + 2 + 3 + 4 = 10
 var addUp1 = 4
 const letsAdd = (number) => {
-	// create variable that starts at 0
-	let mySum = 0
-	// iterate to the number 4 starting at the number 1
-	for(let i = 1; i <= number; i++) {
-		// add the variable mySum the set index number which will increase by one each iteration.
-		mySum += i
-	}
-	return mySum
+  // create variable that starts at 0
+  let mySum = 0
+  // iterate to the number 4 starting at the number 1
+  for(let i = 1; i <= number; i++) {
+    // add the variable mySum the set index number which will increase by one each iteration.
+    mySum += i
+  }
+  return mySum
 }
 console.log(letsAdd(addUp1))
 // Output: 10
@@ -264,26 +264,26 @@ console.log(letsAdd(addUp3))
 var guesses = 0
 var randomNumber = Math.ceil(Math.random() * 100)
 const highLow = () => {
-	var number = document.getElementById("number").value
-	if(number == randomNumber) {
-		document.getElementById("output").innerHTML = "You guessed the right number! 🥳"
-		alert("You guessed the right number!")
-		guesses = 0
-	} else {
-		for(let i = 1; i < 100; i++) {
-			if(guesses >= 6){
-				alert(`Sorry, out of guesses!  The number was ${randomNumber}`)
-				guesses = 0
-			}	else if(number < randomNumber) {
-				document.getElementById("output").innerHTML = `${number} is too low.  Please guess again`
-			} else if(number > randomNumber) {
-				document.getElementById("output").innerHTML = `${number} is too high.  Please guess again`
-			} else {
-				return "oops, something went wrong"
-			}
-		}
-	}
-	guesses ++
+  var number = document.getElementById("number").value
+  if(number == randomNumber) {
+    document.getElementById("output").innerHTML = "You guessed the right number! 🥳"
+    alert("You guessed the right number!")
+    guesses = 0
+  } else {
+    for(let i = 1; i < 100; i++) {
+      if(guesses >= 6){
+        alert(`Sorry, out of guesses!  The number was ${randomNumber}`)
+        guesses = 0
+      }	else if(number < randomNumber) {
+        document.getElementById("output").innerHTML = `${number} is too low.  Please guess again`
+      } else if(number > randomNumber) {
+        document.getElementById("output").innerHTML = `${number} is too high.  Please guess again`
+      } else {
+        return "oops, something went wrong"
+      }
+    }
+  }
+  guesses ++
 }
 ```
 
