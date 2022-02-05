@@ -241,8 +241,113 @@ Create a new HTML file. Copy the following code into your file:
 ```
 
 - As a user, I see a Header component with the name of your cohort
+  ``` html
+    class App extends React.Component{
+      render(){
+        return(
+          <>
+            <Header />
+          </>
+        )
+      }
+    }
+    class Header extends React.Component{
+      render(){
+        return(
+          <>
+            <h1>Alpha Cohort 2022</h1>
+          </>
+        )
+      }
+    }
+  ```
+
 - As a user, I can see a Content component that contains a list of all your classmates
+  ```html
+    class App extends React.Component{
+      render(){
+        return(
+          <>
+            <Header />
+            <Content />
+          </>
+        )
+      }
+    }
+    class Header extends React.Component{
+      render(){
+        return(
+          <>
+            <h1>Alpha Cohort 2022</h1>
+          </>
+        )
+      }
+    }
+    class Content extends React.Component{
+      render(){
+        return(
+          <>
+            <h2>Classmates</h2>
+            <ul>
+              <li>Sarah</li>
+              <li>Austin</li>
+              <li>Charlean</li>
+              <li>Beau</li>
+              <li>Elyse</li>
+            </ul>
+          </>
+        )
+      }
+    }
+  ```
 - As a user, I can see a Footer component with your name
+```html
+    class App extends React.Component{
+      render(){
+        return(
+          <>
+            <Header />
+            <Content />
+            <Footer />
+          </>
+        )
+      }
+    }
+    class Header extends React.Component{
+      render(){
+        return(
+          <>
+            <h1>Alpha Cohort 2022</h1>
+          </>
+        )
+      }
+    }
+    class Content extends React.Component{
+      render(){
+        return(
+          <>
+            <h2>Classmates</h2>
+            <ul>
+              <li>Sarah</li>
+              <li>Austin</li>
+              <li>Charlean</li>
+              <li>Beau</li>
+              <li>Elyse</li>
+            </ul>
+          </>
+        )
+      }
+    }
+    class Footer extends React.Component{
+      render(){
+        return(
+          <>
+            <h3>LEARN Academy</h3>
+          </>
+        )
+      }
+    }
+```
 
 ---
 [Back to Syllabus](../README.md#unit-two-introduction-to-react)
