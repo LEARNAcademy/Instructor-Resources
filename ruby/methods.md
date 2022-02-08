@@ -42,18 +42,18 @@ end
 Now we can call the method repeatedly by referencing the name `greeter`.
 
 In IRB:
-```
->greeter
+```ruby
+> greeter
 Hello World!
-=>nil
+=> nil
 
->greeter
+> greeter
 Hello World!
-=>nil
+=> nil
 
->greeter
+> greeter
 Hello World!
-=>nil
+=> nil
 ```
 
 ## Implicit Return
@@ -103,14 +103,55 @@ end
 => 3
 ```
 
-
 ## Challenges
+```ruby
 
-- Create a method called sum_these_numbers which takes two integers as an argument and prints their sum to the screen.
-- Create a method called is_even, which takes a single integer, and which then returns true if the number is even, and false otherwise.
-- Create a method that takes a number as an argument and prints "Valid" if the number is between 1 and 10 (inclusive) and "Invalid" otherwise.
-- Create a method that takes in a string and determines if the string is a palindrome.
+# - Create a method called sum_these_numbers which takes two integers as an argument and prints their sum to the screen.
+def sum_these_numbers(num1, num2)
+  num1 + num2
+end
+p sum_these_numbers 1, 2
+p sum_these_numbers 10, 20
+p sum_these_numbers 100, 200
+p sum_these_numbers -15, 30
 
+#- Create a method called is_even, which takes a single integer, and which then returns true if the number is even, and false otherwise.
+def is_even num
+  if num.even?
+    "#{num} is even."
+  else
+    "#{num} is odd."
+  end 
+end
+puts is_even 1
+puts is_even 2
+puts is_even 3
+
+#- Create a method that takes a number as an argument and prints "Valid" if the number is between 1 and 10 (inclusive) and "Invalid" otherwise.
+def inclusive num
+  if num >= 1 && num <= 10
+    "#{num} is Valid."
+  else
+    "#{num} is Invalid."
+  end
+end
+puts inclusive 7
+puts inclusive 35
+puts inclusive -5
+
+#- Create a method that takes in a string and determines if the string is a palindrome.
+word_one = 'civic'
+word_two = 'tool'
+
+def palindrome? string
+  if string == string.reverse
+    "#{string} is a palindrome."
+  else
+    "#{string} is not a palindrome."
+  end
+end
+puts palindrome? word_one
+puts palindrome? word_two
 
 ## Challenge: Password Checker
 
@@ -133,6 +174,6 @@ On the registration page, the user has to enter a user ID and a password, which 
 ### User Stories: Super Stretch
 
 - As a developer, my method ensures that the user's password _must_ contain at least one number.
-
+```
 ---
 [Back to Syllabus](../README.md#unit-four-ruby)
