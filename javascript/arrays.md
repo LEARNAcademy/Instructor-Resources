@@ -536,5 +536,18 @@ oddIndexes.push(numbers[5])
 console.log(oddIndexes)
 // Output: [221, 7, 87]
 ```
+
+---
+
+# Lecture Notes
+### Overview
+- Conditional statements create logic through evaluations
+- Only one outcome
+
+### Goals
+### Major Takeaways
+### Lecture
+### Review
+
 ---
 [Back to Syllabus](../README.md#unit-one-javascript-foundations)
