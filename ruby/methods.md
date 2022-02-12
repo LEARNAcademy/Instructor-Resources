@@ -104,9 +104,9 @@ end
 ```
 
 ## Challenges
-
- - Create a method called sum_these_numbers which takes two integers as an argument and prints their sum to the screen.
 ```ruby
+#  - Create a method called sum_these_numbers which takes two integers as an argument and prints their sum to the screen.
+
 def sum_these_numbers(num1, num2)
   num1 + num2
 end
@@ -114,43 +114,40 @@ p sum_these_numbers 1, 2
 p sum_these_numbers 10, 20
 p sum_these_numbers 100, 200
 p sum_these_numbers -15, 30
-```
 
- - Create a method called is_even, which takes a single integer, and which then returns true if the number is even, and false otherwise.
- ```ruby
-def is_even num
+#  - Create a method called is_even, which takes a single integer, and which then returns true if the number is even, and false otherwise.
+
+def is_even(num)
   if num.even?
-    p true
+    true
   else
-    p false
+    false
   end 
 end
 
-is_even 1
-is_even 2
-```
+p is_even(1)
+p is_even(2)
 
- - Create a method that takes a number as an argument and prints "Valid" if the number is between 1 and 10 (inclusive) and "Invalid" otherwise.
-```ruby
-def inclusive num
+#  - Create a method that takes a number as an argument and prints "Valid" if the number is between 1 and 10 (inclusive) and "Invalid" otherwise.
+
+def inclusive(num)
   if num >= 1 && num <= 10
-    p 'Valid'
+    'Valid'
   else
-    p 'Invalid'
+    'Invalid'
   end
 end
 
-inclusive 7
-inclusive 35
-inclusive -5
-```
+p inclusive 7
+p inclusive 35
+p inclusive -5
 
-- Create a method that takes in a string and determines if the string is a palindrome.
-```ruby
+# - Create a method that takes in a string and determines if the string is a palindrome.
+
 word_one = 'civic'
 word_two = 'tool'
 
-def palindrome string
+def palindrome(string)
   if string == string.reverse
     "#{string} is a palindrome."
   else
@@ -159,7 +156,6 @@ def palindrome string
 end
 puts palindrome word_one
 puts palindrome word_two
-```
 
 ## Challenge: Password Checker
 
@@ -168,13 +164,18 @@ puts palindrome word_two
 ### You are writing the user registration page for a secure web site.
 ### On the registration page, the user has to enter a user ID and a password, which has to adhere to the following criteria:
 
- - As a developer, I can create a method that checks for the following rules for a user ID and password:
-   - User ID and password _cannot_ be the same.
-   - User ID and password _must_ be at least six characters long.
-   - Password _must_ contain at least one of: !#$
-   - User ID _cannot_ contain the following characters: !#$ or spaces
-   - Password _cannot_ be the word "password".
-```ruby
+#  - As a developer, I can create a method that checks for the following rules for a user ID and password:
+#    - User ID and password _cannot_ be the same.
+#    - User ID and password _must_ be at least six characters long.
+#    - Password _must_ contain at least one of: !#$
+#    - User ID _cannot_ contain the following characters: !#$ or spaces
+#    - Password _cannot_ be the word "password".
+
+puts "Please enter a User ID"
+username = gets.chomp
+puts "Please enter a password"
+password = gets.chomp
+
 def registration(username, password)
   if username == password
     puts 'User ID and password cannot be the same.'
@@ -184,25 +185,24 @@ def registration(username, password)
     puts 'Password must contain at least one of: !,#,$'
   elsif username.include?('!') || username.include?('#') || username.include?('$') || username.include?(' ') 
     puts "Username cannot contain !,#,$,' '"
-  elsif password == 'password' || password == 'Password'
+  elsif password.downcase == 'password'
     puts 'Password cannot be "password"'
   else
-    puts 'VALID'
+    puts 'Registration Accepted!'
   end
 end
-```
+
+p registration username, password
 
 ### User Stories: Stretch
 
-- As a user, I can enter my user ID and password into the terminal after being prompted to find out if the they are acceptable.
-```ruby
-
-```
+# - As a user, I can enter my user ID and password into the terminal after being prompted to find out if the they are acceptable.
 
 ### User Stories: Super Stretch
 
-- As a developer, my method ensures that the user's password _must_ contain at least one number.
-```ruby
+# - As a developer, my method ensures that the user's password _must_ contain at least one number.
+
+
 
 ```
 ---
