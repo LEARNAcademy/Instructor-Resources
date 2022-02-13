@@ -1,5 +1,8 @@
 # JavaScript Higher-Order Functions
 
+- [Challenges](#challenges)
+- [Lecture Notes](#lecture-notes)
+
 #### Overview
 Higher-order functions are built in methods in JavaScript that act on arrays. They are a specific subset of built in methods that take a function as an argument.
 
@@ -245,7 +248,7 @@ When deciding which higher-order function to use, remember these two differences
   var filterArrayValues = [58, " ", "abcd", true, null, false, 0]
   // --> [58, "abcd", true]
 
-  // declare a function that takes in an array 
+  // declare a function that takes in an array
   const truth = (array) => {
     // create a local variable that filters through the array assessing each value
     let trueValue = array.filter(value => {
@@ -270,14 +273,14 @@ When deciding which higher-order function to use, remember these two differences
 
   // declare a function that takes in a string
   const deleteVowels = (string) => {
-    // create a local variable to split the string into an array of letters 
+    // create a local variable to split the string into an array of letters
     let letterArray = string.split("")
-    // use .filter() function to iterate through the array and return a new array without vowels by using strict inequality and logical operators 
-    let noVowel = letterArray.filter(value => 
+    // use .filter() function to iterate through the array and return a new array without vowels by using strict inequality and logical operators
+    let noVowel = letterArray.filter(value =>
       value !== "a" &&
-      value !== "e" && 
-      value !== "i" && 
-      value !== "o" && 
+      value !== "e" &&
+      value !== "i" &&
+      value !== "o" &&
       value !== "u")
     // return the string without any vowels using the join() method  
     return noVowel.join("")
@@ -291,13 +294,13 @@ When deciding which higher-order function to use, remember these two differences
   var arr1 = [3, 7, 10, 5, 4, 3]
   var arr2 = [7, 8, 2, 1, 5, 4]
   // --> [3, 7, 10, 5, 4, 8, 2, 1]
-  
+
   // declare a function that takes in two arrays
   const noDuplicates = (array1, array2) => {
     // use a local variable to concat two arrays
     let array3 = array1.concat(array2)
     // filter through the array3 to see if the index of the current value matches the index of the current iteration and return an array with no duplicate values
-    return array3.filter((value, index, array) => 
+    return array3.filter((value, index, array) =>
       array.indexOf(value) === index)
   }
   // logging the function and pass in the arrays

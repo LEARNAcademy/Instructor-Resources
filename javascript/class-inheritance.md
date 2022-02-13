@@ -1,5 +1,8 @@
 # JavaScript Class Inheritance
 
+- [Challenges](#challenges)
+- [Lecture Notes](#lecture-notes)
+
 ## Video: Video Name
 [![YouTube](http://img.youtube.com/vi/Rx5_-Y_bG5E/0.jpg)](https://www.youtube.com/watch?v=Rx5_-Y_bG5E)
 

@@ -522,7 +522,7 @@ const myName = "Sarah"
 console.log(myName)
 myName = "Erik"
 console.log(myName)
-// --> error
+// Output: error
 ```
 
 #### String Methods and Properties
@@ -545,23 +545,23 @@ var greeting = "hello"
 
 // upcase all the letters in a string
 console.log(greeting.toUpperCase())
-// output --> "HELLO"
+// Output: "HELLO"
 
 // returns the character that is at a particular index
 console.log(greeting.charAt(1))
-// output --> "e"
+// Output: "e"
 
 // returns the index of a particular character
 console.log(greeting.indexOf("e"))
-// output --> 1
+/// Output: 1
 
 // returns a Boolean value if a subset of characters exists within the string
 console.log(greeting.includes("he"))
-// output --> true
+// Output: true
 
 // returns a subset of a string based on a starting and ending index
 console.log(greeting.slice(1, 3))
-// output --> "el"
+// Output: "el"
 ```
 
 ### Review
@@ -571,6 +571,10 @@ console.log(greeting.slice(1, 3))
 - What is camel case?
 - What are the three variable declarations?
 - What are the six primitive data types?
+
+### Next Steps
+- Go over the syllabus section and challenges
+- Announce which repo will be used
 
 ---
 [Back to Syllabus](../README.md#unit-one-javascript-foundations)

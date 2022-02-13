@@ -1,5 +1,8 @@
 # JavaScript Functions
 
+- [Challenges](#challenges)
+- [Lecture Notes](#lecture-notes)
+
 #### Overview
 Functions are a fundamental building block in JavaScript and in programming in general. Functions are reusable pieces of code that only execute when invoked and always return an output. Functions can have information (arguments) passed into the scope of the function through placeholders called parameters. Functions are designed to be used many times in a program and should be as generic as possible while still being descriptive as to their purpose.
 
@@ -295,7 +298,7 @@ console.log(tallEnough("yolo"))
     // Output: "even"
     console.log(oddOrEven(2021))
     // Output: "odd"
-    
+
 // 4. Write a function named `triple` that takes a number as an argument and returns the result of that number multiplied by 3.
     // create a function named triple that takes a number as an argument
     const triple = (num) => {
@@ -306,18 +309,18 @@ console.log(tallEnough("yolo"))
     // Output: 9
     console.log(triple(4))
     // Output: 12
-    
+
 // 5. Write a function named `multiply` that takes two numbers as arguments and returns the result of the numbers multiplied together.
     // create a function named multiply that takes two numbers as arguments
     const multiply = (num1, num2) => {
       // returns the result of the numbers multiplied together
       return num1 * num2
-    } 
+    }
     console.log(multiply(3.5, 4))
     // Output: 14
     console.log(multiply(5, 60))
     // Output: 300
-    
+
 // 6. Write a function named `divisibleBy` that takes two numbers as arguments and returns whether the first number is evenly divisible by the second so that divisibleBy(10, 5) logs "10 is evenly divisible by 5".
     // create a function named divisibleBy that takes two numbers as arguments
     const divisibleBy = (num1, num2) => {
@@ -335,7 +338,7 @@ console.log(tallEnough("yolo"))
     // Output: "16 is evenly divisible by 4"
     console.log(divisibleBy(16, 3))
     // Output: "16 is not evenly divisible by 3"
-    
+
 // 7. Write a function named `assignGrade` that takes a number score as an argument and returns the letter grade for the score.
     // create a function named assignGrade that takes a number score as an argument
     const assignGrade = (score) => {
@@ -344,7 +347,7 @@ console.log(tallEnough("yolo"))
       if(score >= 90) {
         return "A"
       }
-      // if the score is greater than or equal to 80 but less than 90 return B 
+      // if the score is greater than or equal to 80 but less than 90 return B
       else if(score >= 80) {
         return "B"
       }
@@ -367,7 +370,7 @@ console.log(tallEnough("yolo"))
     // Output: "A"
     console.log(assignGrade(83))
     // Output: "B"
-        
+
 // 8. Write a function named `isLonger` that takes two strings as arguments and returns the string that contains the most characters.
     // create a function named `isLonger` that takes two strings as arguments
     const isLonger = (string1, string2) => {
@@ -385,7 +388,7 @@ console.log(tallEnough("yolo"))
     // Output: "full stack web developer"
     console.log(isLonger("student", "intern"))
     // Output: "student"
-    
+
 // 9. Write a function named `greaterNum` that takes two numbers as arguments and returns whichever number is the greater (higher) number.
     // create a function named `greaterNum` that takes two numbers as arguments
     const greaterNum = (num1, num2) => {
@@ -403,7 +406,7 @@ console.log(tallEnough("yolo"))
     // Output: 44
     console.log(greaterNum(0, -23))
     // Output: 0
-    
+
 // 10. Write a function named `yelling` that takes a string as an argument and return the string in all uppercase case letters.
     // create a function named `yelling` that takes a string as an argument
     const yelling = (string) => {
@@ -428,19 +431,19 @@ console.log(tallEnough("yolo"))
         // if language code is "fr" return Hello World! in French
         if(lang === "fr") {
           return "Bonjour le monde!"
-        } 
+        }
         // if language code is "ro" return Hello World! in Romanian
         else if(lang === "ro") {
           return "Salut Lume!"
-        } 
+        }
         // if language code is "uk" return Hello World! in Ukrainian
         else if(lang === "uk") {
           return "Привіт Світ!"
-        } 
+        }
         // if language code is "it" return Hello World! in Italian
         else if(lang === "it") {
           return "Ciao mondo!"
-        } 
+        }
         // if language code is "tr" return Hello World! in Turkish
         else if(lang === "tr") {
           return "Selam Dünya!"
@@ -448,7 +451,7 @@ console.log(tallEnough("yolo"))
         // if language code is "en" return Hello World! in English
         else if(lang === "en") {
           return "Hello World!"
-        } 
+        }
         // all other language codes will return error code
         else {
           return "Try a different language"
@@ -460,7 +463,7 @@ console.log(tallEnough("yolo"))
       // Output: "Try a different language"
       console.log(helloWorld("en"))
       // Output: "Hello World!"
-    
+
   // (b) Have your function [default](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Default_parameters) to returning English.
       // create a function named helloWorld2 that takes a language code and defaults to English
       const helloWorld2 = (lang = "en") => {
@@ -468,19 +471,19 @@ console.log(tallEnough("yolo"))
         // if language code is "fr" return Hello World! in French
         if(lang === "fr") {
           return "Bonjour le monde!"
-        } 
+        }
         // if language code is "ro" return Hello World! in Romanian
         else if(lang === "ro") {
           return "Salut Lume!"
-        } 
+        }
         // if language code is "uk" return Hello World! in Ukrainian
         else if(lang === "uk") {
           return "Привіт Світ!"
-        } 
+        }
         // if language code is "it" return Hello World! in Italian
         else if(lang === "it") {
           return "Ciao mondo!"
-        } 
+        }
         // if language code is "tr" return Hello World! in Turkish
         else if(lang === "tr") {
           return "Selam Dünya!"
@@ -502,7 +505,7 @@ console.log(tallEnough("yolo"))
       // Output: "Hello World!"
       console.log(helloWorld2())
       // Output: "Hello World!"
-      
+
 // 2. The Pluralizer  
   // (a) Write a function named `pluralizer` that takes a number and a singular noun as arguments and returns the number and pluralized form of the noun, if necessary.
 
@@ -519,7 +522,7 @@ console.log(tallEnough("yolo"))
       if(number !== 1) {
         return `${number} ${noun}s`
       }
-      // else return number and singular noun 
+      // else return number and singular noun
       else {
         return `${number} ${noun}`
       }
@@ -555,10 +558,10 @@ console.log(tallEnough("yolo"))
       else if(number !== 1) {
         return `${number} ${noun}s`
       }
-      // else return number and singular noun 
+      // else return number and singular noun
       else {
         return `${number} ${noun}`
-      } 
+      }
     }
     console.log(pluralizer2(0, "child"))
     // Output: "0 children"
@@ -571,6 +574,192 @@ console.log(tallEnough("yolo"))
     console.log(pluralizer2(10, "play"))
     // Output: "10 plays"
 ```    
+
+---
+
+# Lecture Notes
+### Overview
+- Conditional statements create logic through evaluations
+- Only one outcome
+
+### Goals
+### Major Takeaways
+### Lecture
+### Review
+
+
+// Functions are awesome. We love functions. They make our programs smart. Functions are little machines. They are snippets of functionality that run on command. This is a very powerful concept beacuse it takes what we have been doing with if/else statements and allows us to have control over those actions. The control we get is twofold: first, is we can decide WHEN that action happens. Right now your code will run top to bottom and when you get to your if/else statement, that block will run and when we get to the for loop, that block will run. Functions only execute when we as developers tell them to. The second measure of control we have is that our functions are reusable. Meaning we can use the same code machine over and over again.
+
+// The reason functions are reusable is because they are designed to be relatively neutral. They need to take an input and produce an output.
+
+// The concept of creating a little code machine that is only in charge of itself and shouldn't rely on any data other than the input is the concept of encapsulation. Encapsulation is a very important concept in development. As a developer, you want the output of your code, the decision that your code is making to rely ONLY on the input. ONLY if that is the case can you be certain that you will get predictable behavior.
+
+// Okay, so functions. Like much else in code there are lots of ways to create functions in JavaScript. And as much as I hate saying this, the way that is most correct will depend on what you your goal is. It is one of those annoying answers that doesn't give you anymore information than you had before. But you will hear it a lot.
+
+// So, there isn't a wrong way, but we are going to write functions in a way that is the most useful for the stack that we are working in. The best tool for our particular job.
+
+// So with that, let's kick this off with a section called anatomy of a function.
+
+// Our functions are going to start looking a lot like a variable meaning we need a declaration. Since functions should not be reassigned, we can use the declaration `const`.
+
+const
+
+// Next our function needs a name. We can name it whatever we want, as long as it follows two rules - 1) it is written in camelCase and 2) it communicates intent.
+
+// I am going to create a function that is used for making coffee.
+
+const makeCoffee =
+
+// Functions are machines, they are used for actions. So following the equal sign we need a set of parentheses.
+
+const makeCoffee = ()
+
+// From here we need to indicate that what we are writing is a function. and we do that with an arrow. Which looks like this:
+
+const makeCoffee = () =>
+
+// In this particular syntax the arrow takes the place of the keyword function. It is the symbol representing a function action.
+
+// After our voluptuous arrow, we are going to open a set of curly braces to indicate the exectuable action. Curly braces indicate action.
+
+const makeCoffee = () => {
+}
+
+// And inside the curly braces we write our code. As a first step we are going to write the simplest code we can. Which will just be a statement of "coffee is made".
+
+// But there is one more thing we need to talk about. It is a key word that must be paired with our full-figured arrow. For every fat arrow we need a return.
+
+const makeCoffee = () => {
+ return
+}
+
+// And that is going back to the idea that the job of a function is to act as a little code machine that gives an output. Return is a keyword that indicates what the output of the function is. Everytime you have a fat arrow, you need a return in regular JavaScript.
+
+const makeCoffee = () => {
+ return "Enjoy your coffee"
+}
+
+// Here is our function. It is beautiful. So let's run the code and see what happens... nothing.
+
+// Well, technically not nothing. If we could look into our terminal we would see that JavaScript said, "oh you have a function called makeCoffee, that is nice." And that is all that that would happen.
+
+// Functions are little machines. Little machines that don't run until they are told to run.
+
+// So let's get some coffee made. To invoke the function, we reference the function by name and follow it with parentheses.
+
+const makeCoffee = () => {
+ return "Enjoy your coffee"
+}
+makeCoffee()
+
+// We still need a console.log in order to see the outcome of our file in the terminal, but now if we are behind the sceen JavaScript says, "oh you have a function called makeCoffee, that is nice, oh now you want me to run that function, okay! Here you go."
+
+// So to see the outcome of that function, we can wrap it in a console.log
+
+const makeCoffee = () => {
+ return "Enjoy your coffee"
+}
+console.log(makeCoffee())
+
+// Boom! Now we are in business. We have output.
+
+// And the cool thing we can do now is say we want 5 coffees. We don't have to write 5 functions. We only have to reuse the function we already have.
+
+console.log(makeCoffee())
+console.log(makeCoffee())
+console.log(makeCoffee())
+
+// So to recap, we have a reusable piece of code that does not run until it is invoked. And we can invoke (or call) the function as many times as is useful.
+
+// Alright so let's add on. We are creating a function that produces an output, but it isn't too exciting. The reason functions are useful is because they are designed to be relatively neutral. They can take an input and produce an output.
+
+// So if we want to add a little more action to the function we need to add an argument. An argument is a placeholder value, a little bit like a variable. It exists only in the context of the function.
+
+const makeCoffee = (coffeeType) => {
+ return `Enjoy your ${coffeeType}.`
+}
+console.log(makeCoffee())
+
+// Now our little machine is set up to expect an input. You'll notice that the function runs but the value of coffeeType is undefined. If you remeber back to primitive data types, what is undefined? It is variable that has been declared, but not given a value. By puting coffeeType in the argument of our function, we declaring a variable that exists just in the context of this function.
+
+// So if we declare a variable, we need to give it a value. So let's give it one.
+
+// Just like in any other variable, this variable has to be a data type that JavaScript recognizes. But, unlike other variable we don't use the equal sign, we pass the value into the function invocation.
+
+const makeCoffee = (coffeeType) => {
+ return `Enjoy your ${coffeeType}.`
+}
+console.log(makeCoffee("Kona"))
+
+// So the variable is just a placeholder for whatever we pass in. And we can pass in different values for every function invocation or call.
+
+console.log(makeCoffee("Cappuccino"))
+console.log(makeCoffee("Latte"))
+console.log(makeCoffee("Espresso"))
+
+// Now our function is reusable and significantly more interesting.
+
+// Next we are going to look at a function that has more functionality inside. But to do that, we need to introduce a concept called pseudo coding.
+
+// Pseudo coding is the process of writing out the process of your coding challenge in plain english. It is basically the same process as talking to a rubber duck. It forces you to think about the problem in advance rather than just jumping in and coding with no direction.
+
+// Let's expand on our coffee function and have our program determine the price based on the size of your coffee.
+
+// So first, let's pseudo code.
+// Create a function that takes in two arguments: coffeeType and size
+// if the size is large, return the coffeeType is $5
+// if the size is medium, return the coffeeType is $4
+// if the size is small, return the coffeeType is $3
+// if non of the above, return an error message
+
+
+const makeCoffee = (coffeeType, size) => {
+ if(size === "large"){
+   return `Your ${size} ${coffeeType} is $5`
+ } else if(size === "medium"){
+   return `Your ${size} ${coffeeType} is $4`
+ } else if(size === "small"){
+   return `Your ${size} ${coffeeType} is $3`
+ } else {
+   return "Something went wrong."
+ }
+}
+console.log(makeCoffee("latte", "large"))
+console.log(makeCoffee("black coffee", "medium"))
+console.log(makeCoffee("cappuccino", "small"))
+console.log(makeCoffee("latte"))
+
+// Remember that every fat arrow needs a corresponding return. But there are three returns here. But, the thing about if/else statements is that no matter how many options we have, only one is ever going to run. So only one return is ever going to be hit by the program.
+
+// I know you are all excited to code, you have been champing at the bit to get into the coding. But there is a lot more to being a developer than coding. And we are focused on a learning process. So I really encourage you to take your time, make sure you are understanding the concepts, that you are using git correctly, that you are following the naming conventions, that you are thinking about the process of coding. The biggest favor you can do for yourself is learn how to learn.
+
+
+// Setting default values in the argument
+
+const makeCoffee = (coffeeType, size="small") => {
+ if(size === "large"){
+   return `Your ${size} ${coffeeType} is $5`
+ } else if(size === "medium"){
+   return `Your ${size} ${coffeeType} is $4`
+ } else if(size === "small"){
+   return `Your ${size} ${coffeeType} is $3`
+ } else {
+   return "Something went wrong."
+ }
+}
+console.log(makeCoffee("latte"))
+
+---
+
+# Lecture Notes
+### Overview
+- Conditional statements create logic through evaluations
+- Only one outcome
+
+### Goals
+### Major Takeaways
+### Lecture
+### Review
 
 ---
 [Back to Syllabus](../README.md#unit-one-javascript-foundations)

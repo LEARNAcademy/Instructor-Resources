@@ -1,5 +1,8 @@
 # JavaScript Objects
 
+- [Challenges](#challenges)
+- [Lecture Notes](#lecture-notes)
+
 ## Video: Objects
 [![YouTube](http://img.youtube.com/vi/xDmsrXDweB8/0.jpg)](https://www.youtube.com/watch?v=xDmsrXDweB8)
 

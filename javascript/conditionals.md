@@ -1,5 +1,8 @@
 # JavaScript Conditionals
 
+- [Challenges](#challenges)
+- [Lecture Notes](#lecture-notes)
+
 #### Overview
 Decision structures, also called decision trees, conditional statements, or if/else statements, are fundamental to computer programming. Conditional statements are a sequence of well-defined instructions that produce a unique output based on the value of the input. Conditionals follow a flowchart-like structure and allow you create logic in your code.
 
@@ -261,15 +264,15 @@ if(password.length >= 12 && password.includes("!")) {
 # Lecture Notes
 
 ### Overview
-- Conditional statements create logic through evaluations
-- Only one outcome per conditional statement
+- Conditional statements create logic through evaluations that return a Boolean value
+- There is only one outcome per conditional statement
 
 ### Goals
 - Modeling git workflow
 - Instilling good indentation habits
 
 ### Major Takeaways
-- If, else if, else
+- Vocab - if, else if, else
 - Evaluations that return a Boolean value
 
 ### Lecture
@@ -400,6 +403,10 @@ JavaScript is read line by line. So our little program is just waiting looking f
 - Can have as many else ifs as you want
 - Else is a catch all and does not take an evaluation
 - Only one outcome will ever be true at a time
+
+### Next Steps
+- Go over the syllabus section and challenges
+- Announce which repo will be used
 
 ---
 [Back to Syllabus](../README.md#unit-one-javascript-foundations)

@@ -1,5 +1,8 @@
 # JavaScript Loops
 
+- [Challenges](#challenges)
+- [Lecture Notes](#lecture-notes)
+
 #### Overview
 Iteration is a very important concept in computer programming. Iteration is the process of executing a block of code over and over again until a condition is met. There are particular data types that are conducive to iterations; particularly data types with length properties such as strings and arrays. For loops are an example of iteration. For loops must define a starting location, a condition to be met that will end the loop, and what executable action will take place during the iteration.
 

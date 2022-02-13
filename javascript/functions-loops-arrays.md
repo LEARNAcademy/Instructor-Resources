@@ -1,5 +1,8 @@
 # JavaScript Functions, Loops, and Arrays (Oh My!)
 
+- [Challenges](#challenges)
+- [Lecture Notes](#lecture-notes)
+
 #### Overview
 Functions are powerful tools that can take any kind of data as an input. Often we need a function to interact with data sets and perform iterations. This section integrates functions, loops, and arrays to create reusable, iterative code machines.
 
@@ -286,6 +289,18 @@ const highLow = () => {
   guesses ++
 }
 ```
+
+---
+
+# Lecture Notes
+### Overview
+- Conditional statements create logic through evaluations
+- Only one outcome
+
+### Goals
+### Major Takeaways
+### Lecture
+### Review
 
 ---
 [Back to Syllabus](../README.md#unit-one-javascript-foundations)
