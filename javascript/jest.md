@@ -265,15 +265,15 @@ Excellent! Both tests pass!
 
 **Using variables:**
 
-Sometimes it can be useful to create variables before our test method for use later on in our expect methods.
+Sometimes it can be useful to create variables within our test method for use later on in our expect methods.
 
  > Note: These variables are only available within the scope of the specific test it has been created in.
 
 ```javascript
 describe("addGranola", () => {
-  let groceryList = ["apples", "carrots", "oatmeal"]
-  let result = ["apples", "carrots", "oatmeal", "granola"]
   it("adds granola to the end of an array", () => {
+    let groceryList = ["apples", "carrots", "oatmeal"]
+    let result = ["apples", "carrots", "oatmeal", "granola"]
     expect(addGranola(groceryList)).toEqual(result)
   })
 })
