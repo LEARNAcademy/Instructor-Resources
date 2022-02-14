@@ -1,5 +1,8 @@
 # JavaScript Conditionals
 
+- [Challenges](#challenges)
+- [Lecture Notes](#lecture-notes)
+
 #### Overview
 Decision structures, also called decision trees, conditional statements, or if/else statements, are fundamental to computer programming. Conditional statements are a sequence of well-defined instructions that produce a unique output based on the value of the input. Conditionals follow a flowchart-like structure and allow you create logic in your code.
 
@@ -255,6 +258,155 @@ if(password.length >= 12 && password.includes("!")) {
 }
 // Output: "That is a mighty strong password!"
 ```
+
+---
+
+# Lecture Notes
+
+### Overview
+- Conditional statements create logic through evaluations that return a Boolean value
+- There is only one outcome per conditional statement
+
+### Goals
+- Modeling git workflow
+- Instilling good indentation habits
+
+### Major Takeaways
+- Vocab - if, else if, else
+- Evaluations that return a Boolean value
+
+### Lecture
+- Create a branch
+- Create a JavaScript file with a `.js` extension and no spaces in the name
+- Run the file with `node`
+
+One of the most powerful thing we can have our program do is perform logic. Within that logic we want our program to be able to take a given input make a decision about that input and give us an appropriate output. Conditionals, decision trees, or just if/else statements are all the same thing. To create conditionals, we have to create evaluations. We have to create a situation where we can determine if the outcome of that evaluation is true or false.
+
+#### Evaluations
+These evaluations return Boolean values.
+
+**Equality Operator**
+- Strict equality `===` vs loose equality `==`
+- Strict equality is the best practice
+
+```javascript
+var myFavNum = 7
+console.log(myFavNum === 7)
+
+var myName = "Sarah"
+console.log("Sarah" === myName)
+```
+
+**Relational Operators**
+- < > <= >=
+
+**Logical Operators**
+- Logical and `&&`
+- Logical or `||`
+
+```javascript
+var greeting = "hello"
+var num = 6
+
+console.log(num > 2 + 2  && "hello" === greeting)
+
+console.log(num > 2 + 2 || num === greeting)
+```
+
+**Negation**
+- Logical oposite
+- Bang operator `!`
+
+#### If/Else
+- Create code that will execute an output based on an evaluation
+- `if` is a keyword in JavaScript, it is built into the language
+
+```javascript
+if
+```
+
+- The job of an if statement is to make a decision
+- Need to pass an evaluation to the if
+- To pass more info, we need parentheses
+
+```javascript
+if()
+```
+
+- Inside the parentheses we need to pass information that can be evaluated to a Boolean value of true or false
+- If this information evaluates to `true` we want a response to occur
+- The response is wrapped in curly braces known as a block of code
+- What is inside the curly braces is the executable code, the action
+
+```javascript
+if(true){
+  console.log("I'm true!")
+}
+```
+
+- If the statement evaluates to false, the block of code does not run
+
+```javascript
+if(false){
+  console.log("I'm false!")
+}
+```
+
+Since the statement evaluates to `false` there is no executable action. Which could be fine. There are plenty of situations where either "something" or "nothing" is the desired outcome. That is still two possible outcomes. But we may want more than two possible outcomes. So let's add some code to execute if our "if" is false. If the `if` statement is false we want something to happen. That requires another key word `else`. Else is also a protected word in JavaScript. Unlike "if," "else" does not take an action. It only runs if nothing else is true. It is the catch all.
+
+```javascript
+if(false){
+  console.log("I'm false!")
+} else {
+  console.log("here is the else")
+}
+```
+
+#### Proper Indentation
+The most amateur thing you can do while you are learning code is by lazy about your formatting. Having messy indentation will make your code look bad and more importantly, it makes it really hard to find mistakes.
+
+#### Passing Evaluations
+Rather than passing a Boolean value directly we can create a statement to be evaluated.
+
+```javascript
+var myName = "Sarah"
+if(myName === "Sarah"){
+  console.log("Hey!")
+} else {
+  console.log("here is the else")
+}
+```
+
+- Manipulate the variable a few times
+- This is a very small computer program!
+
+#### Else If
+
+```javascript
+if(6 < 3){
+  console.log("six is less than three")
+} else if(6 !== 5){
+  console.log("six is not equal to five")
+} else {
+  console.log("else!")
+}
+```
+
+JavaScript is read line by line. So our little program is just waiting looking for a condition to be true, or for the else, with no qualifications. As soon as one of the evaluations returns true, the block is executed successfully and JavaScript is done. So set your logic accordingly, and test all outcomes. You could have two true statements but the one that is read first by your program is going to run. The second one will not.
+
+- Play around and change things, add variables
+
+### Review
+- What are the three main types of evaluations?
+- What data type do the evaluations return?
+- Always need an if
+- Can have as many else ifs as you want
+- Else is a catch all and does not take an evaluation
+- Only one outcome will ever be true at a time
+
+### Next Steps
+- Go over the syllabus section and challenges
+- Announce which repo will be used
 
 ---
 [Back to Syllabus](../README.md#unit-one-javascript-foundations)

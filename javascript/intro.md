@@ -1,5 +1,8 @@
 # JavaScript Introduction
 
+- [Challenges](#challenges)
+- [Lecture Notes](#lecture-notes)
+
 #### Overview
 JavaScript is a versatile and powerful programming language. JavaScript is a scripting language, meaning it is used to create logic that will make a webpage react to the interactions from a user. Alongside HTML and CSS, JavaScript is one of the core technologies of the World Wide Web.
 
@@ -436,6 +439,142 @@ console.log(theQuestion.slice(0, 1))
 console.log(theQuestion.length > theAnswer)  
 // Output: false
 ```
+
+---
+
+# Lecture Notes
+
+### Overview
+- Deep dive into the fundamentals of JavaScript
+- Establishing expectations for challenges
+
+### Goals
+- Setting the tone for all lectures
+- Modeling git workflow
+- Establishing JavaScript and terminal workflow
+- Be declarative and deliberate with the terminal commands
+
+### Major Takeaways
+- Primitive data types
+- Variable creation
+- Built-in methods
+
+### Lecture
+- Create a branch
+- Create a JavaScript file with a `.js` extension and no spaces in the name
+- Run the file with `node`
+- Explain `console.log()`
+
+Alongside HTML and CSS, JavaScript is one of the core technologies of the World Wide Web. If you are a web developer it is almost a given that you are going to need to know JavaScript no matter what stack you are working in.
+
+- JavaScript provides interaction with the user
+- JavaScript is dynamically-typed
+- JavaScript is an interpreted language
+- JavaScript is a scripting language
+
+#### Data Types
+Because JavaScript manipulates data, it is very particular about how it processes said data. JavaScript has categories of information that it will work with. These are called data types. There are 6 primitive data types in JavaScript. Primitive data types mean they cannot be broken down into a simpler form.
+
+**Numbers**
+- The number data types allow us to perform mathematical functions and compare values
+- Numbers can either be integers or floats
+- A float is a non-whole number
+- JavaScript can perform basic mathematical functions - addition, subtraction, multiplication and division
+- You can multiply exponents with two asterisks
+- Modulo will return the remainder of a division operation
+
+**Strings**
+- Strings are characters stored inside quotation marks
+- Strings have particular properties, things like length, and ability to identify the location of a character
+- Indexing, zero-indexing
+
+**Booleans**
+- Booleans are true false values
+- They are represented by the words true and false but they are not strings
+- Boolean values can be used for comparisons
+- Relational operators are design to compare numerical values < > <= >=
+- Equality operators == ===
+- Type coersion
+- Logical operators are used to evaluate two complete clauses &&, ||, !
+
+**Null**
+- Null is equal to nothing else, the lack of value. It is not false, it is not 0, it is just null
+
+**Symbols**
+- Symbols are unique keys
+- We will revisit symbols more in depth when we get to JavaScript objects
+
+**Undefined**
+- Undefined is the value of a variable that has been declared, but not yet assigned
+
+#### Variables
+- Store information by creating variables
+- Anything saved in a variable needs to be a data type
+- To create a variable in JavaScript you must declare it: var, let, const
+- Name the variable in camelCase
+- At this point our variable has been declared but not assigned meaning right now our variable has the data type of undefined
+- Single equal sign to assign a variable
+- The declarations let and var allows variables to be reassigned
+- The declarations const protects a variable from being reassigned
+
+```javascript
+const myName = "Sarah"
+console.log(myName)
+myName = "Erik"
+console.log(myName)
+// Output: error
+```
+
+#### String Methods and Properties
+Strings are a collection of characters. Because of the structure of this data type, strings have certain properties. For example, strings have a length property.
+```javascript
+"alpha".length
+"alpha cohort".length
+```
+
+Each character in the string can be accounted for by its placement called an index. Strings are zero indexed meaning the counting of the characters starts at 0 and moves forward.
+```javascript
+"hello"[0]
+"hello"[1]
+```
+
+#### Built in Methods
+There are lots of actions that take place in code that people do over and over. If there is an action that is done over and over, it is likely that someone has made a shortcut. JavaScript has lots of these shortcuts referred to as built-in methods. They are bits of code functionality wrapped up and given to us out of the box when you make a file with the extension .js. All build-in methods are designed for a particular action on a particular data type.
+```javascript
+var greeting = "hello"
+
+// upcase all the letters in a string
+console.log(greeting.toUpperCase())
+// Output: "HELLO"
+
+// returns the character that is at a particular index
+console.log(greeting.charAt(1))
+// Output: "e"
+
+// returns the index of a particular character
+console.log(greeting.indexOf("e"))
+/// Output: 1
+
+// returns a Boolean value if a subset of characters exists within the string
+console.log(greeting.includes("he"))
+// Output: true
+
+// returns a subset of a string based on a starting and ending index
+console.log(greeting.slice(1, 3))
+// Output: "el"
+```
+
+### Review
+- What is the file extension for JavaScript?
+- What does console.log() do?
+- How do you run a JS file?
+- What is camel case?
+- What are the three variable declarations?
+- What are the six primitive data types?
+
+### Next Steps
+- Go over the syllabus section and challenges
+- Announce which repo will be used
 
 ---
 [Back to Syllabus](../README.md#unit-one-javascript-foundations)

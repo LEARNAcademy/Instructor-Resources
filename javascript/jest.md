@@ -1,5 +1,8 @@
 # JavaScript Testing with Jest
 
+- [Challenges](#challenges)
+- [Lecture Notes](#lecture-notes)
+
 ## Video: Jest
 [![YouTube](http://img.youtube.com/vi/em5X2zJH-N0/0.jpg)](https://www.youtube.com/watch?v=em5X2zJH-N0)
 
@@ -465,7 +468,7 @@ Use `fit()` to focus on an it-block without having to comment all other it-block
   // declare function that takes in a number
   const oddNumber = (number) => {
     // conditional statement using modulo and strict equality operators to determine if odd return odd
-    if(number % 2 !== 0) { 
+    if(number % 2 !== 0) {
       return "odd"
     // if determine to be even return not odd
     } else if(number % 2 === 0) {
@@ -511,7 +514,7 @@ Use `fit()` to focus on an it-block without having to comment all other it-block
   })
 
 //   Write the function that will make the test pass.
-  // declare function called rick 
+  // declare function called rick
   const rick = () => {
     // return Morty
     return "Morty"
@@ -528,11 +531,11 @@ Use `fit()` to focus on an it-block without having to comment all other it-block
   })
 
 //   Write the function that will make the test pass.
-  // declare function called greeter that takes in a string 
+  // declare function called greeter that takes in a string
   const greeter = (string) => {
     // using string interpolation return a greeting with the string
     return `Good morning, ${string}!`
-  } 
+  }
 
 // 9.  Write the test for a function called oddOrEven that takes a number as an argument and logs whether the number is odd or even.
 // a describe method that lists the name of the function
@@ -549,7 +552,7 @@ Use `fit()` to focus on an it-block without having to comment all other it-block
 // declare function called oddOrEven that takes in a number
 const oddOrEven = (number) => {
   // conditional statement using modulo and strict inequality operators to determine if odd return odd
-  if(number % 2 !== 0) { 
+  if(number % 2 !== 0) {
     return "odd"
   // if determine to be even return even
   } else if(number % 2 === 0) {
@@ -606,10 +609,10 @@ const oddOrEven = (number) => {
   // declare function called divisibleBy that takes in a number
   const divisibleBy = (num1, num2) => {
     // conditional statement of evenly divisible using modulo and strict equality operators and string interpolation
-    if(num1 % num2 ===0) { 
+    if(num1 % num2 ===0) {
       return `${num1} is evenly divisible by ${num2}`
     // conditional statement of not evenly divisible using modulo and strict inequality operators and string interpolation
-    } else if(num1 % num2 !==0) { 
+    } else if(num1 % num2 !==0) {
       return `${num1} is not evenly divisible by ${num2}`
     }
   }
@@ -629,13 +632,13 @@ const oddOrEven = (number) => {
   // declare function called fizzbuzz that takes in a number
   const fizzbuzz = (number) => {
     // conditional statement of 3 & 5 multiple using modulo, logical, and strict equality operators
-    if(number % 3 === 0 && number % 5 === 0) { 
+    if(number % 3 === 0 && number % 5 === 0) {
       return "fizzbuzz"    
     // conditional statement of 3 using modulo and strict equality operators
-    } else if(number % 3 === 0) { 
+    } else if(number % 3 === 0) {
       return "fizz"
     // conditional statement of 5 using modulo and strict inequality operators
-    } else if(number % 5 === 0) { 
+    } else if(number % 5 === 0) {
       return "buzz"
     // if any other number return number
     } else {

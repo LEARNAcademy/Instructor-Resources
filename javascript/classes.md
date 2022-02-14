@@ -1,5 +1,8 @@
 # JavaScript Classes
 
+- [Challenges](#challenges)
+- [Lecture Notes](#lecture-notes)
+
 ## Video: Video Name
 [![YouTube](http://img.youtube.com/vi/LudiZKHYvMo/0.jpg)](https://www.youtube.com/watch?v=LudiZKHYvMo)
 

@@ -1,5 +1,8 @@
 # JavaScript Arrays
 
+- [Challenges](#challenges)
+- [Lecture Notes](#lecture-notes)
+
 #### Overview
 Arrays are variables that store collections of data in an ordered list. Having an organized data set gives developers the ability to access particular pieces of information, access every item in the set, or make a decision about every item in the data set. Arrays are indexed which means the data can be accessed by its location within the array. Arrays also have many built-in methods that can be used to manipulate and access the content.
 
@@ -536,5 +539,128 @@ oddIndexes.push(numbers[5])
 console.log(oddIndexes)
 // Output: [221, 7, 87]
 ```
+
+---
+
+# Lecture Notes
+### Overview
+- Until now, we've only dealt with primitive data types which are single pieces of information
+- Arrays are a non-primitive data type that are collections of ordered data
+- Arrays can contain any type of information as long as it is a valid data type
+- Interacting with arrays is a really important fundamental concept
+
+### Goals
+- Modeling git workflow
+- Use online documentation to look at built-in methods
+
+### Major Takeaways
+- Bracket notation
+- Index and value
+- Accessors vs mutators
+
+### Lecture
+- Create a branch
+- Create a JavaScript file with a `.js` extension and no spaces in the name
+- Run the file with `node`
+
+Arrays are a collection of data. The data is organized like a list with each item having a unique placement in the array.
+- Declaring an array
+- Saving the array in a variable
+
+```javascript
+console.log(["enie", "meanie", "minie", "mo"])
+var rhymingArray = ["enie", "meanie", "minie", "mo"]
+console.log(rhymingArray )
+```
+
+#### Value
+Each item in the array must be a data type recognized by JavaScript. The actual data is called the value.
+
+"enie" is a value
+"meanie" is a value
+"minie" is a value
+"mo" is a value
+
+#### Indexing
+Each item in the array has a unique placement called an index. The index is like an address. The index can be used to extract individual values from the array.
+- Zero indexing
+
+```javascript
+//                    0         1         2      3
+var rhymingArray = ["enie", "meanie", "minie", "mo"]
+```
+
+#### Accessing Items
+- Bracket notation
+
+```javascript
+var rhymingArray = ["enie", "meanie", "minie", "mo"]
+console.log(rhymingArray[0])
+console.log(rhymingArray[1])
+console.log(rhymingArray[2])
+console.log(rhymingArray[3])
+```
+
+#### Modifying Items
+- Reassigning a value
+
+```javascript
+var rhymingArray = ["enie", "meanie", "minie", "mo"]
+rhymingArray[3] = "momo"
+console.log(rhymingArray)
+// Output: ["enie", "meanie", "minie", "momo"]
+```
+
+#### Length Property
+Length determines the number of items in the array. The output will always be a number. Length is always the last index plus one.
+```javascript
+var rhymingArray = ["enie", "meanie", "minie", "mo"]
+console.log(rhymingArray.length)
+// Output: 4
+```
+
+#### Built-in Methods
+- Review built in methods
+- Review arguments
+- Mutators - modify the original array
+  - `.push()` - adds an item to the end of the array, takes an argument of the value to add
+  - `.pop()` - removes the last item, doesn't take an argument
+  - .`reverse()` - doesn't take an argument
+  - `.sort()` - alphabetizes string, when sorting numbers additional info will be necessary
+- Accessors - doesn't modify the array
+  - `.indexOf()` - take the argument of a value and returns the index
+  - `.slice()` - creates a subset of the array, take the argument of the index that starts the subset and an optional argument of the end of the subset
+  - `.concat()` - merges two arrays
+- Array to string
+  - `.join()` - takes an argument that determine what is in
+  between each character in the string
+- String to array
+  - `.split()` - takes an argument of where to split the string determining what is at each index in the array
+
+#### Array Destructuring
+Destructing allows for individual assignment of array values to variables.
+
+```javascript
+var [firstName, lastName] = ["Bruce", "Wayne"]
+
+console.log(firstName)
+// Output: "Bruce"
+console.log(lastName)
+// Output: "Wayne"
+```
+
+### Review
+- What is an array?
+- What is the value?
+- What is the index?
+- What is the difference between value and index?
+- What is a built-in method?
+- What is an accessor?
+- What is a mutator?
+
+### Next Steps
+- Go over the syllabus section and challenges
+- Announce which repo will be used
+
 ---
 [Back to Syllabus](../README.md#unit-one-javascript-foundations)
