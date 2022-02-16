@@ -178,17 +178,17 @@ password = gets.chomp
 
 def registration(username, password)
   if username == password
-    puts 'User ID and password cannot be the same.'
+    'User ID and password cannot be the same.'
   elsif username.length < 6 || password.length < 6
-    puts 'Username and Password must be at least 6 characters'
+    'Username and Password must be at least 6 characters'
   elsif !password.include?('!') && !password.include?('#') && !password.include?('$') 
-    puts 'Password must contain at least one of: !,#,$'
+    'Password must contain at least one of: !,#,$'
   elsif username.include?('!') || username.include?('#') || username.include?('$') || username.include?(' ') 
-    puts "Username cannot contain !,#,$,' '"
+    "Username cannot contain !,#,$,' '"
   elsif password.downcase == 'password'
-    puts 'Password cannot be "password"'
+    'Password cannot be "password"'
   else
-    puts 'Registration Accepted!'
+    'Registration Accepted!'
   end
 end
 
@@ -198,11 +198,51 @@ p registration username, password
 
 # - As a user, I can enter my user ID and password into the terminal after being prompted to find out if the they are acceptable.
 
+def reg_accept
+  puts 'Please enter a User ID'
+  username = gets.chomp
+  puts 'Please enter a password'
+  password = gets.chomp
+
+  password_chars = ['!', '#', '$']
+  user_chars = ['!', '#', '$', ' ']
+
+  if username == password
+    'User ID and password cannot be the same.'
+  elsif username.length <= 6 && password.length <= 6
+    'Username and Password must be at least 6 characters'
+  elsif password_chars.select { |value| password.include? value }.empty?
+    'Password must contain at least one of: !,#,$'
+  elsif !user_chars.select { |value| username.include? value }.empty?
+    "Username cannot contain !,#,$,' '"
+  elsif password.downcase == 'password'
+    'Your Password cannot be "password"'
+  else
+    'Registration Accepted!'
+  end
+end
+
+p reg_accept
+
 ### User Stories: Super Stretch
 
 # - As a developer, my method ensures that the user's password _must_ contain at least one number.
 
+puts 'Please enter a User ID'
+username = gets.chomp
+puts 'Please enter a password'
+password = gets.chomp
 
+def must_contain_num(password)
+  number = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+  if number.select { |value| password.include? value.to_s }.empty?
+    'Password must contain a number.'
+  else
+    'Password Accepted'
+  end
+end
+
+p must_contain_num password
 
 ```
 ---
