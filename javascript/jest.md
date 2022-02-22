@@ -712,32 +712,31 @@ Your tests speak volumes about you as a developer, as much or more than the actu
 ### Process
 1: Write the test first! 
 Here's an example of a JavaScript test using Jest:
-This is a test for a function called hello( that returns a string that says hi.
+This is a test for a function called aloha() that returns a string that says hi.
 
-Enter this on the .test.js file
-``` javascript
-describe("alpha", () => {
-  it("returns a string that says Aloha, Alpha 2022!!!", () => {
-    expect(aloha()).toEqual("Aloha, Alpha 2022!!!")
-  })
-})
-```
-Then use pseudocode to describe each portion.
+#### Explanation of Testing Syntax with Jest (use this explanation while pseudocoding in the text editor)
+Jest uses a method called describe() that runs other nested methods. First we invoke the describe method, providing the argument of "aloha" which is our function name, followed by a comma, a set of parentheses, arrow syntax and an opening curly brace to allow us to nest more code within its block scope. (place pseudocode above the describe method)
+
 ```javascript
 // a describe method that lists the name of the function OR naming of the particular test.
 describe("aloha", () => {
+```
 
+  Second we invoke the test method, providing it an argument that in plain words explains what the function does, followed by a comma, a set of parentheses, arrow syntax and its own opening curly brace allowing us to nest more code within its block scope. 
+
+  ```javascript
   // a test/it method, nested within the describe block, that in plain words, describes that the function does.
   it("returns a string that says Aloha, Alpha 2022!!!", () => {
+  ```
 
+    Third we then invoke the expect method, providing it an argument of the function call, and then chain a matcher to the end of it, in this case we use toEqual(), which will check that the return of the function to be a string that says hi.
+  
+    ```javascript  
     //an expect method, nested within the test block, calling on the hello() function, followed by the .toEqual() matcher that checks the expected output of the function return.
     expect(aloha()).toEqual("Aloha, Alpha 2022!!!")
   })
 })
-```
-
-#### Explanation of Testing Syntax with Jest (use this explanation while pseudocoding in the text editor)
-Jest uses a method called describe() that runs other nested methods. First we invoke the describe method, providing the argument of "aloha" which is our function name, followed by a comma, a set of parentheses, arrow syntax and an opening curly brace to allow us to nest more code within its block scope. Second we invoke the test method, providing it an argument that in plain words explains what the function does, followed by a comma, a set of parentheses, arrow syntax and its own opening curly brace allowing us to nest more code within its block scope. Third we then invoke the expect method, providing it an argument of the function call, and then chain a matcher to the end of it, in this case we use toEqual(), which will check that the return of the function to be a string that says hi.
+    ```
 
 2: Run your testing suite to see a failing test. 
 
@@ -791,11 +790,14 @@ const doYouUnderstand = (string) => {
 
 Notice: We don't comment out the old tests and function. We leave those there, as the purpose of having tests is so that they are AUTOMATED. We simply keep the original code and tests and keep writing new ones below those.
 
+Sometimes it can be useful to create variables within our test method for use later on in our expect methods.
+Note: These variables are only available within the scope of the specific test it has been created in.
+
 ```javascript
 describe("becomeADeveloper", () => {
   it("adds ask questions to the end of an array", () => {
-    let developerList = ["take notes", "pay attention", "practice"]
-    let result = ["take notes", "pay attention", "practice", "ask questions"]
+    let developerList = ["take notes", "pay attention", "practice", "take breaks"]
+    let result = ["take notes", "pay attention", "practice", "take breaks", "ask questions"]
     expect(addGranola(developerList)).toEqual(result)
   })
 })
@@ -804,9 +806,6 @@ const becomeADeveloper = (array) => {
   return array.concat("ask questions")
 }
 ```
-
-Sometimes it can be useful to create variables within our test method for use later on in our expect methods.
-Note: These variables are only available within the scope of the specific test it has been created in.
 
 We can see here, utilizing variables for our arrays, that it keeps our code cleaner and easier to understand and read, versus having to put these huge arrays into the argument parentheses.
 
