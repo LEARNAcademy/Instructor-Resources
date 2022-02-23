@@ -568,54 +568,54 @@ Arrays are a collection of data. The data is organized like a list with each ite
 - Saving the array in a variable
 
 ```javascript
-console.log(["enie", "meanie", "minie", "mo"])
-var rhymingArray = ["enie", "meanie", "minie", "mo"]
-console.log(rhymingArray )
+console.log(["she sells", "seashells", "by the", "seashore"])
+var tongueTwister = ["she sells", "seashells", "by the", "seashore"]
+console.log(tongueTwister )
 ```
 
 #### Value
 Each item in the array must be a data type recognized by JavaScript. The actual data is called the value.
 
-"enie" is a value
-"meanie" is a value
-"minie" is a value
-"mo" is a value
+"she sells" is a value
+"seashells" is a value
+"by the" is a value
+"seashore" is a value
 
 #### Indexing
 Each item in the array has a unique placement called an index. The index is like an address. The index can be used to extract individual values from the array.
 - Zero indexing
 
 ```javascript
-//                    0         1         2      3
-var rhymingArray = ["enie", "meanie", "minie", "mo"]
+//                       0            1            2         3
+var tongueTwister = ["she sells", "seashells", "by the", "seashore"]
 ```
 
 #### Accessing Items
 - Bracket notation
 
 ```javascript
-var rhymingArray = ["enie", "meanie", "minie", "mo"]
-console.log(rhymingArray[0])
-console.log(rhymingArray[1])
-console.log(rhymingArray[2])
-console.log(rhymingArray[3])
+var tongueTwister = ["she sells", "seashells", "by the", "seashore"]
+console.log(tongueTwister[0])
+console.log(tongueTwister[1])
+console.log(tongueTwister[2])
+console.log(tongueTwister[3])
 ```
 
 #### Modifying Items
 - Reassigning a value
 
 ```javascript
-var rhymingArray = ["enie", "meanie", "minie", "mo"]
-rhymingArray[3] = "momo"
-console.log(rhymingArray)
-// Output: ["enie", "meanie", "minie", "momo"]
+var tongueTwister = ["she sells", "seashells", "by the", "seashore"]
+tongueTwister[0] = "She sells"
+console.log(tongueTwister)
+// Output: ["She sells", "seashells", "by the", "seashore"]
 ```
 
 #### Length Property
 Length determines the number of items in the array. The output will always be a number. Length is always the last index plus one.
 ```javascript
-var rhymingArray = ["enie", "meanie", "minie", "mo"]
-console.log(rhymingArray.length)
+var tongueTwister = ["she sells", "seashells", "by the", "seashore"]
+console.log(tongueTwister.length)
 // Output: 4
 ```
 
