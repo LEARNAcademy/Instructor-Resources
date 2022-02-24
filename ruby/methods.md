@@ -110,10 +110,10 @@ end
 def sum_these_numbers(num1, num2)
   num1 + num2
 end
-p sum_these_numbers 1, 2
-p sum_these_numbers 10, 20
-p sum_these_numbers 100, 200
-p sum_these_numbers -15, 30
+p sum_these_numbers (1, 2)
+p sum_these_numbers (10, 20)
+p sum_these_numbers (100, 200)
+p sum_these_numbers (-15, 30)
 
 #  - Create a method called is_even, which takes a single integer, and which then returns true if the number is even, and false otherwise.
 
@@ -154,8 +154,8 @@ def palindrome(string)
     "#{string} is not a palindrome."
   end
 end
-puts palindrome word_one
-puts palindrome word_two
+p palindrome (word_one)
+p palindrome (word_two)
 
 ## Challenge: Password Checker
 
@@ -192,7 +192,7 @@ def registration(username, password)
   end
 end
 
-p registration username, password
+p registration (username, password)
 
 ### User Stories: Stretch
 
