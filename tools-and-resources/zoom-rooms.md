@@ -166,3 +166,6 @@ Preset breakout rooms can be added to the reoccurring Zoom meeting. Rooms can be
 - La Jolla Shores Beach
 - Sunset Cliffs Beach
 - Windansea Beach
+- Moonlight Beach
+- Cardiff Beach
+- Ponto Beach
