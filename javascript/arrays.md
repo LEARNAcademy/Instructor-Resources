@@ -549,7 +549,14 @@ console.log(oddIndexes)
 - Arrays can contain any type of information as long as it is a valid data type
 - Interacting with arrays is a really important fundamental concept
 
-### Goals
+### Process
+- Ensure you are in the cohort-lecture-examples repo
+- Ensure your local is up to date and there are no stale branches
+- Create a new branch
+- Create a JavaScript file with the naming convention `language-topic.js`
+- Run the file with `node`
+
+### Additional Notes and Goals
 - Modeling git workflow
 - Use online documentation to look at built-in methods
 
@@ -559,10 +566,6 @@ console.log(oddIndexes)
 - Accessors vs mutators
 
 ### Lecture
-- Create a branch
-- Create a JavaScript file with a `.js` extension and no spaces in the name
-- Run the file with `node`
-
 Arrays are a collection of data. The data is organized like a list with each item having a unique placement in the array.
 - Declaring an array
 - Saving the array in a variable
@@ -659,8 +662,11 @@ console.log(lastName)
 - What is a mutator?
 
 ### Next Steps
-- Go over the syllabus section and challenges
-- Announce which repo will be used
+- Open the syllabus section and briefly run through the challenges and expectations
+- Remind the student to use the `javascript-intro-challenges` repo
+- Remind the students of the appropriate naming conventions for their branch and file
+- Post pairs in Slack
+- Open breakout rooms with ability for participants to choose their room
 
 ---
 [Back to Syllabus](../README.md#unit-one-javascript-foundations)

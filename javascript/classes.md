@@ -309,7 +309,7 @@ class Cylinder {
     this.height = height
   }
   findVolume() {
-    return  (this.radius * this.height * Math.PI).toFixed(4)
+    return (this.radius * this.height * Math.PI).toFixed(4)
   }
 }
 
@@ -324,6 +324,217 @@ var cupCylinder = new Cylinder(2, 6)
 console.log(cupCylinder.findVolume())
 // Output: 37.6991
 ```
+
+---
+
+# Lecture Notes
+
+### Overview
+- Establish the difference between classes and objects
+- Discuss the differences between hard-coded and dynamic values
+- Classes and objects are the intersection of data and behavior
+- Classes need to be instantiated just like functions need to be invoked
+
+### Process
+- Ensure you are in the cohort-lecture-examples repo
+- Ensure your local is up to date and there are no stale branches
+- Create a new branch
+- Create a JavaScript file with the naming convention `language-topic.js`
+- Run the file with `node`
+
+### Additional Notes and Goals
+- Using the verbage of "instantiate a class" and that an object is an "instance of a class"
+
+### Major Takeaways
+- Objects are hard-coded while classes are dynamic
+- PascalCase is the naming conventions for classes in many languages, not just JavaScript
+- `constructor()` is a JavaScript method specifically for defining variables that belong to a class
+- `new` is a keyword in JavaScript that instantiates a class (creates an object)
+
+### Lecture
+Objects are a way to store collections of data and methods. Objects are a really common data structure in all of development. The problem with how we created objects is that all the values are hard-coded.
+- Hard-coded values vs dynamic values
+
+We need a way to be able to make objects reusable. To make objects dynamic. So enter classes.
+
+#### Class Anatomy
+- Class declaration - just like functions and variables, classes have a declaration using the word `class` which is a protected word in JavaScript
+- Class name - naming syntax for classes uses a casing convention called PascalCase
+- Curly braces to define the scope of the class
+
+```javascript
+class DoingMath {
+}
+```
+
+#### Static Data
+Just like an object, a class can have both static information or data in the form of JavaScript data types and methods or behavior. So let's start with the data.
+- Need to establish variables that belong to the class
+- The `constructor()` method is a built in JavaScript method that is used to instantiate class variables, it "constructs" the values for the class
+
+
+```javascript
+class DoingMath {
+  constructor() {
+
+  }
+}
+```
+
+- Creating variables that belong to the class requires the keyword `this`
+
+```javascript
+class DoingMath {
+  constructor() {
+    this.num1 = 5,
+    this.num2 = 10,
+    this.num3 = 15
+  }
+}
+```
+
+#### Methods
+Now we can add a method to add up the variables that hold the numbers.
+```javascript
+class DoingMath {
+  constructor() {
+    this.num1 = 5,
+    this.num2 = 10,
+    this.num3 = 15
+  }
+  addUp() {
+    return this.num1 + this.num2 + this.num3
+  }
+}
+```
+
+#### Instantiating a Class
+AKA creating an object. Just like a function, the class is not doing anything at all right now. It is just describing the idea of variables that contain numbers and a method that adds up those numbers. To make the class useful it must be instantiate, meaning that we need to use the class to create an object.
+- JavaScript keyword `new` instantiates a class, another way of saying this is it creates an object from the template of the class
+
+```javascript
+console.log(new DoingMath)
+```
+
+- The log will display an object with key:values pairs
+- This can be saved into a variable
+
+```javascript
+const math = new DoingMath
+console.log(math)
+```
+
+#### Accessing Data and Methods
+Now that we have a variable containing an object we can use dot notation and access the data and the methods.
+
+```javascript
+console.log(math.num1)
+console.log(math.addUp())
+```
+
+#### Making Multiple Classes
+This same class can be instantiated as many times as we want, creating as many objects as we want.
+
+```javascript
+const math1 = new DoingMath
+console.log(math1)
+
+const math2 = new DoingMath
+console.log(math2)
+```
+
+#### Making the Class Dynamic
+We talked about the power of having dynamic values vs hard-coded values. Right now every object we make is exactly identical. To created dynamic values for the numbers we can remove the hard-coded values and have our constructor take these values as parameters.
+- The keyword `new` calls the constructor method
+- If the constructor method has parameters, that means we need to pass it arguments of actual data
+- Now every object can have different values for the number variables
+
+```javascript
+class DoingMath {
+  constructor(num1, num2, num3) {
+    this.num1 = num1,
+    this.num2 = num2,
+    this.num3 = num3
+  }
+  addUp() {
+    return this.num1 + this.num2 + this.num3
+  }
+}
+
+const math1 = new DoingMath(5, 10, 15)
+console.log(math1)
+console.log(math1.addUp())
+
+const math2 = new DoingMath(3, 7, 2)
+console.log(math2)
+console.log(math2.addUp())
+```
+
+#### Mix and Match
+Sometimes you will want a mix of hard-coded data and dynamic data.
+- Parameters just have to match the name that is assigned to the variable
+- It is convention for the class variable names and the parameters to be the same
+
+```javascript
+class DoingMath {
+  constructor(num2, num3) {
+    this.num1 = 5
+    this.num2 = num2,
+    this.num3 = num3
+  }
+  addUp() {
+    return this.num1 + this.num2 + this.num3
+  }
+}
+
+const math = new DoingMath(5, 10)
+console.log(math.addUp())
+```
+
+#### Adding Another Method
+Can add as many methods as needed.
+- Create a method that returns the largest number.
+- Google "javascript method largest number" (or equivalent) and use MDN Math.max documentation to model the logic in the method
+
+```javascript
+class DoingMath {
+  constructor(num2, num3) {
+    this.num1 = 5
+    this.num2 = num2,
+    this.num3 = num3
+  }
+  addUp() {
+    return this.num1 + this.num2 + this.num3
+  }
+  largestNum() {
+    return Math.max(this.num1, this.num2, this.num3)
+  }
+}
+
+const math1 = new DoingMath(5, 10)
+console.log(math1.largestNum())
+
+const math2 = new DoingMath(2, 3)
+console.log(math2.largestNum())
+```
+
+### Review
+- What is a class?
+- What is the naming convention for a class?
+- What is the difference between hard-coded and dynamic values?
+- What does the keyword `new` do?
+- What is the constructor?
+- What is the difference between an object and a class?
+- What is the difference between a function and a method?
+- What does it mean to instantiate a class?
+- What is an instance of a class?
+
+### Next Steps
+- Open the syllabus section and briefly run through the challenges and expectations
+- Remind the student to use the `javascript-foundations-challenges` repo
+- Remind the students of the appropriate naming conventions for their branch and file
+- Post pairs in Slack
+- Open breakout rooms with ability for participants to choose their room
 
 ---
 [Back to Syllabus](../README.md#unit-one-javascript-foundations)
