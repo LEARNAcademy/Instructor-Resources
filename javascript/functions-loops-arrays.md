@@ -294,7 +294,10 @@ const highLow = () => {
 # Lecture Notes
 
 ### Overview
--
+- Incorporating looping logic into reusable functions
+- Functions are dynamic and not attached to any particular dataset
+- Collecting the output of the iteration into a storage place
+- Functions will only return one thing
 
 ### Process
 - Ensure you are in the cohort-lecture-examples repo
@@ -304,10 +307,205 @@ const highLow = () => {
 - Run the file with `node`
 
 ### Additional Notes and Goals
+- Establish good indentation practices
+- Tracking many scopes (many curly braces)
+
 ### Major Takeaways
+- Problem solving with iteration
+- Scope of the `for loop` vs scope of the function
+
 ### Lecture
-#### Topic
+Functions are logic machines that developers use to create reusable, or dynamic, code. Functions must be invoked. When a function is invoked it will always return exactly one thing. Functions can be designed to have one or more inputs so that you can use a function logic to manipulate data.
+
+#### Iteration
+Let's create a function that will multiply each number in an array by 5. It doesn't matter what numbers are in the array or how many numbers are in the array. The function will handle any array of numbers.
+```javascript
+const myArrayOfNums1 = [2, 3, 4, 5, 6]
+const myArrayOfNums2 = [4, 5, 6]
+const myArrayOfNums3 = [7, 8, 9, 10]
+```
+
+Anytime you are faced with a problem and you are thinking to yourself, I need to do something to each item, or make a decision about each item, think iteration.
+- Set up a function that takes an array as a parameter
+- Call the function passing in each of the test arrays
+
+```javascript
+const myArrayOfNums1 = [2, 3, 4, 5, 6]
+const myArrayOfNums2 = [4, 5, 6]
+const myArrayOfNums3 = [7, 8, 9, 10]
+
+const mult5 = (array) => {
+
+}
+console.log(mult5(myArrayOfNums1))
+console.log(mult5(myArrayOfNums2))
+console.log(mult5(myArrayOfNums3))
+
+```
+
+Does this work?
+
+```javascript
+const mult5 = (array) => {
+  return array * 5
+}
+console.log(mult5(myArrayOfNums1))
+console.log(mult5(myArrayOfNums2))
+console.log(mult5(myArrayOfNums3))
+
+// Output: NaN
+```
+
+Nope because arrays can't be multiplied, only numbers can. So we need to get into this array and have access to each number. The word "each" always makes me think of iteration.
+
+#### Adding a Loop: Part I
+For loops require three things: a starting place, a stopping place, and how to get from the starting to the stopping. For loops don't innately connect with arrays. There is nothing that says a for loop's iteration is happening on an array. For loops are only good at counting. To get a for loop to iterate on an array we just match the count to the indexes of an array. And if we have the index, we can extract the values. So `i` is completely arbitrary. It is just a variable that communicates intent.
+
+```javascript
+const myArrayOfNums1 = [2, 3, 4, 5, 6]
+const myArrayOfNums2 = [4, 5, 6]
+
+const mult5 = (array) => {
+  for(let i = 0; i < array.length; i++) {
+    console.log(i)
+  }
+}
+console.log(mult5(myArrayOfNums1))
+// Output:
+// 0
+// 1
+// 2
+// 3
+// 4
+// Output: undefined
+
+console.log(mult5(myArrayOfNums2))
+// Output:
+// 0
+// 1
+// 2
+// Output: undefined
+```
+
+- Each iteration returns the current value of `i`
+- The function logs undefined because there is no return
+- We have crafting a for loop to log a series of numbers that match up exactly with the indexes of whatever array we pass in to the function
+
+#### #### Adding a Loop: Part II
+Now that we have successfully added a for loop that will create a series of numbers that match the indexes, we can extract the value.
+- To get the value from the array we need the name of the array and the index in square brackets
+
+```javascript
+const myArrayOfNums1 = [2, 3, 4, 5, 6]
+const myArrayOfNums2 = [4, 5, 6]
+
+const mult5 = (array) => {
+  for(let i = 0; i < array.length; i++) {
+    console.log(array[i])
+  }
+}
+console.log(mult5(myArrayOfNums1))
+// Output:
+// 2
+// 3
+// 4
+// 5
+// 6
+// Output: undefined
+
+console.log(mult5(myArrayOfNums2))
+// Output:
+// 4
+// 5
+// 6
+// Output: undefined
+```
+
+- Each iteration returns the value at each index of the array
+- The function logs undefined because there is no return
+
+#### Manipulating the Output
+Now that we can access the value in the array we can manipulate the output by performing logic on each number in the array.
+
+```javascript
+const myArrayOfNums1 = [2, 3, 4, 5, 6]
+const myArrayOfNums2 = [4, 5, 6]
+
+const mult5 = (array) => {
+  for(let i = 0; i < array.length; i++) {
+    console.log(array[i] * 5)
+  }
+}
+console.log(mult5(myArrayOfNums1))
+// Output:
+// 10
+// 15
+// 20
+// 25
+// 30
+// Output: undefined
+
+console.log(mult5(myArrayOfNums2))
+// Output:
+// 20
+// 25
+// 30
+// Output: undefined
+```
+
+#### Returning the Value
+Right now the console log is doing all the heavy lifting. Our function is still returning undefined. Functions need the keyword `return`.
+- Remove the console.log and add return
+- Explore the idea of where to add the return
+
+```javascript
+const myArrayOfNums1 = [2, 3, 4, 5, 6]
+const myArrayOfNums2 = [4, 5, 6]
+
+const mult5 = (array) => {
+  for(let i = 0; i < array.length; i++) {
+    return array[i] * 5
+  }
+}
+console.log(mult5(myArrayOfNums1))
+// Output: 10
+
+console.log(mult5(myArrayOfNums2))
+// Output: 20
+```
+
+We got rid of the undefined, but it is still not producing the correct response. That is because once the function returns something, it is done. And the iteration will not continue.
+
+#### Capturing Each Value of During the Iteration
+We can't return in the loop. That kills the iteration. We need to capture these values and keep them somewhere and return that thing rather than a single value in the loop.
+- Create a storage array outside the scope of the for loop
+- Return the array rather than the inner workings of the loop
+
+```javascript
+const myArrayOfNums1 = [2, 3, 4, 5, 6]
+const myArrayOfNums2 = [4, 5, 6]
+
+const mult5 = (array) => {
+  let storageArray = []
+  for(let i = 0; i < array.length; i++) {
+    storageArray.push(array[i] * 5)
+  }
+  return storageArray
+}
+console.log(mult5(myArrayOfNums1))
+// Output: [10, 15, 20, 25, 30]
+
+console.log(mult5(myArrayOfNums2))
+// Output: [20, 25, 30]
+```
+
 ### Review
+- What is function?
+- What is iteration?
+- What are some keywords that can help you identify the need for iteration?
+- Why can't you use the keyword `return` inside the scope of a for loop?
+- What should you look for if your function logs undefined?
+- What does `.push()` do?
 
 ### Next Steps
 - Open the syllabus section and briefly run through the challenges and expectations
