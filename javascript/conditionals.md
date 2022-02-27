@@ -267,7 +267,14 @@ if(password.length >= 12 && password.includes("!")) {
 - Conditional statements create logic through evaluations that return a Boolean value
 - There is only one outcome per conditional statement
 
-### Goals
+### Process
+- Ensure you are in the cohort-lecture-examples repo
+- Ensure your local is up to date and there are no stale branches
+- Create a new branch
+- Create a JavaScript file with the naming convention `language-topic.js`
+- Run the file with `node`
+
+### Additional Notes and Goals
 - Modeling git workflow
 - Instilling good indentation habits
 
@@ -405,8 +412,11 @@ JavaScript is read line by line. So our little program is just waiting looking f
 - Only one outcome will ever be true at a time
 
 ### Next Steps
-- Go over the syllabus section and challenges
-- Announce which repo will be used
+- Open the syllabus section and briefly run through the challenges and expectations
+- Remind the student to use the `javascript-intro-challenges` repo
+- Remind the students of the appropriate naming conventions for their branch and file
+- Post pairs in Slack
+- Open breakout rooms with ability for participants to choose their room
 
 ---
 [Back to Syllabus](../README.md#unit-one-javascript-foundations)

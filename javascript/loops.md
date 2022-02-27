@@ -140,6 +140,7 @@ Notice that in our loops we use `let` to assign `i` or `index` to a starting val
 // - Write a for loop that logs each number from 1 - 20.
 for(let i = 1; i <= 20; i++) {
   console.log(i)
+}
 // Output: 1, 2, 3, 4, ...20
 
 
@@ -161,7 +162,7 @@ for(let i = 1; i <= 20; i++) {
 
 // 2. Looping over an array. Consider this variable:
 let nums = [3, 57, -9, 20, 67]
-//- Create a loop that will log the highest number from the array. **Expected output** --> 67
+// - Create a loop that will log the highest number from the array. **Expected output** --> 67
 const highest = nums[0]
 for(let i = 0; i < nums.length; i++) {
   if(nums[i] > highest) {
@@ -200,7 +201,7 @@ for(let i = 0; i < myString.length; i++) {
 console.log(letterECount)
 // Output: 2
 
-### STRETCH Challenges
+// ### STRETCH Challenges
 
 //1. Even or Odd: Write a for loop that iterates from 0 to 15. For each iteration, it will check if the current number is odd or even, and display the appropriate outcome. **Expected output** -> "0 is even" "1 is odd" "2 is even" ...etc
 
@@ -215,7 +216,7 @@ for(let i = 0; i <= 15; i++) {
 
 // 2. Fizz Buzz: Use a for loop to log all numbers from 1-100.  If a number is a multiple of 3, replace it with the word `fizz`. If a number is a multiple of five, replace it with the word `buzz`. If a number is a multiple of both 3 and 5, replace it with `fizzbuzz`. **Expected output** --> 1, 2, "fizz", 4, "buzz", "fizz", 7, 8, "fizz", "buzz", 11, "fizz", 13, 14, "fizzbuzz" ...etc
 
-for(let i = 1; i < 101; i++) {
+for(let i = 1; i <= 100; i++) {
   if(i % 3 == 0 && i % 5 == 0) {
     console.log("fizzbuzz")
   } else if(i % 3 === 0) {
@@ -228,5 +229,32 @@ for(let i = 1; i < 101; i++) {
 }
 // Output: 1, 2, "fizz", 4, "buzz", 6, 7, 8, "fizz", "buzz", 11, "fizz", 13, 14, "fizzbuzz", ...etc
 ```
+
+---
+
+# Lecture Notes
+
+### Overview
+-
+
+### Process
+- Ensure you are in the cohort-lecture-examples repo
+- Ensure your local is up to date and there are no stale branches
+- Create a new branch
+- Create a JavaScript file with the naming convention `language-topic.js`
+- Run the file with `node`
+
+### Additional Notes and Goals
+### Major Takeaways
+### Lecture
+#### Topic
+### Review
+
+### Next Steps
+- Open the syllabus section and briefly run through the challenges and expectations
+- Remind the student to use the `javascript-intro-challenges` repo
+- Remind the students of the appropriate naming conventions for their branch and file
+- Post pairs in Slack
+- Open breakout rooms with ability for participants to choose their room
 ---
 [Back to Syllabus](../README.md#unit-one-javascript-foundations)
