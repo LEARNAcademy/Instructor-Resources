@@ -258,7 +258,9 @@ export default App
 # Lecture Notes
 
 ### Overview
-- A React application is a collection of components. Components are classes that incorporate both logic and markup. The logic comes to us in the form of JavaScript code and the mark up is called JSX.
+- A React application is a collection of components
+- Components are classes that incorporate both logic and markup
+- The logic comes as JavaScript code and the mark up is called JSX
 
 ### Goals
 - Modeling git workflow putting a React app inside a shared repo
@@ -271,7 +273,7 @@ export default App
 ### Major Takeaways
 - Constructor and state object syntax
 - Placement of constructor, logic, and render inside a React class component
--
+- `setState()` method
 
 ### Lecture
 - Create a branch
@@ -526,11 +528,15 @@ class Tracker extends Component {
 - What is `setState()`?
 - What is an attribute?
 - When do we need to use curly braces in the JSX section?
+- Where do git commands happen vs yarn commands
 
 ### Next Steps
-- Go over the syllabus section and challenges
-- Announce which repo will be used
-- Remind the students to be aware of whether they are in the project level or the repo level when making git commands.
+- Open the syllabus section and briefly run through the challenges and expectations
+- Remind the student to use the `react-challenges` repo
+- Remind the students of the appropriate naming conventions for their branch and project name
+- Remind the students that yarn commands happen at the project level and git commands happen at the repo level
+- Post pairs in Slack
+- Open breakout rooms with ability for participants to choose their room
 
 ---
 [Back to Syllabus](../README.md#unit-two-introduction-to-react)
