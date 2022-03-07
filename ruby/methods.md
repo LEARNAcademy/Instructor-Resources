@@ -43,17 +43,17 @@ Now we can call the method repeatedly by referencing the name `greeter`.
 
 In IRB:
 ```
->greeter
+> greeter
 Hello World!
-=>nil
+=> nil
 
->greeter
+> greeter
 Hello World!
-=>nil
+=> nil
 
->greeter
+> greeter
 Hello World!
-=>nil
+=> nil
 ```
 
 ## Implicit Return
@@ -103,36 +103,147 @@ end
 => 3
 ```
 
-
 ## Challenges
+```ruby
+#  - Create a method called sum_these_numbers which takes two integers as an argument and prints their sum to the screen.
 
-- Create a method called sum_these_numbers which takes two integers as an argument and prints their sum to the screen.
-- Create a method called is_even, which takes a single integer, and which then returns true if the number is even, and false otherwise.
-- Create a method that takes a number as an argument and prints "Valid" if the number is between 1 and 10 (inclusive) and "Invalid" otherwise.
-- Create a method that takes in a string and determines if the string is a palindrome.
+def sum_these_numbers(num1, num2)
+  num1 + num2
+end
+p sum_these_numbers(1, 2)
+p sum_these_numbers(10, 20)
+p sum_these_numbers(100, 200)
+p sum_these_numbers(-15, 30)
 
+#  - Create a method called is_even, which takes a single integer, and which then returns true if the number is even, and false otherwise.
+
+def is_even(num)
+  if num.even?
+    true
+  else
+    false
+  end 
+end
+
+p is_even(1)
+p is_even(2)
+
+#  - Create a method that takes a number as an argument and prints "Valid" if the number is between 1 and 10 (inclusive) and "Invalid" otherwise.
+
+def inclusive(num)
+  if num >= 1 && num <= 10
+    'Valid'
+  else
+    'Invalid'
+  end
+end
+
+p inclusive(7)
+p inclusive(35)
+p inclusive(-5)
+
+# - Create a method that takes in a string and determines if the string is a palindrome.
+
+word_one = 'civic'
+word_two = 'tool'
+
+def palindrome(string)
+  if string == string.reverse
+    "#{string} is a palindrome."
+  else
+    "#{string} is not a palindrome."
+  end
+end
+p palindrome(word_one)
+p palindrome(word_two)
 
 ## Challenge: Password Checker
 
 ### User Stories
 
-You are writing the user registration page for a secure web site.
-On the registration page, the user has to enter a user ID and a password, which has to adhere to the to following criteria:
+### You are writing the user registration page for a secure web site.
+### On the registration page, the user has to enter a user ID and a password, which has to adhere to the following criteria:
 
-- As a developer, I can create a method that checks for the following rules for a user ID and password:
-  - User ID and password _cannot_ be the same.
-  - User ID and password _must_ be at least six characters long.
-  - Password _must_ contain at least one of: !#$
-  - User ID _cannot_ contain the following characters: !#$ or spaces
-  - Password _cannot_ be the word "password".
+#  - As a developer, I can create a method that checks for the following rules for a user ID and password:
+#    - User ID and password _cannot_ be the same.
+#    - User ID and password _must_ be at least six characters long.
+#    - Password _must_ contain at least one of: !#$
+#    - User ID _cannot_ contain the following characters: !#$ or spaces
+#    - Password _cannot_ be the word "password".
+
+puts "Please enter a User ID"
+username = gets.chomp
+puts "Please enter a password"
+password = gets.chomp
+
+def registration(username, password)
+  if username == password
+    'User ID and password cannot be the same.'
+  elsif username.length < 6 || password.length < 6
+    'Username and Password must be at least 6 characters'
+  elsif !password.include?('!') && !password.include?('#') && !password.include?('$') 
+    'Password must contain at least one of: !,#,$'
+  elsif username.include?('!') || username.include?('#') || username.include?('$') || username.include?(' ') 
+    "Username cannot contain !,#,$,' '"
+  elsif password.downcase == 'password'
+    'Password cannot be "password"'
+  else
+    'Registration Accepted!'
+  end
+end
+
+p registration(username, password)
 
 ### User Stories: Stretch
 
-- As a user, I can enter my user ID and password into the terminal after being prompted to find out if the they are acceptable.
+# - As a user, I can enter my user ID and password into the terminal after being prompted to find out if the they are acceptable.
+
+def reg_accept
+  puts 'Please enter a User ID'
+  username = gets.chomp
+  puts 'Please enter a password'
+  password = gets.chomp
+
+  password_chars = ['!', '#', '$']
+  user_chars = ['!', '#', '$', ' ']
+
+  if username == password
+    'User ID and password cannot be the same.'
+  elsif username.length <= 6 && password.length <= 6
+    'Username and Password must be at least 6 characters'
+  elsif password_chars.select { |value| password.include? value }.empty?
+    'Password must contain at least one of: !,#,$'
+  elsif !user_chars.select { |value| username.include? value }.empty?
+    "Username cannot contain !,#,$,' '"
+  elsif password.downcase == 'password'
+    'Your Password cannot be "password"'
+  else
+    'Registration Accepted!'
+  end
+end
+
+p reg_accept
 
 ### User Stories: Super Stretch
 
-- As a developer, my method ensures that the user's password _must_ contain at least one number.
+# - As a developer, my method ensures that the user's password _must_ contain at least one number.
 
+puts 'Please enter a User ID'
+username = gets.chomp
+puts 'Please enter a password'
+password = gets.chomp
+
+def must_contain_num(password)
+  number = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+  if number.select { |value| password.include? value.to_s }.empty?
+    'Password must contain a number.'
+  else
+    'Password Accepted'
+  end
+end
+
+p must_contain_num(password)
+
+```
 ---
 [Back to Syllabus](../README.md#unit-four-ruby)
