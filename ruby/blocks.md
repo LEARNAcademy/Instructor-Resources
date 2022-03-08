@@ -249,13 +249,97 @@ Ruby has lots of built in methods for different types of iteration. And when we 
 Blocks can be defined two ways: using the key words do/end or with curly braces. Generally speaking, the do/end should be used if the block is more than one line of code. Curly braces are used for code that can be written in one line.
 
 #### Each
+The each method works on a list of items. So it needs an array order to run. It uses an array's length to determine the number of times it is going to run. By default, each starts at 0 and continues to the length of whatever it is acting on.
+
 ```ruby
+num = [2, 3, 4]
+num.each do
+  p 'hello'
+end
 ```
 
-#### Blocks
+To add more functionality to this method we can pass a block. Blocks take parameters. To pass a parameter to the block you use pipes.
 ```ruby
+num = [2, 3, 4]
+num.each do |value|
+  p value
+end
 ```
+
+#### Ranges
+A range is an object which has a starting value and an ending value and creates a sequence that span between these values. You can create ranges of numbers or ranges of letters.
+- The `each` method can be used to see each item in a range
+
+```ruby
+1..5  # a range
+p 1..5  # logs the range
+
+range = 1..5
+range.each do |value|
+  p value
+end
+
+# Adding logic inside a each block
+range = 1..10
+range.each do |value|
+  if value % 2 == 0
+    p 'even'
+  else
+    p 'odd'
+  end
+end
+```
+
+#### Map
+The `each` method is a great iterator, but it doesn't collect the values. `map` is an iterator that takes a block. It returns a new array with all the values from the iteration.
+
+```ruby
+numbers = [4, 5, 6, 7, 8]
+multiplier = numbers.map do |value|
+  value * 3
+end
+p multiplier
+```
+
+#### Map Inside a Method
+We can wrap the map content inside a custom method. In this example we can create a method that takes in a set of numbers and determines whether the number is even or odd.
+- The original array is unchanged
+
+```ruby
+def even_or_odd nums
+  nums.map do |value|
+    if value % 2 == 0  # OR: value.even?
+      'even'
+    else
+      'odd'
+    end
+  end
+end
+p even_or_odd 1..7
+p even_or_odd [4, 5, 6, 7]
+```
+
+#### Select
+Select is very similar to filter. It has a built in if/else statement that looks for a Boolean return value.
+
+```ruby
+greetings = ['hey', 'yo', 'sup', 'hello']
+def has_e array
+  array.select do |value|
+    value.include?('e')
+  end
+end
+p has_e greetings
+p has_e ['hi', 'there', 'alpha', 'student']
+```
+
 ### Review
+- What is iteration?
+- What is a block?
+- What is a range?
+- What is the syntax for passing a variable in a block?
+- What data type does map return?
+- What does select do?
 
 ### Next Steps
 - Open the syllabus section and briefly run through the challenges and expectations
