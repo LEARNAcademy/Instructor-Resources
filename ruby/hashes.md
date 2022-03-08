@@ -1,5 +1,8 @@
 # Ruby Hashes
 
+- [Challenges](#challenges)
+- [Lecture Notes](#lecture-notes)
+
 ## Overview
 - A hash is a collection of unique keys and their values
 - A hash is a bit like an array but instead of the values being referenced by an index, the values are reference by their unique key
@@ -171,7 +174,7 @@ Output:
 - Hashes can have new key value pairs added, updated or deleted.
 - Hashes have enumerable abilities allowing developer the ability to use methods such as `.each` and `.map` to iterate over the key:value pairs.
 
-## Challenges: Practice with Hashes
+## Challenges
 - As a developer, I can create a hash called my_phone using the Ruby method `.new`.
 - As a developer, I can add five key:value pairs of app names and their descriptions to my hash.
 - As a developer, I can return a value from my_phone by passing in the name of a key.
@@ -182,6 +185,142 @@ Output:
 
 ### Stretch Challenges
 - As a developer, I can create a custom method that takes in my_phone and returns an array with the app name capitalized and information about each phone app.
+
+---
+
+# Lecture Notes
+
+### Overview
+- Hashes are a data structure in Ruby
+- Hashes are a dictionary-like collection of key:value pairs
+- Hashes are very similar to JavaScript objects but also have some iterative properties
+
+### Process
+- Ensure you are in the cohort-lecture-examples repo
+- Ensure your local is up to date and there are no stale branches
+- Create a new branch
+- Create a Ruby file with the naming convention `language-topic.rb`
+- Run the file with `ruby`
+
+### Additional Notes and Goals
+- Introducing CRUD actions
+- Opportunity to discuss duck-typing
+
+### Major Takeaways
+- How to access a value in a hash by referencing the key
+- Symbol syntax in Ruby
+- Hash rocket
+
+### Lecture
+Hashes have key:value pairs where the key is a symbols and the value is any type of data recognized by Ruby. To access the value in a hash you must reference the key.
+
+#### Creating a Hash
+There are two ways to create a hash.
+- Key:value pairs inside curly braces
+- The keys are the Ruby data type symbol
+- The values is any data type recognized by Ruby
+- Key:value sets are comma separated
+- Assign the hash to a variable and print the variable
+- Look at the syntax of the output
+
+```ruby
+learn_staff = {instructor: 'Austin', career: 'Jake', marketing: 'TJ'}
+
+p learn_staff
+
+# Output:
+{:instructor=>"Austin", :career=>"Jake", :marketing=>"TJ"}
+```
+
+The output is interesting because it shows another version of the Ruby syntax. Like all languages, Ruby has gone through many iterations and has evolved over time. Writing a symbol can look like it did when we created the hash, or it can have the colon in front. When you reference a symbol it will often have the colon-first syntax. In this syntax the thing that separates the keys from the values is called a hash rocket.
+
+The second way to create a hash is to use the Ruby method `new`. The `new` method is called on a class. It will instantiate the class. Another way of saying that is that we are going to create an instance of the class which is an object.
+
+```ruby
+my_hash = Hash.new
+p my_hash
+```
+
+#### Manipulating Hashes
+Generally speaking there are four actions that a develop would want to perform on a single piece of data. The first is that you want to return data, you want to read a particular piece of information. The second is create content, adding new items. The third is update existing content. And the last is delete or remove existing content.
+
+Return all the data in the hash
+```ruby
+learn_staff = {instructor: 'Austin', career: 'Jake', marketing: 'TJ'}
+
+p learn_staff
+```
+
+Return one value in the hash
+```ruby
+learn_staff[:marketing]
+# Output:
+=> "TJ"
+```
+
+Add content to the hash
+```ruby
+learn_staff[:boss_lady] = 'Chelsea'
+p learn_staff
+
+learn_staff[:enrollment] = 'Kumba'
+p learn_staff
+```
+
+Update content in the hash
+```ruby
+learn_staff[:boss_lady] = 'Chelsea K'
+p learn_staff
+
+learn_staff[:instructor] = 'Austin W'
+p learn_staff
+```
+
+Remove content from the hash
+```ruby
+learn_staff.delete(:career)
+p learn_staff
+```
+
+#### Enumerables and Duck Typing
+Ruby has a lot of methods. There are methods that we can call on a hash to help manipulate or return information. There is a concept in Ruby called modules. Modules are way of grouping together like things that have similar properties. One of the main modules in Ruby is called the enumerable module. The enumerable module is a grouping of things that are iterable. Hashes, arrays, and ranges all belong to the Ruby module called enumberables.
+
+So why is this important? You'll remember from JavaScript that all built in methods have to be called on a particular data type. Map only works on arrays, toUpperCase only works on strings, as so on. In JavaScript, all methods are connected to a particular data types. But Ruby takes a different approach. Rather than limit a method to a single data type, Ruby developers decided to look at the behavior of a method and define it by its action rather than strictly by the data type it must be applied to.
+
+This concept is called Duck Typing. The saying is, that if it walks like a duck and quacks like a duck, then you can call it a duck. So in Ruby there is a method called reverse. You can call the reverse method on a string, but it can also call it on an array. Because the behavior of reversing characters in a string and the behavior of reversing indexes in an array are basically the same thing. Ruby developers don't worry about whether reverse is a string method or an array method. They both quack like ducks.
+
+So with that when it comes to ranges, arrays, and hashes, grouping them together under the category of enumerables means that they all quack like ducks and so we can apply a lot of the same methods to all of them.
+
+This is a long way of saying that we can use each and map on a hash.
+- When mapping a hash we have access to the key and the value in that order
+
+```ruby
+learn_staff.each do |key, value|
+  p "#{value}'s job is #{key}."
+end
+
+
+def my_coworkers hash
+  hash.map do |key, value|
+    "My coworker is #{value}."
+  end
+end
+
+p my_coworkers learn_staff
+```
+
+### Review
+- What is a hash?
+- What how do you access a value from a hash?
+- What is the syntax of referencing a symbol in Ruby?
+- What is duck typing?
+
+### Next Steps
+- Open the syllabus section and briefly run through the challenges and expectations
+- Remind the student to use the `ruby-challenges` repo
+- Remind the students of the appropriate naming conventions for their branch and file
+- Post pairs in Slack
+- Open breakout rooms with ability for participants to choose their room
 
 ---
 [Back to Syllabus](../README.md#unit-four-ruby)
