@@ -483,6 +483,9 @@ We wrote one component and can call it as many times as we want and all of them 
 
 And that is pretty cool.
 
+#### Display vs Logic Components
+Handling state is an important part of creating React apps. But you don't want every component to have state. It is important to keep the data centralized. In this example we have one component that holds state and one that does not. This is also known as creating a logic component (that holds state) and a display component (that does not).
+
 #### Inline Styling with JSX
 One last thing, to talk about. That will help you with your challenge today. And that is inline styling in JSX.
 
