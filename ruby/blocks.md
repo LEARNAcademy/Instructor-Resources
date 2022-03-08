@@ -1,5 +1,8 @@
 # Ruby Blocks and Iterables
 
+- [Challenges](#challenges)
+- [Lecture Notes](#lecture-notes)
+
 ## Overview
 - Ruby has lots of iteration methods
 - Ruby uses the keywords `do/end` or {} to create a block of code to be executed
@@ -182,6 +185,84 @@ Note the original array is untouched. To modify the original array use the bang 
 
 ### FIZZBUZZ
 - Write a method that prints the numbers from 1 to 100. For multiples of three print Fizz instead of the number, for multiples of five print Buzz instead of the number, for numbers that are multiples of both three and five print FizzBuzz, for all other numbers print the number.
+
+---
+
+# Lecture Notes
+
+### Overview
+- There are many built in methods used for iteration in Ruby
+- Some of these built in methods take additional information, similar to higher-order functions in JavaScript
+- Blocks are defined by the keywords `do` and `end`
+
+### Process
+- Ensure you are in the cohort-lecture-examples repo
+- Ensure your local is up to date and there are no stale branches
+- Create a new branch
+- Create a Ruby file with the naming convention `language-topic.rb`
+- Run the file with `ruby`
+
+### Additional Notes and Goals
+- Overview different approaches to iteration in Ruby
+
+### Major Takeaways
+- Revisit iteration
+- Blocks are Ruby anonymous functions that are passed to a method
+- Blocks provide iteration methods more context
+
+### Lecture
+Iteration is the process of repeating a code action until a condition is met. In this section we are going to talk about different types of iteration in Ruby.
+
+#### While
+While is a keyword in Ruby. A while loop performs iteration. While just executes code until a condition is met. In this example we can print a list of numbers from 1 to 10.
+- `while` needs and end to define its scope
+- `while` takes a condition
+- The logic goes inside the while loop
+- Print the num and redefine the variable to increment by one so that eventually the while condition becomes false
+- Collect the values in an array using the shovel operator
+
+```ruby
+while  # step one - define the while loop
+end
+
+num = 1  # step two - define a variable and give the while loop a condition
+while num <= 10
+end
+
+num = 1  # step three - print the number and increment
+while num <= 10
+  p num
+  num += 1
+end
+
+nums = []  # step four - shovel the values into an array
+num = 1
+while num <= 10
+  nums << num +=1
+end
+p nums
+```
+
+#### Blocks
+Ruby has lots of built in methods for different types of iteration. And when we are using a method for iteration we need to pass the method some info. When you pass info to a method, the info is called a block. A block is an anonymous function. It modifies the behavior of the method. This is very much like when you pass a function to the map or filter method in JavaScript. It is a function that gets passed to a method.
+
+Blocks can be defined two ways: using the key words do/end or with curly braces. Generally speaking, the do/end should be used if the block is more than one line of code. Curly braces are used for code that can be written in one line.
+
+#### Each
+```ruby
+```
+
+#### Blocks
+```ruby
+```
+### Review
+
+### Next Steps
+- Open the syllabus section and briefly run through the challenges and expectations
+- Remind the student to use the `ruby-challenges` repo
+- Remind the students of the appropriate naming conventions for their branch and file
+- Post pairs in Slack
+- Open breakout rooms with ability for participants to choose their room
 
 ---
 [Back to Syllabus](../README.md#unit-four-ruby)
