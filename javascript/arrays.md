@@ -543,6 +543,7 @@ console.log(oddIndexes)
 ---
 
 # Lecture Notes
+
 ### Overview
 - Until now, we've only dealt with primitive data types which are single pieces of information
 - Arrays are a non-primitive data type that are collections of ordered data
