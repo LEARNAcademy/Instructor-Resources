@@ -1,5 +1,9 @@
 # Ruby Objects, Classes, and Inheritance
 
+- [Challenges](#challenges)
+- [Lecture Notes for Classes](#lecture-notes-classes)
+- [Lecture Notes for Inheritance](#lecture-notes-inheritance)
+
 #### Overview
 In Ruby, everything belongs to a class. We can also create custom classes that hold data and behavior. Inheritance describes relationships between classes.
 
@@ -366,6 +370,266 @@ The `super()` method is used in the child class. It calls the method of the *sam
   - **Hint**: Find out how the spaceship operator can help you with an array.
 - **SUPER STRETCH:** As a developer, I can utilize a Ruby `module` to help DRY up my code. I can create a `swim` method inside of my `module` that will apply to Animals who can _swim_. This method should return "I can swim!"  
   - **Hint**: Look into module `mix ins`. Since not all animals can swim, only certain Animals will have access to this module.
+
+---
+
+# Lecture Notes: Classes
+
+### Overview
+- In Ruby, everything is an object, meaning everything is an instance of a class
+- There are classes are predefined in Ruby such as Integer and Hash, but we can also create custom classes
+
+### Process
+- Ensure you are in the cohort-lecture-examples repo
+- Ensure your local is up to date and there are no stale branches
+- Create a new branch
+- Create a Ruby file with the naming convention `language-topic.rb`
+- Run the file with `ruby`
+
+### Additional Notes and Goals
+- Keeping clean indentation
+- Printing the method invocation not the inner workings of the method
+
+### Major Takeaways
+- Classes are defined by the keyword `class`
+- `.new` is a Ruby method that instantiates a class
+- Classes have getter and setter methods
+- The `initialize` method is a specific setter method that is called by `.new`
+- Instance variables are variables that belong to the class
+- `attr_accessor` is a method that creates additional methods
+
+### Lecture
+Classes are defined by the keyword class and given a name in PascalCase. The scope of the class is defined by the keyword end.
+
+#### Anatomy of a Class
+In this example, we are going to create a class for a Netflix show. Classes are templates from which many objects can be instantiated.
+- Create an object by calling the method `.new` on the class
+- The output is a unique instance of the class, aka an object
+- Can save the object as a variable
+- Ask the class for a Netflix show they are watching and use that as the example
+
+```ruby
+class NetflixShow
+end
+
+p NetflixShow.new
+# => #<NetflixShow:0x00007fe36f0ad0e8>
+
+class_example = NetflixShow.new
+p class_example
+```
+
+#### Setters
+Classes need to be able to define data and to retrieve data. These are called setting and getting. Starting with setters, we need to create a method in the class that takes a parameter and assigns that value to a variable. When creating a variable that belongs to a class there is a special syntax. In JavaScript it was the keyword "this," in Ruby it is an instance variable.
+- Create a title with the setter method
+- Create another object with a title
+
+```ruby
+class NetflixShow
+  def set_show_info title
+    @title = title
+  end
+end
+
+# First object
+class_example = NetflixShow.new
+class_example.set_show_info 'Title Here'
+p class_example
+
+# Second object
+another_class_example = NetflixShow.new
+another_class_example.set_show_info 'Title Here'
+p another_class_example
+```
+
+#### Additional Instance Variables
+The setter method can have as many instance variables as needed.
+```ruby
+class NetflixShow
+  def set_show_info title, run_time
+    @title = title
+    @run_time = run_time
+  end
+end
+
+class_example = NetflixShow.new
+class_example.set_show_info 'Title Here', '30min'
+p class_example
+```
+
+#### Getters
+We can see the variables belong to the class. But to get those values back we need getter methods.
+
+```ruby
+class NetflixShow
+  def set_show_info title, run_time
+    @title = title
+    @run_time = run_time
+  end
+
+  def get_title
+    @title
+  end
+
+  def get_run_time
+    @run_time
+  end
+end
+
+class_example = NetflixShow.new
+class_example.set_show_info 'Title Here', '30min'
+p class_example.get_title
+p class_example.get_run_time
+```
+
+#### Initializer
+Setter methods are very useful, but in this example when we instantiate the class, there is no title and run_time. There is a special kind of setter method that is called by the `.new` method. It is called the initializer.
+
+```ruby
+class NetflixShow
+  def initialize title, run_time
+    @title = title
+    @run_time = run_time
+  end
+
+  def get_title
+    @title
+  end
+
+  def get_run_time
+    @run_time
+  end
+end
+
+class_example = NetflixShow.new 'Title Here', '30min'
+p class_example.get_title
+p class_example.get_run_time
+```
+
+#### Putting It All Together
+The initialize method is acting as the initial setter and there are getters to return info. Now that the initialize is handling the creation of the instance variables, we can use setter methods to modify the values.
+- Add an instance variable for whether the show has been watched or not
+- It will have a default value of false
+- Add a getter method for watched
+
+```ruby
+class NetflixShow
+  def initialize title, run_time
+    @title = title
+    @run_time = run_time
+    @watched = false
+  end
+
+  def get_title
+    @title
+  end
+
+  def get_run_time
+    @run_time
+  end
+
+  def been_watched
+    @watched = true
+  end
+
+  def show_data
+    if @watched
+      "You have watched the show called #{@title} which is #{@run_time}."
+    else
+      "You have not watched the show called #{@title} which is #{@run_time}."
+    end
+  end
+end
+
+class_example = NetflixShow.new 'Title Here', '30min'
+p class_example.show_data
+class_example.been_watched
+p class_example.show_data
+```
+
+#### Attribute Accessor
+So far, we have covered the fundamental concepts needed to understand Ruby classes. Now, we can dig into additional Ruby methods to refactor the code. Ruby offers a method called `attr_accessor` whose job is to make more methods. By passing a symbol of our instance variable to the `attr_accessor` method we get two methods created in return - a getter for that variable and a setter for that variable.
+- Add `attr_accessor` allows the removal of some of the getter and setter methods
+
+```ruby
+class NetflixShow
+  attr_accessor :title, :run_time, :watched
+
+  def initialize title, run_time
+    @title = title
+    @run_time = run_time
+    @watched = false
+  end
+  # def get_title
+  #   @title
+  # end
+  # def get_run_time
+  #   @run_time
+  # end
+  # def been_watched
+  #   @watched = true
+  # end
+  def show_data
+    if @watched
+      "You have watched the show called #{@title} which is #{@run_time}."
+    else
+      "You have not watched the show called #{@title} which is #{@run_time}."
+    end
+  end
+end
+
+class_example = NetflixShow.new 'Title Here', '30min'
+p class_example.title
+class_example.title = 'Different Title Here'
+p class_example.title
+p class_example.show_data
+class_example.watched = true
+p class_example.show_data
+```
+
+### Review
+- What is the casing for a class name?
+- What is an instance variable?
+- What is the syntax to create an instance variable?
+- What are the two categories of methods a dev would add to a class?
+- What is the initializer?
+- What is attr_accessor?
+
+### Next Steps
+- Open the syllabus section and briefly run through the challenges and expectations
+- Remind the student to use the `ruby-challenges` repo
+- Remind the students of the appropriate naming conventions for their branch and file
+- Post pairs in Slack
+- Open breakout rooms with ability for participants to choose their room
+
+---
+
+# Lecture Notes: Inheritance
+
+### Overview
+-
+
+### Process
+- Ensure you are in the cohort-lecture-examples repo
+- Ensure your local is up to date and there are no stale branches
+- Create a new branch
+- Create a Ruby file with the naming convention `language-topic.rb`
+- Run the file with `ruby`
+
+### Additional Notes and Goals
+### Major Takeaways
+### Lecture
+#### Topic
+```ruby
+```
+### Review
+
+### Next Steps
+- Open the syllabus section and briefly run through the challenges and expectations
+- Remind the student to use the `ruby-challenges` repo
+- Remind the students of the appropriate naming conventions for their branch and file
+- Post pairs in Slack
+- Open breakout rooms with ability for participants to choose their room
 
 ---
 [Back to Syllabus](../README.md#unit-four-ruby)
