@@ -219,6 +219,10 @@ p my_name
 - Note that `gets` will always return a string
 
 ```ruby
+p 'What is your name?'
+your_name = gets.chomp
+p "Thank you for being a full stacker, #{your_name}!"
+
 my_name = gets.chomp
 p my_name
 
