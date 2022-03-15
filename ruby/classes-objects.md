@@ -446,14 +446,14 @@ p another_class_example
 The setter method can have as many instance variables as needed.
 ```ruby
 class NetflixShow
-  def set_show_info title, run_time
+  def set_show_info(title, run_time)
     @title = title
     @run_time = run_time
   end
 end
 
 class_example = NetflixShow.new
-class_example.set_show_info 'Title Here', '30min'
+class_example.set_show_info('Title Here', '30min')
 p class_example
 ```
 
@@ -462,7 +462,7 @@ We can see the variables belong to the class. But to get those values back we ne
 
 ```ruby
 class NetflixShow
-  def set_show_info title, run_time
+  def set_show_info(title, run_time)
     @title = title
     @run_time = run_time
   end
@@ -477,7 +477,7 @@ class NetflixShow
 end
 
 class_example = NetflixShow.new
-class_example.set_show_info 'Title Here', '30min'
+class_example.set_show_info('Title Here', '30min')
 p class_example.get_title
 p class_example.get_run_time
 ```
@@ -487,7 +487,7 @@ Setter methods are very useful, but in this example when we instantiate the clas
 
 ```ruby
 class NetflixShow
-  def initialize title, run_time
+  def initialize(title, run_time)
     @title = title
     @run_time = run_time
   end
@@ -501,7 +501,7 @@ class NetflixShow
   end
 end
 
-class_example = NetflixShow.new 'Title Here', '30min'
+class_example = NetflixShow.new('Title Here', '30min')
 p class_example.get_title
 p class_example.get_run_time
 ```
@@ -514,7 +514,7 @@ The initialize method is acting as the initial setter and there are getters to r
 
 ```ruby
 class NetflixShow
-  def initialize title, run_time
+  def initialize(title, run_time)
     @title = title
     @run_time = run_time
     @watched = false
@@ -541,7 +541,7 @@ class NetflixShow
   end
 end
 
-class_example = NetflixShow.new 'Title Here', '30min'
+class_example = NetflixShow.new('Title Here', '30min')
 p class_example.show_data
 class_example.been_watched
 p class_example.show_data
@@ -555,7 +555,7 @@ So far, we have covered the fundamental concepts needed to understand Ruby class
 class NetflixShow
   attr_accessor :title, :run_time, :watched
 
-  def initialize title, run_time
+  def initialize(title, run_time)
     @title = title
     @run_time = run_time
     @watched = false
@@ -578,7 +578,7 @@ class NetflixShow
   end
 end
 
-class_example = NetflixShow.new 'Title Here', '30min'
+class_example = NetflixShow.new('Title Here', '30min')
 p class_example.title
 class_example.title = 'Different Title Here'
 p class_example.title
