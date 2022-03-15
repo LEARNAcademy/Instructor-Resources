@@ -435,4 +435,39 @@ Now that we have a Garage class we can change the test to use the class name `de
 **Story:** As a developer with a TaskList with and without due dates, I can list all the not completed items in order of due date, and then the items without due dates.
 
 ---
+
+# Lecture Notes
+
+### Overview
+- TDD which stands for test-driven development, is a developer philosophy of writing tests (or specs, short for specifications) first and then creating the code that wil make the tests pass.
+
+
+### Process
+- Ensure you are in the cohort-lecture-examples repo
+- Ensure your local is up to date and there are no stale branches
+- Create a new branch
+- Create a Ruby folder with the naming convention `language-topic`
+- Create a Ruby file with the naming convention `language-topic.rb`
+- Run the tests with `rspec spec`
+
+### Additional Notes and Goals
+### Major Takeaways
+### Lecture
+RSpec is a Domain Specific Language which is a language that has been specialized for a particular task. In this case RSpec is specialized for testing Ruby code.
+
+TDD which stands for test-driven development, is a developer philosophy of writing tests (or specs, short for specifications) first and then creating the code that wil make the tests pass.
+
+#### Topic
+```ruby
+```
+### Review
+
+### Next Steps
+- Open the syllabus section and briefly run through the challenges and expectations
+- Remind the student to use the `ruby-challenges` repo
+- Remind the students of the appropriate naming conventions for their branch and file
+- Post pairs in Slack
+- Open breakout rooms with ability for participants to choose their room
+
+---
 [Back to Syllabus](../README.md#unit-four-ruby)
