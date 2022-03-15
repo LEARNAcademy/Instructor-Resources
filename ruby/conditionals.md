@@ -1,5 +1,8 @@
 # Ruby Conditionals
 
+- [Challenges](#challenges)
+- [Lecture Notes](#lecture-notes)
+
 #### Overview
 Decision structures, also called decision trees, conditional statements, or if/else statements, are fundamental to computer programming. Conditional statements are a sequence of well-defined instructions that produce a unique output based on the value of the input. Conditionals follow a flowchart-like structure.
 
@@ -99,7 +102,9 @@ The string output from `gets` includes the return character you type to enter th
 => "Hello, LEARN Student. How are you today?"
 ```
 
-## Challenge: Rock, Paper, Scissors
+## Challenges
+
+Rock, Paper, Scissors
 
 **Story**: As *user 1*, I can see a prompt in the terminal asking me to type either "rock", "paper", or "scissors".
 
@@ -108,6 +113,138 @@ The string output from `gets` includes the return character you type to enter th
 **Story**: As a user, I can see a message in the terminal saying if *user 1* or *user 2* won the round.
 
 **Story**: As a user, I can see a message in the terminal saying if there was a tie.
+
+---
+
+# Lecture Notes
+
+### Overview
+- Conditional statements create logic through evaluations that return a Boolean value
+- There is only one outcome per conditional statement
+- Ruby allows two-way interactions through the terminal
+
+### Process
+- Ensure you are in the cohort-lecture-examples repo
+- Ensure your local is up to date and there are no stale branches
+- Create a new branch
+- Create a Ruby file with the naming convention `language-topic.rb`
+- Run the file with `ruby`
+
+### Additional Notes and Goals
+- Indentation always matters, but it really matters in Ruby
+
+### Major Takeaways
+- Using p and puts
+- Defining executable code blocks
+- Syntax of Ruby conditionals - `if`, `elsif`, `else`, `end`
+- Syntax of string interpolation `"#{}"`
+
+### Lecture
+Creating decisions structures is an important fundamental in performing any kind of code logic. We've seen this action in JavaScript and now we will look at the similarities and difference in creating decision structures in Ruby.
+
+Luckily, if we understand the fundamental concepts, the small changes in syntax are very manageable. To review, a decision structure - also called a decision tree or an if statement - is a series of evaluations. Each evaluation will returns a Boolean values of true or false. If a statement is true, the corresponding code will execute and the statement will be finished. If the statement is false, no code will execute and the program will move to the next decision.
+
+#### Ruby Conditionals
+Ruby is a language that is designed to be very human readable. So there are a lot fewer curly braces than we see in JavaScript. In replacement of the curly braces, Ruby depends on indentation. As a Ruby developer, all indentations should consist of two spaces. Indentation always matters, but in really matters in Ruby.
+- `if` is a keyword in Ruby
+- `if` takes an evaluation that will return a Boolean value
+- `end` is a keyword in Ruby
+- `end` closes the code block
+
+```ruby
+if 9 + 9 == 18
+  p 'the answer is 18'
+end
+```
+
+- `else` is a keyword in Ruby
+- Just like in JavaScript, the else statement is a catchall and does not take an evaluation
+
+```ruby
+if 9 + 9 == 19
+  p 'is the answer 19?'
+else
+  p 'no conditions in this statement evaluated to true'
+end
+```
+
+- `elsif` is a keyword in Ruby
+- `elsif` takes an evaluation that will return a Boolean value
+- There can be as many `elsif` statements as needed
+
+```ruby
+if 9 + 9 == 19
+  p 'is the answer 19?'
+elsif 9 + 9 == 20
+  p 'is the answer 20?'
+elsif 9 + 9 == 21
+  p 'is the answer 21?'
+elsif 9 + 9 == 18
+  p 'is the answer 18?'
+else
+  p 'no conditions in this statement evaluated to true'
+end
+```
+
+#### User Input
+Ruby has a method that will allow two-way interaction in the terminal. We are used to seeing the output of our code. In Ruby we can use the terminal to facilitate user inputs. This will make the conditional statements a little more fun.
+- Start with a basic conditional statement that makes an evaluation using a variable
+
+```ruby
+my_name = 'Sarah'
+
+if my_name == 'Sarah'
+  p 'Hey there Sarah!'
+else
+  p "Hi there, #{my_name}"
+end
+```
+
+- In order to see a different outcome, we would need to change the value of the variable
+- This can be made more fun by assigning our variable through the terminal
+- `gets` is a method that will stop the execution of the program and wait for you to type something and hit enter
+- We can save whatever the user types into a variable
+- `p` the variable and look at the output
+
+```ruby
+gets # step one - see the action in the terminal
+my_name = gets # step two - saving output in a variable
+p my_name
+```
+
+- Look at the output and notice the extra characters
+- The `\n` is a character for a line break, typically we don't see these character but the computer sees them
+- We need to remove the line break characters so they are not included in the variable
+- Ruby has a method that will remove any additional characters at the end of a string
+- Note that `gets` will always return a string
+
+```ruby
+p 'What is your name?'
+your_name = gets.chomp
+p "Thank you for being a full stacker, #{your_name}!"
+
+my_name = gets.chomp
+p my_name
+
+if my_name == 'Sarah'
+  p 'Hey there Sarah!'
+else
+  p "Hi there, #{my_name}"
+end
+```
+
+### Review
+- What are the keywords in the conditional statement?
+- What are the possible outcomes of a conditional statement evaluation?
+- What does `gets` do?
+- What does `.chomp` do?
+
+### Next Steps
+- Open the syllabus section and briefly run through the challenges and expectations
+- Remind the student to use the `ruby-challenges` repo
+- Remind the students of the appropriate naming conventions for their branch and file
+- Post pairs in Slack
+- Open breakout rooms with ability for participants to choose their room
 
 ---
 [Back to Syllabus](../README.md#unit-four-ruby)

@@ -444,6 +444,8 @@ Now that we have a Garage class we can change the test to use the class name `de
 - RSpec stands for Ruby specifications or specs
 - RSpec is installed via RubyGems which is a package manager for Ruby
 - Tests should only look at the output of the code, not the inner logic
+- TDD which stands for test-driven development, is a developer philosophy of writing tests (or specs, short for specifications) first and then creating the code that wil make the tests pass.
+
 
 ### Process
 - Ensure you are in the cohort-lecture-examples repo
