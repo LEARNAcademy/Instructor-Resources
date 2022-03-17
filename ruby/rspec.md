@@ -445,6 +445,7 @@ Now that we have a Garage class we can change the test to use the class name `de
 - RSpec is installed via RubyGems which is a package manager for Ruby
 - Tests should only look at the output of the code, not the inner logic
 
+
 ### Process
 - Ensure you are in the cohort-lecture-examples repo
 - Ensure your local is up to date and there are no stale branches
