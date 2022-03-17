@@ -55,6 +55,32 @@ or
 
 ![Rails Boilerplate](./assets/yay-youre-on-rails.png)
 
+---
+
+### Overview
+- This topic is largely informational
+
+### Process
+- Ensure you are in the cohort-lecture-examples repo
+- Ensure your local is up to date and there are no stale branches
+- Create a new branch
+- Create a Ruby file with the naming convention `language-topic.rb`
+- Run the file with `ruby`
+
+### Additional Notes and Goals
+### Major Takeaways
+### Lecture
+#### Topic
+```ruby
+```
+### Review
+
+### Next Steps
+- Open the syllabus section and briefly run through the challenges and expectations
+- Remind the student to use the `ruby-challenges` repo
+- Remind the students of the appropriate naming conventions for their branch and file
+- Post pairs in Slack
+- Open breakout rooms with ability for participants to choose their room
 
 ---
 [Back to Syllabus](../README.md#unit-five-intro-to-postgres-and-ruby-on-rails-models)
