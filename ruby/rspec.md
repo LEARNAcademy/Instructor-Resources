@@ -469,7 +469,7 @@ RSpec is a Domain Specific Language which is a language that has been specialize
 TDD which stands for test-driven development, is a developer philosophy of writing tests (or specs, short for specifications) first and then creating the code that will make the tests pass. TDD is closely associated with the phrase `red-green-refactor`. Which means we will write our tests first and see them fail (red), the write the code to make it pass (green), then if we need to do any refactor or make any edits on the code, then we can do so with confidence.
 
 #### RSpec Installs and Setup
-For this example we are going to create a class for Book. Book is going to be a template from which we can create many instances of books. The Book class will have both data and behavior. A book can have a title, an author, and pages which are all data. And we can read a book change the current page we are on. That is an action, or a behavior, which in development we call them methods.
+For this example we are going to create a class for Book. Book is going to be a template from which we can create many instances of books. The Book class will have both data and behavior. A book can have a title, an author, and pages which are all data. We can also read a book which will change the current page we are on. Since this is an action, or behavior, in development we call them methods.
 
 We are going to have two files. One is going to have the Ruby code and one is going to have the tests.
 - Google: ruby gem rspec and look at the https://rubygems.org/gems/rspec/versions/3.4.0 documentation for the number of downloads for RSpec
