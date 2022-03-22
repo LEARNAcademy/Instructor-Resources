@@ -572,54 +572,55 @@ Arrays are a collection of data. The data is organized like a list with each ite
 - Saving the array in a variable
 
 ```javascript
-console.log(["she sells", "seashells", "by the", "seashore"])
-var tongueTwister = ["she sells", "seashells", "by the", "seashore"]
-console.log(tongueTwister )
+console.log(["ash", "beech", "cedar", "date"])
+var streetNames = ["ash", "beech", "cedar", "date"]
+console.log(streetNames )
 ```
 
 #### Value
 Each item in the array must be a data type recognized by JavaScript. The actual data is called the value.
 
-"she sells" is a value
-"seashells" is a value
-"by the" is a value
-"seashore" is a value
+"ash" is a value
+"beech" is a value
+"cedar" is a value
+"date" is a value
 
 #### Indexing
 Each item in the array has a unique placement called an index. The index is like an address. The index can be used to extract individual values from the array.
 - Zero indexing
 
 ```javascript
-//                       0            1            2         3
-var tongueTwister = ["she sells", "seashells", "by the", "seashore"]
+//                    0         1         2      3
+var streetNames = ["ash", "beech", "cedar", "date"]
 ```
 
 #### Accessing Items
 - Bracket notation
 
 ```javascript
-var tongueTwister = ["she sells", "seashells", "by the", "seashore"]
-console.log(tongueTwister[0])
-console.log(tongueTwister[1])
-console.log(tongueTwister[2])
-console.log(tongueTwister[3])
+var streetNames = ["ash", "beech", "cedar", "date"]
+console.log(streetNames[0])
+console.log(streetNames[1])
+console.log(streetNames[2])
+console.log(streetNames[3])
 ```
 
 #### Modifying Items
 - Reassigning a value
+- Values in the array are reassigned the same way that variables are reassigned with a singel equal sign
 
 ```javascript
-var tongueTwister = ["she sells", "seashells", "by the", "seashore"]
-tongueTwister[0] = "She sells"
-console.log(tongueTwister)
-// Output: ["She sells", "seashells", "by the", "seashore"]
+var streetNames = ["ash", "beech", "cedar", "date"]
+streetNames[3] = "elm"
+console.log(streetNames)
+// Output: ["ash", "beech", "cedar", "elm"]
 ```
 
 #### Length Property
 Length determines the number of items in the array. The output will always be a number. Length is always the last index plus one.
 ```javascript
-var tongueTwister = ["she sells", "seashells", "by the", "seashore"]
-console.log(tongueTwister.length)
+var streetNames = ["ash", "beech", "cedar", "date"]
+console.log(streetNames.length)
 // Output: 4
 ```
 
