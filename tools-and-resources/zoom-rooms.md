@@ -3,12 +3,12 @@
 Recurring meeting for cohort.
 
 Example:  
-- Topic - Alpha Classroom  
-- Description - Alpha 2021 Cohort - Turing Classroom  
+- Topic - Bravo Classroom  
+- Description - Bravo 2022 Cohort - Hopper Classroom  
 - Duration - 8:30 AM, 10 hours  
-- Recurrence - Weekly (M-F)  
+- Recurrence - no limit
 
-Preset breakout rooms can be added to the reoccurring Zoom meeting. Rooms can be custom names. Below are some fun options.
+Preset breakout rooms can be added to the reoccurring Zoom meeting. Rooms can be custom names.
 
 **Week 1: Downtown(ish) San Diego Neighborhoods**
 - East Village
@@ -166,3 +166,6 @@ Preset breakout rooms can be added to the reoccurring Zoom meeting. Rooms can be
 - La Jolla Shores Beach
 - Sunset Cliffs Beach
 - Windansea Beach
+- Moonlight Beach
+- Cardiff Beach
+- Ponto Beach

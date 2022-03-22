@@ -43,17 +43,17 @@ Now we can call the method repeatedly by referencing the name `greeter`.
 
 In IRB:
 ```
->greeter
+> greeter
 Hello World!
-=>nil
+=> nil
 
->greeter
+> greeter
 Hello World!
-=>nil
+=> nil
 
->greeter
+> greeter
 Hello World!
-=>nil
+=> nil
 ```
 
 ## Implicit Return
@@ -103,36 +103,271 @@ end
 => 3
 ```
 
-
 ## Challenges
+```ruby
+#  - Create a method called sum_these_numbers which takes two integers as an argument and prints their sum to the screen.
 
-- Create a method called sum_these_numbers which takes two integers as an argument and prints their sum to the screen.
-- Create a method called is_even, which takes a single integer, and which then returns true if the number is even, and false otherwise.
-- Create a method that takes a number as an argument and prints "Valid" if the number is between 1 and 10 (inclusive) and "Invalid" otherwise.
-- Create a method that takes in a string and determines if the string is a palindrome.
+def sum_these_numbers(num1, num2)
+  num1 + num2
+end
+p sum_these_numbers(1, 2)
+p sum_these_numbers(10, 20)
+p sum_these_numbers(100, 200)
+p sum_these_numbers(-15, 30)
 
+#  - Create a method called is_even, which takes a single integer, and which then returns true if the number is even, and false otherwise.
+
+def is_even(num)
+  if num.even?
+    true
+  else
+    false
+  end 
+end
+
+p is_even(1)
+p is_even(2)
+
+#  - Create a method that takes a number as an argument and prints "Valid" if the number is between 1 and 10 (inclusive) and "Invalid" otherwise.
+
+def inclusive(num)
+  if num >= 1 && num <= 10
+    'Valid'
+  else
+    'Invalid'
+  end
+end
+
+p inclusive(7)
+p inclusive(35)
+p inclusive(-5)
+
+# - Create a method that takes in a string and determines if the string is a palindrome.
+
+word_one = 'civic'
+word_two = 'tool'
+
+def palindrome(string)
+  if string == string.reverse
+    "#{string} is a palindrome."
+  else
+    "#{string} is not a palindrome."
+  end
+end
+p palindrome(word_one)
+p palindrome(word_two)
 
 ## Challenge: Password Checker
 
 ### User Stories
 
-You are writing the user registration page for a secure web site.
-On the registration page, the user has to enter a user ID and a password, which has to adhere to the to following criteria:
+### You are writing the user registration page for a secure web site.
+### On the registration page, the user has to enter a user ID and a password, which has to adhere to the following criteria:
 
-- As a developer, I can create a method that checks for the following rules for a user ID and password:
-  - User ID and password _cannot_ be the same.
-  - User ID and password _must_ be at least six characters long.
-  - Password _must_ contain at least one of: !#$
-  - User ID _cannot_ contain the following characters: !#$ or spaces
-  - Password _cannot_ be the word "password".
+#  - As a developer, I can create a method that checks for the following rules for a user ID and password:
+#    - User ID and password _cannot_ be the same.
+#    - User ID and password _must_ be at least six characters long.
+#    - Password _must_ contain at least one of: !#$
+#    - User ID _cannot_ contain the following characters: !#$ or spaces
+#    - Password _cannot_ be the word "password".
+
+puts "Please enter a User ID"
+username = gets.chomp
+puts "Please enter a password"
+password = gets.chomp
+
+def registration(username, password)
+  if username == password
+    'User ID and password cannot be the same.'
+  elsif username.length < 6 || password.length < 6
+    'Username and Password must be at least 6 characters'
+  elsif !password.include?('!') && !password.include?('#') && !password.include?('$') 
+    'Password must contain at least one of: !,#,$'
+  elsif username.include?('!') || username.include?('#') || username.include?('$') || username.include?(' ') 
+    "Username cannot contain !,#,$,' '"
+  elsif password.downcase == 'password'
+    'Password cannot be "password"'
+  else
+    'Registration Accepted!'
+  end
+end
+
+p registration(username, password)
 
 ### User Stories: Stretch
 
-- As a user, I can enter my user ID and password into the terminal after being prompted to find out if the they are acceptable.
+# - As a user, I can enter my user ID and password into the terminal after being prompted to find out if the they are acceptable.
+
+def reg_accept
+  puts 'Please enter a User ID'
+  username = gets.chomp
+  puts 'Please enter a password'
+  password = gets.chomp
+
+  password_chars = ['!', '#', '$']
+  user_chars = ['!', '#', '$', ' ']
+
+  if username == password
+    'User ID and password cannot be the same.'
+  elsif username.length <= 6 && password.length <= 6
+    'Username and Password must be at least 6 characters'
+  elsif password_chars.select { |value| password.include? value }.empty?
+    'Password must contain at least one of: !,#,$'
+  elsif !user_chars.select { |value| username.include? value }.empty?
+    "Username cannot contain !,#,$,' '"
+  elsif password.downcase == 'password'
+    'Your Password cannot be "password"'
+  else
+    'Registration Accepted!'
+  end
+end
+
+p reg_accept
 
 ### User Stories: Super Stretch
 
-- As a developer, my method ensures that the user's password _must_ contain at least one number.
+# - As a developer, my method ensures that the user's password _must_ contain at least one number.
+
+puts 'Please enter a User ID'
+username = gets.chomp
+puts 'Please enter a password'
+password = gets.chomp
+
+def must_contain_num(password)
+  number = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+  if number.select { |value| password.include? value.to_s }.empty?
+    'Password must contain a number.'
+  else
+    'Password Accepted'
+  end
+end
+
+p must_contain_num(password)
+
+```
+---
+
+# Lecture Notes
+
+### Overview
+- Ruby methods are custom logic that can take inputs and will always produce outputs
+
+### Process
+- Ensure you are in the cohort-lecture-examples repo
+- Ensure your local is up to date and there are no stale branches
+- Create a new branch
+- Create a Ruby file with the naming convention `language-topic.rb`
+- Run the file with `ruby`
+
+### Additional Notes and Goals
+- The `puts` or `p` should always be on the invocation not on the inner working of the method
+
+### Major Takeaways
+- Every `def` needs a corresponding `end`
+- Ruby has an implicit return
+- Methods must be invoked
+
+### Lecture
+Everything in Ruby is an object which is an instance of a class. If everything is an object, that means that all functions are technically methods. Just like in JavaScript we need to be able to define custom methods that take an input and produce an output. Talking about custom methods is basically the same thing we talk about when we say "creating a function to do x, y, z" in JavaScript.
+- When you create a method in Ruby, you define it
+- `def` is a keyword in Ruby
+- `def` is short for define
+- Every `def` needs a corresponding `end`
+
+#### Method Syntax
+The most simple method we can create will just return a line of code. The method won't do anything until it is invoked. Note that there isn't a return. In JavaScript if we didn't use the keyword return, we would get back undefined. While there is a `return` keyword in Ruby, we don't have to use it. Ruby will automatically return the last line of every method unless we say otherwise. That is called an implicit return.
+
+```ruby
+def greeter  # step one - define the method
+end
+
+def greeter  # step two - add a string
+  'Hello World!'
+end
+
+p greeter  # step three - invoke the method
+```
+
+#### Methods with Arguments
+Okay so let's add a parameter to our method. Of course, if we are creating custom methods we probably want to pass in information. We can do that by adding a parameter.
+
+```ruby
+def greeter name
+  "Hello #{name}!"
+end
+p greeter
+```
+
+It is not necessary to use parentheses around the parameters. But it is a good practice. It is definitely a good practice to use parentheses if there are multiple parameters.
+- Create a method that takes in two numbers
+- Return the numbers multiplied
+
+```ruby
+def multiply(num1, num2)
+  num1 * num2
+end
+p multiply(3, 7)
+```
+
+#### Methods with Conditional Logic
+Often we need to add more logic into a method. We can create a method that decides which number is greater.
+- Every `def` needs an `end`
+- Every `if` needs an `end`
+
+```ruby
+def greater_num(num1, num2)
+  if num1 > num2
+    "#{num1} is greater"
+  elsif num1 < num2
+    "#{num2} is greater"
+  else
+    "#{num1} and #{num2} are equal"
+  end
+end
+p greater_num(27, 22)
+p greater_num(6, 27)
+p greater_num(42, 42)
+```
+
+#### Getting User Input
+So as a final step, let's get the user input from the terminal rather than from our program. We can create a method that asks a user for their name and age. Then it will give a customized answer to whether the user is old enough to vote.
+- Content from the terminal is always going to be a string
+- Need to modify the the age to be a number
+
+```ruby
+puts 'Enter Your Name'
+user_name = gets.chomp
+p user_name
+
+puts 'Enter your Age'
+user_age = gets.chomp
+p user_age
+p user_age.class
+
+user_age = gets.chomp.to_i
+
+def can_you_vote(name, age)
+  if age >= 18
+    "Hi #{name}. #{age} is old enough to vote"
+  else
+    "Hi #{name}. #{age} is not old enough to vote"
+  end
+end
+p can_you_vote(user_name, user_age)
+```
+
+### Review
+- What is def?
+- What is implicit return?
+- Where does the `p` and the `puts` belong in the method?
+- What data type will the `gets` method return?
+
+### Next Steps
+- Open the syllabus section and briefly run through the challenges and expectations
+- Remind the student to use the `ruby-challenges` repo
+- Remind the students of the appropriate naming conventions for their branch and file
+- Post pairs in Slack
+- Open breakout rooms with ability for participants to choose their room
 
 ---
 [Back to Syllabus](../README.md#unit-four-ruby)

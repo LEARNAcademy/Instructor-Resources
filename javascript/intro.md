@@ -448,7 +448,13 @@ console.log(theQuestion.length > theAnswer)
 - Deep dive into the fundamentals of JavaScript
 - Establishing expectations for challenges
 
-### Goals
+### Process
+- Ensure you are in the cohort-lecture-examples repo
+- Create a new branch
+- Create a JavaScript file with the naming convention `language-topic.js`
+- Run the file with `node`
+
+### Additional Notes and Goals
 - Setting the tone for all lectures
 - Modeling git workflow
 - Establishing JavaScript and terminal workflow
@@ -573,8 +579,11 @@ console.log(greeting.slice(1, 3))
 - What are the six primitive data types?
 
 ### Next Steps
-- Go over the syllabus section and challenges
-- Announce which repo will be used
+- Open the syllabus section and briefly run through the challenges and expectations
+- Remind the student to use the `javascript-intro-challenges` repo
+- Remind the students of the appropriate naming conventions for their branch and file
+- Post pairs in Slack
+- Open breakout rooms with ability for participants to choose their room
 
 ---
 [Back to Syllabus](../README.md#unit-one-javascript-foundations)

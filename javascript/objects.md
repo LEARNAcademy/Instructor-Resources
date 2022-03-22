@@ -298,4 +298,30 @@ console.log(describePokemon(pokeTwo))
 ```
 
 ---
+
+# Lecture Notes
+
+### Overview
+-
+
+### Process
+- Ensure you are in the cohort-lecture-examples repo
+- Ensure your local is up to date and there are no stale branches
+- Create a new branch
+- Create a JavaScript file with the naming convention `language-topic.js`
+- Run the file with `node`
+
+### Additional Notes and Goals
+### Major Takeaways
+### Lecture
+#### Topic
+### Review
+
+### Next Steps
+- Open the syllabus section and briefly run through the challenges and expectations
+- Remind the student to use the `javascript-foundations-challenges` repo
+- Remind the students of the appropriate naming conventions for their branch and file
+- Post pairs in Slack
+- Open breakout rooms with ability for participants to choose their room
+---
 [Back to Syllabus](../README.md#unit-one-javascript-foundations)
