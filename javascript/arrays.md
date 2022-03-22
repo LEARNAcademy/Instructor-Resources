@@ -603,6 +603,7 @@ console.log(streetNames[3])
 
 #### Modifying Items
 - Reassigning a value
+- Values in the array are reassigned the same way that variables are reassigned with a singel equal sign
 
 ```javascript
 var streetNames = ["ash", "beech", "cedar", "date"]
