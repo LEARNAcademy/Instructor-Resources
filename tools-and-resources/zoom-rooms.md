@@ -3,8 +3,8 @@
 Recurring meeting for cohort.
 
 Example:  
-- Topic - Bravo Classroom  
-- Description - Bravo 2022 Cohort - Hopper Classroom  
+- Topic - Charlie Classroom  
+- Description - Charlie 2022 Cohort - Turing Classroom  
 - Duration - 8:30 AM, 10 hours  
 - Recurrence - no limit
 
@@ -116,18 +116,17 @@ Preset breakout rooms can be added to the reoccurring Zoom meeting. Rooms can be
 - Notch8
 
 **Cat Tinder: Types of Cats**
-- Persian
-- Siamese
-- Exotic Shorthair
-- Ragdoll
 - Bengal
+- Birman
+- Bombay
+- Calico
+- Exotic Shorthair
+- Himalayan
+- Persian
+- Ragdoll
+- Siamese
 - Sphynx
 - Tabby
-- Bombay
-- Himalayan
-- Birman
-- Bobtail
-- Calico
 - Tuxedo
 
 **Apartment App: Rooms in a House**
