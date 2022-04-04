@@ -265,7 +265,8 @@ The class StockEngine has access to the information from the parent class of Eng
 # Lecture Notes
 
 ### Overview
--
+- Inheritance is one of the pillars of object-oriented programming
+- Inheritance helps solve the problem of redundancy in creating code
 
 ### Process
 - Ensure you are in the cohort-lecture-examples repo
@@ -275,11 +276,163 @@ The class StockEngine has access to the information from the parent class of Eng
 - Run the file with `node`
 
 ### Additional Notes and Goals
+- Revisiting the concept of classes, constructor, this, methods
+
 ### Major Takeaways
-### Major Takeaways
+- The relationship in inheritance is referred to as parent-child
+- Parent classes are more general, child classes are more specific
+- `super` is the method that calls the constructor of the parent class
+
 ### Lecture
-#### Topic
+Objects are a data structure that help us organize information and behavior. To make many objects from a single entity we can create a class that describe the data structures and the methods. Classes are great for making reusable objects but often there can be redundancy in class information. Inheritance is a way of creating relationships between classes to create more reusable data.
+
+#### Relationships Between Classes
+Information can be passed between classes by creating relationships. A class relationship is is defined as parent-child. The parent class passes information to the child class. It is best to have the parent class be more generic and the child class more specific.
+- A child class `extends` a parent class
+- `super` calls the constructor in the parent class
+- A new instance of the child class will have access to the property of the parent class
+
+```javascript
+class Plant {
+  constructor() {
+    this.photosynthesis = true
+  }
+}
+
+class Cactus extends Plant {
+  constructor() {
+    super()
+    this.storesWater = true
+  }
+}
+
+let christmasCactus = new Cactus
+
+console.log(christmasCactus)
+// Output: Cactus { photosynthesis: true, storesWater: true }
+```
+
+#### Passing Methods
+Methods can also be passed down from parent to child.
+
+```javascript
+class Plant {
+  constructor() {
+    this.photosynthesis = true
+    this.growing = false
+  }
+  grow() {
+    this.growing = true
+  }
+}
+
+class Cactus extends Plant {
+  constructor() {
+    super()
+    this.storesWater = true
+  }
+}
+
+let christmasCactus = new Cactus
+
+console.log(christmasCactus)
+// Cactus { photosynthesis: true, growing: false, storesWater: true }
+
+christmasCactus.grow()
+console.log(christmasCactus)
+Cactus { photosynthesis: true, growing: true, storesWater: true }
+```
+
+#### Multiple Child Classes
+The power of inheritance is the ability pass the information from a parent class to many child classes.
+- Both child classes inherit the data and behavior from their parent class
+- Both child classes have unique data from their own class
+
+```javascript
+class Plant {
+  constructor() {
+    this.photosynthesis = true
+    this.growing = false
+  }
+  grow() {
+    this.growing = true
+  }
+}
+
+class Cactus extends Plant {
+  constructor() {
+    super()
+    this.storesWater = true
+  }
+}
+
+let christmasCactus = new Cactus
+console.log(christmasCactus)
+
+class Tree extends Plant {
+  constructor() {
+    super()
+    this.hasLeaves = true
+  }
+}
+
+let maple = new Tree
+console.log(maple)
+// Output: Tree { photosynthesis: true, growing: false, hasLeaves: true }
+```
+
+#### Methods in Child Classes
+A child class can inherit methods from the parent class as well as have classes of their own.
+
+```javascript
+class Plant {
+  constructor() {
+    this.photosynthesis = true
+    this.growing = false
+  }
+  grow() {
+    this.growing = true
+  }
+}
+
+class Cactus extends Plant {
+  constructor() {
+    super()
+    this.storesWater = true
+  }
+}
+
+let christmasCactus = new Cactus
+console.log(christmasCactus)
+christmasCactus.grow()
+console.log(christmasCactus)
+// Output: Cactus { photosynthesis: true, storesWater: true }
+
+class Tree extends Plant {
+  constructor() {
+    super()
+    this.hasLeaves = true
+  }
+  leafDrop() {
+    this.hasLeaves = false
+  }
+}
+
+let maple = new Tree
+console.log(maple)
+// Output: Tree { photosynthesis: true, growing: false, hasLeaves: true }
+
+maple.leafDrop()
+maple.grow()
+console.log(maple)
+// Output: Tree { photosynthesis: true, growing: true, hasLeaves: false }
+```
+
 ### Review
+- Creating relationships in classes helps reduce duplicate code
+- Parent classes are more general and child classes are more specific
+- A child class extends the parent class
+- Calling super in the child class will call the constructor in the parent class
 
 ### Next Steps
 - Open the syllabus section and briefly run through the challenges and expectations
