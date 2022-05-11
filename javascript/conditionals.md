@@ -309,8 +309,9 @@ if()
 
 - Inside the parentheses we need to pass information that can be evaluated to a Boolean value of true or false
 - If this information evaluates to `true` we want a response to occur
-- The response is wrapped in curly braces known as a block of code
-- What is inside the curly braces is the executable code, the action
+- The response is wrapped in curly braces known as a code block
+- Code block: simply consists of grouped logical statements with curly braces { }. 
+- What is inside the curly braces is the executable code, or the set of actions we want to be run if this option is chosen. 
 
 ```javascript
 if(true){
@@ -318,7 +319,7 @@ if(true){
 }
 ```
 
-- If the statement evaluates to false, the block of code does not run
+- If the statement evaluates to false, the code block does not run
 
 ```javascript
 if(false){
@@ -366,7 +367,7 @@ if(6 < 3){
 }
 ```
 
-JavaScript is read line by line. So our little program is just waiting looking for a condition to be true, or for the else, with no qualifications. As soon as one of the evaluations returns true, the block is executed successfully and JavaScript is done. So set your logic accordingly, and test all outcomes. You could have two true statements but the one that is read first by your program is going to run. The second one will not.
+JavaScript is read line by line. So our little program is just waiting looking for a condition to be true, or for the else, with no qualifications. As soon as one of the evaluations returns true, the code block is executed successfully and JavaScript is done. So set your logic accordingly, and test all outcomes. You could have two true statements but the one that is read first by your program is going to run. The second one will not.
 
 - Play around and change things, add variables
 

@@ -499,7 +499,7 @@ Because JavaScript manipulates data, it is very particular about how it processe
 - They are represented by the words true and false but they are not strings
 - Boolean values can be used for comparisons
 
-** Evaluations **
+**Evaluations**
 These evaluations return Boolean values.
 
 **Equality Operator**
