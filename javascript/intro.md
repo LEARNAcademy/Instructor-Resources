@@ -498,6 +498,41 @@ Because JavaScript manipulates data, it is very particular about how it processe
 - Booleans are true false values
 - They are represented by the words true and false but they are not strings
 - Boolean values can be used for comparisons
+
+** Evaluations **
+These evaluations return Boolean values.
+
+**Equality Operator**
+- Strict equality `===` vs loose equality `==`
+- Strict equality is the best practice
+
+```javascript
+var myFavNum = 7
+console.log(myFavNum === 7)
+
+var myName = "Sarah"
+console.log("Sarah" === myName)
+```
+
+**Relational Operators**
+- < > <= >=
+
+**Logical Operators**
+- Logical and `&&`
+- Logical or `||`
+
+```javascript
+var greeting = "hello"
+var num = 6
+
+console.log(num > 2 + 2  && "hello" === greeting)
+
+console.log(num > 2 + 2 || num === greeting)
+```
+
+**Negation**
+- Logical oposite
+- Bang operator `!`
 - Relational operators are design to compare numerical values < > <= >=
 - Equality operators == ===
 - Type coersion

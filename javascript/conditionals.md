@@ -289,40 +289,7 @@ if(password.length >= 12 && password.includes("!")) {
 
 One of the most powerful thing we can have our program do is perform logic. Within that logic we want our program to be able to take a given input make a decision about that input and give us an appropriate output. Conditionals, decision trees, or just if/else statements are all the same thing. To create conditionals, we have to create evaluations. We have to create a situation where we can determine if the outcome of that evaluation is true or false.
 
-#### Evaluations
-These evaluations return Boolean values.
 
-**Equality Operator**
-- Strict equality `===` vs loose equality `==`
-- Strict equality is the best practice
-
-```javascript
-var myFavNum = 7
-console.log(myFavNum === 7)
-
-var myName = "Sarah"
-console.log("Sarah" === myName)
-```
-
-**Relational Operators**
-- < > <= >=
-
-**Logical Operators**
-- Logical and `&&`
-- Logical or `||`
-
-```javascript
-var greeting = "hello"
-var num = 6
-
-console.log(num > 2 + 2  && "hello" === greeting)
-
-console.log(num > 2 + 2 || num === greeting)
-```
-
-**Negation**
-- Logical oposite
-- Bang operator `!`
 
 #### If/Else
 - Create code that will execute an output based on an evaluation

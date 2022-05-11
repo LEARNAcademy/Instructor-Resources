@@ -259,6 +259,10 @@ end
 ```
 
 To add more functionality to this method we can pass a block. Blocks take parameters. To pass a parameter to the block you use pipes.
+Two vocab words here: 
+- Pipes
+- Parameter
+
 ```ruby
 num = [2, 3, 4]
 num.each do |value|
@@ -290,8 +294,22 @@ range.each do |value|
 end
 ```
 
-#### Map
-The `each` method is a great iterator, but it doesn't collect the values. `map` is an iterator that takes a block. It returns a new array with all the values from the iteration.
+**EXTRA**
+Can use a range to populate an array in a couple different ways:
+nums = [*1..9]
+nums = Array(1..10)
+(1..5).to_a
+Need the parentheses otherwise you are basically calling .to_a on the last value
+**end**
+
+
+
+### Map
+Let's talk about map. So each/do is great, but it really is a bit of a more primitive version of map. It returns all the elements but it doesn't collect them in any way.
+
+So for that, we can turn to map. Just like in JavaScript map needs an array or an iterable item and it returns an array. We like arrays!
+
+
 
 ```ruby
 numbers = [4, 5, 6, 7, 8]
