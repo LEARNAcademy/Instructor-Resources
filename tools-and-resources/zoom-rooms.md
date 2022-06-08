@@ -3,8 +3,8 @@
 Recurring meeting for cohort.
 
 Example:  
-- Topic - Charlie Classroom  
-- Description - Charlie 2022 Cohort - Turing Classroom  
+- Topic - Delta Classroom  
+- Description - Delta 2022 Cohort - Hopper Classroom  
 - Duration - 8:30 AM, 10 hours  
 - Recurrence - no limit
 
