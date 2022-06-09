@@ -289,40 +289,7 @@ if(password.length >= 12 && password.includes("!")) {
 
 One of the most powerful thing we can have our program do is perform logic. Within that logic we want our program to be able to take a given input make a decision about that input and give us an appropriate output. Conditionals, decision trees, or just if/else statements are all the same thing. To create conditionals, we have to create evaluations. We have to create a situation where we can determine if the outcome of that evaluation is true or false.
 
-#### Evaluations
-These evaluations return Boolean values.
 
-**Equality Operator**
-- Strict equality `===` vs loose equality `==`
-- Strict equality is the best practice
-
-```javascript
-var myFavNum = 7
-console.log(myFavNum === 7)
-
-var myName = "Sarah"
-console.log("Sarah" === myName)
-```
-
-**Relational Operators**
-- < > <= >=
-
-**Logical Operators**
-- Logical and `&&`
-- Logical or `||`
-
-```javascript
-var greeting = "hello"
-var num = 6
-
-console.log(num > 2 + 2  && "hello" === greeting)
-
-console.log(num > 2 + 2 || num === greeting)
-```
-
-**Negation**
-- Logical oposite
-- Bang operator `!`
 
 #### If/Else
 - Create code that will execute an output based on an evaluation
@@ -342,8 +309,9 @@ if()
 
 - Inside the parentheses we need to pass information that can be evaluated to a Boolean value of true or false
 - If this information evaluates to `true` we want a response to occur
-- The response is wrapped in curly braces known as a block of code
-- What is inside the curly braces is the executable code, the action
+- The response is wrapped in curly braces known as a code block
+- Code block: simply consists of grouped logical statements with curly braces { }. 
+- What is inside the curly braces is the executable code, or the set of actions we want to be run if this option is chosen. 
 
 ```javascript
 if(true){
@@ -351,7 +319,7 @@ if(true){
 }
 ```
 
-- If the statement evaluates to false, the block of code does not run
+- If the statement evaluates to false, the code block does not run
 
 ```javascript
 if(false){
@@ -399,7 +367,7 @@ if(6 < 3){
 }
 ```
 
-JavaScript is read line by line. So our little program is just waiting looking for a condition to be true, or for the else, with no qualifications. As soon as one of the evaluations returns true, the block is executed successfully and JavaScript is done. So set your logic accordingly, and test all outcomes. You could have two true statements but the one that is read first by your program is going to run. The second one will not.
+JavaScript is read line by line. So our little program is just waiting looking for a condition to be true, or for the else, with no qualifications. As soon as one of the evaluations returns true, the code block is executed successfully and JavaScript is done. So set your logic accordingly, and test all outcomes. You could have two true statements but the one that is read first by your program is going to run. The second one will not.
 
 - Play around and change things, add variables
 
