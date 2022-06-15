@@ -283,3 +283,31 @@ export default App
 
 ---
 [Back to Syllabus](../README.md#unit-two-introduction-to-react)
+
+
+# Lecture Notes
+
+### Overview
+
+
+### Process
+
+
+### Additional Notes and Goals
+
+
+### Major Takeaways
+
+
+### Lecture
+
+### Review
+
+### Next Steps
+- Open the syllabus section and briefly run through the challenges and expectations
+- Remind the student to use the `react-challenges` repo
+- Remind the students of the appropriate naming conventions for their branch and file
+- Post pairs in Slack
+- Open breakout rooms with ability for participants to choose their room
+
+---
