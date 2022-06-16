@@ -212,20 +212,231 @@ Earlier in our code we created our own landing page so our user won't see the Ra
 - Each route will point to a method on a controller file
 - The controller method will ultimately do the work you require and send the appropriate view response
 
-### Routes, Controllers, and Views Challenges
+## Challenges Routes, Views, Controllers
 
-- Create a Rails application called our_favorites. The app will have a PostgreSQL database.
-- Generate a controller called Main.
-- Generate additional controllers named for EACH member of the team, e.g. ` $ rails generate controller George`
+### As a user, I can visit a custom landing page at localhost:3000.
 
-**User Stories**
-- As a user, I can see a landing page at `localhost:3000` that has a title of the application and subtitles with each team member's name.
-  - HINT: Use the main controller to create the landing page.
-- As a user, I can see a list of each team member's top three things. (Could be top three restaurants, activities, books, video games, hiking locations, beaches, doughnut shoppes, movies, etc.)
-- As a user, I can see that each of the list items are links.
-- As a user, I can click on a link and be take to a page where I can see more information about that particular list item.
-  - HINT: Use the appropriate controller for each teammate. Create methods for each list item. Create view files in the corresponding view folder.
-- As a user, I can return to the landing page from any of the other pages.
+#### Create rails app
+- $ rails new our_favorites -d postgresql -T
+- $ cd our_favorites
+- $ rails db:create
+- $ rails s
+- $ code .
 
+#### Create controller
+- $ rails g controller Main
+
+```ruby
+# Route
+root 'main#home'
+
+# View - in app/views/main, create an erb file - home.html.erb and add html
+<h1>This is the landing page</h1>
+<p>Brought to you by the home.html.erb who did not need a method<p>
+```
+
+
+### As a user, I can see the names of my team members as hyperlinks on the landing page.
+```ruby
+# home.html.erb (view)
+<%= link_to 'Austin', '/austin'%>
+<%= link_to 'Charlean', '/charlean'%>
+```
+
+
+### As a user, I can click on each team member's name and be taken to a page that displays a list of that team member's top three things. (Could be top three restaurants, activities, books, video games, hiking locations, beaches, doughnut shoppes, movies, etc.)
+```ruby
+# method in controller for each team member
+def austin
+end
+def charlean
+end
+
+# routes for each team member
+  get '/austin' => 'main#austin'
+  get '/charlean' => 'main#charlean'
+
+# app/views/main (view) create an erb file for each team member and add html/link to home
+# austin
+<h1>The best of the best in Austinville</h1>
+<li>Nicole</li>
+<li>Sheldon</li>
+<li>Tacos</li>
+<p>Brought to you by the austin.html.erb<p>
+<%= link_to 'Home', '/'%>
+
+# charlean
+<h1>Guaranteed Laughter in the Jurisdiction of Charlean</h1>
+<li>Olivia</li>
+<li>Brooklyn</li>
+<li>Valencia</li>
+<li>Yisrael</li>
+<p>Brought to you by the charlean.html.erb<p>
+<%= link_to 'Home', '/'%>
+```
+
+### Refactor 
+- Controller --->use instance variables to store list
+as an array in the method
+```ruby
+    @fav = ['Nicole', 'Sheldon', 'Tacos', 'Sealand']
+    @fun = ['Olivia', 'Brooklyn', 'Valencia', 'Yisrael']
+```
+
+- View ---> add a ruby method with ERB to replace static data
+```ruby
+<% @variable.each do |value| %>
+<li> <%= value %> </li>
+<% end %>
+```
+
+
+## Params
+
+### As a user, I can visit a page called cubed that takes a number as a param and displays that number cubed.
+- Setup controller method, route, view
+- Add link to home page
+```ruby
+# Update controller method
+def cubed
+  @number = params[:number].to_i
+end
+
+# view
+# add ERB calculation to instance variable
+<h1>Are you ready to be cubed?</h1>
+<h3>Checkout your new number</h3>
+<h3> <%= @number**3 %> </h3>
+<p>Brought to you by the cubed.html.erb<p>
+<%= link_to 'Home', '/'%>
+```
+
+- in browser ---> http://localhost:3000/cubed?number=3
+
+- Update routes
+```ruby
+  get '/cubed/:number' => 'main#cubed'
+```
+
+- in browser ---> http://localhost:3000/cubed/9
+
+
+### As a user, I can visit a page called evenly that takes two numbers as params and displays whether or not the first number is evenly divisible by the second.
+- Repeat flow as previous
+```ruby
+# method
+  def evenly
+    num1 = params[:num1].to_i
+    num2 = params[:num2].to_i
+    @result = if num1 % num2 === 0
+        "#{num1} is evenly divisible by #{num2}"
+      else
+        "#{num1} is not evenly divisible by #{num2}"
+      end
+  end
+
+# route
+  get '/evenly/:num1/:num2' => 'main#evenly'
+
+# view
+<h1>Is your first number evenly divisible by the second number?</h1>
+<h2><%= @result %></h2>
+<p>Brought to you by the evenly.html.erb<p>
+<%= link_to 'Home', '/'%>
+```
+
+- in browser ---> http://localhost:3000/evenly/4/3
+
+
+### As a user, I can visit a page called palindrome that takes a string as a param and displays whether it is a palindrome (the same word forward and backward).
+```ruby
+# method
+  def palindrome
+    word = params[:word]
+    if word.downcase == word.downcase.reverse
+      @same = "#{word} is a palindrome"
+    else  
+      @same = "#{word} is not a palindrome"
+    end
+  end
+
+# route
+  get '/palindrome/:word' => 'main#palindrome'
+
+# view
+<h1>Backwards! Forwards! Is the spelling the same?</h1>
+<h2><%= @same %> </h2>
+<p>Brought to you by the palindrome.html.erb<p>
+<%= link_to 'Home', '/'%>
+```
+
+
+### As a user, I can visit a page called madlib that takes params of a noun, verb, adjective, adverb, and displays a short silly story.
+
+```ruby
+# method
+def madlib
+  noun = params[:noun]
+  verb = params[:verb]
+  adj = params[:adj]
+  adv = params[:adv]
+  @silly = "Have you seen the petition to impeach the Sealand Lord! Everything started when he declared every Monday to be Whiskey-Infused Queso on Tacos Day. That sounds #{adj}. He is even forcing #{noun} to eat those tacos. The cruelty that the palette of those citizens have to #{adv} endure just makes you want to #{verb}, right?"
+end
+
+# route
+  get '/madlib/:noun/:verb/:adj/:adv' => 'main#madlib'
+
+# view
+<h1>Hide your plates!</h1>
+<h2><%= @silly %> </h2>
+<p>Brought to you by the madlib.html.erb<p>
+<%= link_to 'Home', '/'%>
+```
+
+- To see available routes
+```
+http://localhost:3000/rails/info/routes
+```
+
+### Additional notes 
+- Update home page with instructions to navigate to the other web pages
+```ruby
+<h1>This is the landing page</h1>
+
+<h3>Click the links to learn more about the team members</h3>
+<li> <%= link_to 'Austin', '/austin'%> </li>
+<li> <%= link_to 'Charlean', '/charlean'%> </li>
+
+<h3>Copy and paste the following urls to checkout some basic web pages</h3>
+<table style="width:100%" border=1>
+  <tr>
+    <th>Web Page</th>
+    <th>Instruction</th>
+    <th>Link with example</th>
+  </tr>
+  <tr>
+    <td>Cubed</td>
+    <td>Replace the number at the end of the url with any number</td>
+    <td>http://localhost:3000/cubed/3</td>
+  </tr>
+  <tr>
+    <td>Evenly</td>
+    <td>Replace the numbers at the end of the url with any two numbers. Make sure you separate the two numbers with a "/" and no spaces </td>
+    <td>http://localhost:3000/evenly/2/3</td>
+  </tr>
+  <tr>
+    <td>Palindrome</td>
+    <td>Replace the word at the end of the url with any word</td>
+    <td>http://localhost:3000/palindrome/mom</td>
+  </tr>
+  <tr>
+  <td>Madlib</td>
+  <td>Replace the last four words at the end of the url with any words in the following order: noun/verb/adjective/adverb</td>
+  <td>http://localhost:3000/madlib/donkey/kick/furry/vigourously</td>
+</tr>
+</table>
+
+<p>Brought to you by the home.html.erb who did not need a method<p>
+```
 ---
 [Back to Syllabus](../README.md#unit-six-ruby-on-rails)
