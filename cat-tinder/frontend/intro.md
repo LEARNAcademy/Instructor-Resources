@@ -195,3 +195,31 @@ As a developer, I have been commissioned to create an application where a user c
 
 ---
 [Back to Syllabus](../../README.md#cat-tinder-frontend)
+
+# Lecture Notes
+### Overview
+
+### Process
+- Review trello 
+  - Review trello card for Cat Tinder
+- 
+
+### Additional Notes and Goals
+
+
+### Major Takeaways
+
+
+### Lecture
+
+
+### Review
+- CatNew is a view page for the user
+- We won't be able to actually make cats since this is still mock data
+
+### Next Steps
+- Open the syllabus section and briefly run through the challenges and expectations
+- Remind the students of the appropriate naming conventions for their branch based on the Trello card
+- Open breakout rooms with ability for participants to choose their room
+
+---

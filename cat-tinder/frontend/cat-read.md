@@ -149,3 +149,74 @@ As a developer, I have been commissioned to create an application where a user c
 
 ---
 [Back to Syllabus](../../README.md#cat-tinder-frontend)
+
+
+# Lecture Notes
+### Overview
+- Review trello card for Cat Read
+- 
+### Process
+- 
+
+### Additional Notes and Goals
+
+
+### Major Takeaways
+
+
+### Lecture
+
+#### Test Coverage
+- Add a new file called CatIndex.test.js to the pages folder
+- Assert against the form tags
+
+```javascript
+// src/pages/CatNew.test.js
+import React from 'react'
+import Enzyme, { shallow } from 'enzyme'
+import Adapter from 'enzyme-adapter-react-16'
+import CatIndex from './CatIndex'
+import { Card } from "reactstrap"
+
+Enzyme.configure({ adapter: new Adapter()})
+
+const cats = [
+  {
+    id: 1,
+    name: "mittens",
+    age: 10,
+    enjoys: "Lounging on the deck",
+    img: "https://media.istockphoto.com/photos/cat-sleeping-picture-id470642774?k=20&m=470642774&s=612x612&w=0&h=srG9UGUa2mvJmVK5WJKk9kQzoN6Cj5SfVX3I9MSay-o="
+  }
+]
+const props = {
+  cats: cats
+}
+
+describe("When CatIndex renders", () => {
+  it("displays a heading", () => {
+    const catIndex = shallow(<CatIndex {...props} />)
+    const catIndexHeading = catIndex.find("h3")
+    expect(catIndexHeading.text()).toEqual("See all the cats")
+  })
+  it("displays all the cats", () => {
+    const catIndex = shallow(<CatIndex {...props} />)
+    const catIndexCards = catIndex.find(Card )
+    expect(catIndexCards.length).toEqual(1)
+  })
+})
+```
+
+### Review
+- CatNew is a view page for the user
+- We won't be able to actually make cats since this is still mock data
+
+### Next Steps
+- Open the syllabus section and briefly run through the challenges and expectations
+- Remind the students of the appropriate naming conventions for their branch based on the Trello card
+- Open breakout rooms with ability for participants to choose their room
+
+---
+[Back to Syllabus](../../README.md#cat-tinder-frontend)
+
+
