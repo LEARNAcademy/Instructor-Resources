@@ -104,7 +104,7 @@ Preset breakout rooms can be added to the reoccurring Zoom meeting. Rooms can be
 - WowYow
 - Measurabl
 - Vizer
-- Q-Centrix
+- Classy
 - LeaseLabs
 - Pack Digital
 - Kitu System
@@ -113,7 +113,7 @@ Preset breakout rooms can be added to the reoccurring Zoom meeting. Rooms can be
 - Mitchell International
 - SOCi
 - Zeal
-- Notch8
+- Scientist
 
 **Cat Tinder: Types of Cats**
 - Bengal
