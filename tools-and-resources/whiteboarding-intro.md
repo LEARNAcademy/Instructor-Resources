@@ -42,6 +42,8 @@ The process is:
 
 The instruction team will perform a mock interview.
 
+Question: How do you learn best?
+
 Prompt: Create a function that takes a string of multiple words. If the individual word is five or more letters, reverse the word. If it is less than five letters leave it as is.
 
 - Ask questions to confirm understanding
