@@ -13,7 +13,7 @@ There are lots of ways this can happen during an interview: asking technical que
 
 To be fair, white boarding is not always the best way to assess a candidates technical strengths. It just isn't how you code. No one codes without Google or without notes. Developers don't memorize things. But it is one tactic that is used and it gets at the fundamental principles of interviewing.
 
-The main thing is that a tech lead wants to know what you do when you don't know how to solve a problem. When evaluating your technical skills, quizzing you on what you know isn't always the best use of time. The journey to becoming a developer is the process of getting really, really comfortable NOT knowing the answer. So, while your interviewer wants to know where you are at technically, they also really want to know what you do when you don't know something. Your interviewer whats to see how you think and reason under pressure.
+The main thing is that a tech lead wants to know what you do when you don't know how to solve a problem. When evaluating your technical skills, quizzing you on what you know isn't always the best use of time. The journey to becoming a developer is the process of getting really, really comfortable NOT knowing the answer. So, while your interviewer wants to know where you are at technically, they also really want to know what you do when you don't know something. Your interviewer wants to see how you think and reason under pressure.
 
 ### How Does This Go?
 
@@ -22,7 +22,7 @@ We are going to do virtual white boarding exercises every week. We will ask you 
 White boarding is NOT about the code.
 
 White boarding is about communication.
-Shifting your focus from trying to write perfect code with perfect logic to trying to showing your process.
+Shifting your focus from trying to write perfect code with perfect logic to trying to show your process.
 
 This is also your opportunity to see if the company is going to be a good fit for you. Remember that during an interview, you are interviewing them as much as much they are interviewing you.
 
